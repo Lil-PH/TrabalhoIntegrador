@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');/* importação de fonts do google fonts */
+
+/* Abaixo e a estilização da pagina index.html */
+
+* {
+    /* Resetando qualquer estilização vinda do html*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  body{
+    font-size: 100%;
+    background: #2E5575;
+
+  }
+
+  .cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
+    background: #2E5575;
+  }
+
+  .cabecalho-imagem{
+    height: 72px;
+    
+  }
+
+  .cabecalho-menu{
+    display: flex;
+    gap: 32px;
+
+  }
+
+.cabecalho-menu-item{
+  font-family: 'Sarala', sans-serif;
+  color:white;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.cabecalho-menu a.cabecalho-menu-item:hover {
+  background: transparent;
+  color: black;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
+.conteudo{
+  margin-bottom: 48px;
+  border-top: 0.4px solid white;
+
+}
+
+.conteudo-principal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+
+}
+
+.conteudo-principal-escrito{
+  display: flex;
+  flex-direction: column;
+  gap:32px;
+}
+
+.conteudo-principal-escrito-titulo{
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+}
+
+.conteudo-principal-escrito-subtitulo{
+  font-family: 'Sarala', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color:white;
+}
+
+.botao {
+  --primary-color: #000000;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 50px;
+  width: 150px;
+}
+
+.botao .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.botao .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.botao:hover {
+  background-color: var(--hover-color);
+}
+
+.botao:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.botao:hover .arrow:before {
+  right: 0;
+}
+
+.conteudo-principal-imagem{
+  height: 430px;/*altura da imagen*/
+}
+
+.conteudo-secundario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+
+
+}
+
+.conteudo-secundario-titulo{
+  border-top:0.4px solid white;
+  padding-top: 48px; /*48px sera a distancia do titulo em relação ao border-top*/
+  font-family: 'Sarala', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color:white;
+  margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
+}
+
+.conteudo-secundario-paragrafo{
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  font-size: 18px;
+  color:white;
+
+}
+
+.rodape{
+  padding: 32px;
+  border-top:0.4px solid white;
+  background: #2E5575;
+}
+
+.rodape-imagem{
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+
+
+}
+
+/* Guia de Menu */
+
+.item-menu {
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: 'Sarala', sans-serif;;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.item-menu:focus,
+.item-menu:hover {
+  color: #fff;
+}
+
+.item-menu:focus:after,
+.item-menu:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.item-menu:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
