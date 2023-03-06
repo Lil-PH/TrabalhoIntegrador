@@ -285,7 +285,9 @@ header {
   /* Imagem */
 
   .conteudo-principal-imagem{
-    height: 430px;/*altura da imagen*/
+    /*altura da imagen*/
+    max-width: 100%;
+    height: auto;
   }
 
   /* Botao de Cadastro */
@@ -312,6 +314,8 @@ header {
   }
   
   .conteudo-secundario-paragrafo{
+    max-width: 100%;
+    word-wrap: break-word;
     font-family: 'Righteous', cursive;
     font-weight: 300;
     font-size: 18px;
@@ -333,4 +337,9 @@ header {
     margin: 0 auto;
   
   
+  }
+
+  .imagem-responsiva {
+    max-width: 100%;
+    height: auto;
   }
