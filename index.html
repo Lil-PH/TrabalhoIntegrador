@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,34 +10,67 @@
     <title>Odonto Bia</title>
     <link rel="shortcut icon" href="/image/Dente.png" type="image/x-icon">
 </head>
+
 <body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="/"><h1>Odonto Bia</h1></a>
+            </div>
+            <div class="nav-list">
 
-    
+                <ul>
+                    <li class="nav-item"><a href="#sobre"><button class="item-menu">
+                        SOBRE
+                    </button></a></li>
+                    <li class="nav-item"><a href="#funcionalidade"><button class="item-menu">
+                        FUNCIONALIDADE
+                    </button></a></li>
+                    <li class="nav-item"><a href="#localizacao"><button class="item-menu">
+                        LOCALIZAÇÃO
+                    </button></a></li>
+                    <li class="nav-item"><a href="#contato"><button class="item-menu">
+                        CONTATO
+                    </button></a></li>
+                </ul>
 
-    <header class="cabecalho">
-        <!-- Cabeçalho da pagina -->   
-        <img class="cabecalo-imagem" src="image/OdontoBia.png" alt="Odonto Bia" style="width: 8%; height: 8%;">
-        <nav class="cabecalho-menu">
-            <a href="#sobre"><button class="item-menu">
-                SOBRE
-            </button></a>
-            <a href="#funcionalidade"><button class="item-menu">
-                FUNCIONALIDADE
-            </button></a>
-            <a href="#localizacao"><button class="item-menu">
-                LOCALIZAÇÃO
-            </button></a>
-            <a href="#contato"><button class="item-menu">
-                CONTATO
-            </button></a>
-            <a href="/TrabalhoIntegrador/html/login.html"><button class="item-menu">
-                LOGIN
-            </button></a>
+            </div>
+
+            <div>
+                <a href="/TrabalhoIntegrador/html/login.html"><button class="item-menu">
+                    LOGIN
+                </button></a>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="/image/menu_white_36dp.svg" alt=""></button>
+            </div>
         </nav>
+        <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="#sobre"><button class="item-menu">
+                        SOBRE
+                    </button></a></li>
+                    <li class="nav-item"><a href="#funcionalidade"><button class="item-menu">
+                        FUNCIONALIDADE
+                    </button></a></li>
+                    <li class="nav-item"><a href="#localizacao"><button class="item-menu">
+                        LOCALIZAÇÃO
+                    </button></a></li>
+                    <li class="nav-item"><a href="#contato"><button class="item-menu">
+                        CONTATO
+                    </button></a></li>
+                </ul>
 
-    </header> 
+                <div>
 
+                    <a href="/TrabalhoIntegrador/html/login.html"><button class="item-menu">
+                        LOGIN
+                    </button></a>
     
+                </div>
+        </div>
+    </header>
 
     <main class="conteudo">
         <!-- Parte principal da pagina  -->
@@ -58,8 +92,6 @@
             <img class="conteudo-principal-imagem" src="image/Dente.png" alt="Dente">
 
         </section>
-          
-
 
         <section class="conteudo-secundario">
 
@@ -76,13 +108,14 @@
 
     </main>
 
-    
+    <script src="/js/script.js"></script>
 
     <footer class="rodape">
         <!-- Roda pé da pagina -->
         <img class="rodape-imagem" src="image/Logo roda pé.png" alt="Logo OdontoBia">
 
     </footer>
-    
+
 </body>
+
 </html>
