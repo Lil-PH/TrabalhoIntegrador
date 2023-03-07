@@ -287,7 +287,6 @@ header {
   .conteudo-principal-imagem{
     /*altura da imagen*/
     max-width: 100%;
-    height: auto;
   }
 
   /* Botao de Cadastro */
@@ -298,7 +297,7 @@ header {
     align-items: center;
     gap: 24px;
     margin-top: 48px;
-  
+    padding-bottom: 48px;
   }
 
   /* Botao de Cadastro */
@@ -335,11 +334,10 @@ header {
     height: 200px;
     display: block;
     margin: 0 auto;
-  
-  
   }
 
   .imagem-responsiva {
     max-width: 100%;
     height: auto;
+    padding-top: 50px;
   }

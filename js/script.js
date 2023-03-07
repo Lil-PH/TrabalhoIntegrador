@@ -11,7 +11,7 @@ function menuShow() {
 
 window.addEventListener('resize', function(event){
     // Recalcula a largura da imagem quando a tela é redimensionada
-    var imagens = document.getElementsByClassName('conteudo-principal-imagem');
+    var imagens = document.getElementsByClassName('imagem-responsiva');
     for(var i = 0; i < imagens.length; i++){
       imagens[i].style.width = '100%';
     }
