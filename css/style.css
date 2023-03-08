@@ -64,7 +64,7 @@ header {
     display: none;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 768px) {
     .nav-bar {
         padding: 1.5rem 4rem;
     }
@@ -103,6 +103,12 @@ header {
     .open {
         display: block;
     }
+
+    .conteudo-principal-imagem {
+        width: 10%;
+        flex-direction: column; /* para direcionar para baixo da coluna */
+    }
+
 }
 
 /* Conteudo principal */
@@ -286,7 +292,9 @@ header {
 
   .conteudo-principal-imagem{
     /*altura da imagen*/
-    max-width: 100%;
+    display: flex;
+    width: 25%;
+    justify-content: space-around;
   }
 
   /* Botao de Cadastro */
@@ -334,10 +342,4 @@ header {
     height: 200px;
     display: block;
     margin: 0 auto;
-  }
-
-  .imagem-responsiva {
-    max-width: 100%;
-    height: auto;
-    padding-top: 50px;
   }
