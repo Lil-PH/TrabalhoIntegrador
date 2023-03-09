@@ -309,6 +309,9 @@ header {
   }
 
   /* Botao de Cadastro */
+  main section div p{
+    color:#00aafb;
+  }
   
   .conteudo-secundario-titulo{
     border-top:0.4px solid white;
