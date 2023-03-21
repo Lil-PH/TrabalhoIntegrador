@@ -109,6 +109,15 @@ header {
         flex-direction: column; /* para direcionar para baixo da coluna */
     }
 
+    .mapa-responsivo{
+
+      width: 150%;
+      height: 350;
+      flex-direction: column; /* para direcionar para baixo da coluna */
+      border: 1px solid black;
+  
+    }
+
 }
 
 /* Conteudo principal */
@@ -356,4 +365,12 @@ header {
     height: 200px;
     display: block;
     margin: 0 auto;
+  }
+
+  .mapa-responsivo{
+
+    width: 425;
+    height: 350;
+    border: 1px solid black;
+
   }
