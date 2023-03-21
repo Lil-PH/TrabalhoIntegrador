@@ -307,6 +307,7 @@ header {
   .conteudo-principal-imagem{
     /*altura da imagen*/
     display: flex;
+    margin-top: 5.5em;
     width: 25%;
     justify-content: space-around;
   }
