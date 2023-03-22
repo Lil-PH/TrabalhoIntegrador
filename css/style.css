@@ -327,14 +327,6 @@ header {
     color:#00aafb;
   }
 
-  .imagem-secundaria-direita{
-    display: flex;
-    /*align-content:space-between;*/
-    align-items: center;
-    justify-content: space-around;
-
-
-  }
   
   .conteudo-secundario-titulo{
     border-top:0.4px solid white;
