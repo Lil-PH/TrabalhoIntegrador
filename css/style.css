@@ -352,6 +352,14 @@ header {
     
   }
 
+  .mapa-responsivo{
+
+    width: 15vw;
+    height: 15vh;
+    border: 1px solid black;
+
+  }
+  
   /* Rodape */
 
   .rodape{
@@ -364,12 +372,4 @@ header {
     height: 200px;
     display: block;
     margin: 0 auto;
-  }
-
-  .mapa-responsivo{
-
-    width: 425;
-    height: 350;
-    border: 1px solid black;
-
   }
