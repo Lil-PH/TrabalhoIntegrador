@@ -9,26 +9,26 @@ function menuShow() {
   }
 }
 
-window.addEventListener('resize', function(event){
+// window.addEventListener('resize', function(event){
 
-  var paragrafos = document.getElementsByClassName('conteudo-secundario-paragrafo');
-  for(var i = 0; i < paragrafos.length; i++){
-    paragrafos[i];
-  }
+//   var paragrafos = document.getElementsByClassName('conteudo-secundario-paragrafo');
+//   for(var i = 0; i < paragrafos.length; i++){
+//     paragrafos[i];
+//   }
 
-  var titulos = document.getElementsByClassName('conteudo-principal-escrito-titulo');
-  for(var i = 0; i < titulos.length; i++){
-    titulos[i].style.fontSize = '5vw';
-  }
+//   var titulos = document.getElementsByClassName('conteudo-principal-escrito-titulo');
+//   for(var i = 0; i < titulos.length; i++){
+//     titulos[i].style.fontSize = '5vw';
+//   }
 
-  var titulos = document.getElementsByClassName('conteudo-principal-escrito-subtitulo');
-  for(var i = 0; i < titulos.length; i++){
-    titulos[i].style.fontSize = '5vw';
-  }
+//   var titulos = document.getElementsByClassName('conteudo-principal-escrito-subtitulo');
+//   for(var i = 0; i < titulos.length; i++){
+//     titulos[i].style.fontSize = '5vw';
+//   }
 
-  var titulos = document.getElementsByClassName('conteudo-secundario-titulo');
-  for(var i = 0; i < titulos.length; i++){
-    titulos[i].style.fontSize = '5vw';
-  }
+//   var titulos = document.getElementsByClassName('conteudo-secundario-titulo');
+//   for(var i = 0; i < titulos.length; i++){
+//     titulos[i].style.fontSize = '5vw';
+//   }
 
-});
+// });
