@@ -13,8 +13,9 @@
 header {
   background-color: #2E5575;
   box-shadow: 0px 3px 10px #464646;
-  position: fixed;
-  width: 100vw;
+  position: fixed; /* Fixa o header*/
+  width: 100vw;  /* Define o header com 100% da largura do dispositivo*/
+  z-index: 999; /* Posiciona o header a frente dos demais elementos*/
 }
 
 .logo {
