@@ -250,6 +250,8 @@ main section div p{
   display: flex;
   align-items: center;
   border-top:0.4px solid white;  
+  justify-content: space-between;
+  padding: 0 25px;
 
 
 }
