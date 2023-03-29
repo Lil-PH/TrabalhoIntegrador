@@ -227,6 +227,8 @@ main section div p{
 
 /* textos secundarios */
 
+
+
 .conteudo-secundario-titulo{
   padding-top: 48px; /*48px sera a distancia do titulo em relação ao border-top*/
   font-family: 'Sarala', sans-serif;
@@ -249,18 +251,28 @@ main section div p{
 .teste{
   display: flex;
   align-items: center;
-  border-top:0.4px solid white;  
+  /* border:0.4px solid white;   */
   justify-content: space-between;
-  padding: 0 25px;
+  padding: 0 400px;
+  margin: 0 0 25px 0;
 
 
 }
 
 .conteudo-secundario-imagem{
-  width: 15vw;
-  height: 15vh;
-  padding-right: 25px ;
+  width: 25vw;
+  height: 25vh;
+  
+
  
+}
+
+.mapa-responsivo{
+
+  width: 25vw;
+  height: 25vh;
+  border: 1px solid black;
+
 }
 
 /* Rodape */
@@ -276,6 +288,7 @@ main section div p{
     display: block;
     margin: 0 auto;
   }
+
 
   /* Responsividade da pagina */
 
