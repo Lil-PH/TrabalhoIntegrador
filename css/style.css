@@ -10,6 +10,10 @@
     text-decoration: none;
 }
 
+body{
+  background: #2E5575;
+}
+
 header {
   background-color: #2E5575;
   box-shadow: 0px 3px 10px #464646;
@@ -233,9 +237,10 @@ main section div p{
   padding-top: 48px; /*48px sera a distancia do titulo em relação ao border-top*/
   font-family: 'Sarala', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 3.5rem;
   color:white;
   margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
+
 }
 
 .conteudo-secundario-paragrafo{
@@ -243,7 +248,7 @@ main section div p{
   word-wrap: break-word;
   font-family: 'Righteous', cursive;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 2rem;
   color:white;
 
 }
@@ -254,7 +259,7 @@ main section div p{
   /* border:0.4px solid white;   */
   justify-content: space-between;
   padding: 0 400px;
-  margin: 0 0 25px 0;
+  margin: 0 0 100px 0;
 
 
 }
