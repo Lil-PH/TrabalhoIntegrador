@@ -128,6 +128,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 200px; 
 
 }
 
@@ -247,6 +248,7 @@ header {
   font-weight: 300;
   font-size: 2rem;
   color:white;
+  
 
 }
  
@@ -255,7 +257,7 @@ header {
   align-items: center;
   /* border:0.4px solid white;   */
   justify-content: space-between;
-  padding: 0 400px;
+  padding: 0 350px 0 250px;
   margin: 0 0 100px 0;
 
 
