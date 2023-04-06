@@ -183,7 +183,7 @@ header {
   gap: 0.6em;
   font-weight: bold;
   height: 50px;
-  width: 150px;
+  width: 205px;
 }
 
 .botao .arrow-wrapper {
@@ -348,6 +348,15 @@ header {
       flex-direction: column; /* para direcionar para baixo da coluna */
       border: 1px solid black;
  
+    }
+
+    .teste {
+      flex-direction: column;
+    }
+    
+    .conteudo-secundario-titulo,
+    .conteudo-secundario-paragrafo {
+      margin: 0;
     }
 
 }
