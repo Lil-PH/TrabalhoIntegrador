@@ -249,7 +249,12 @@ header {
   font-size: 2rem;
   color:white;
   
+  
 
+}
+
+.teste2{
+  width: 100vw; 
 }
  
 .teste{
@@ -340,6 +345,7 @@ header {
    
     .conteudo-principal {
         flex-direction: column; /* para direcionar para baixo da coluna */
+        margin-bottom: 50px;
     }
 
     .conteudo-principal-imagem{
@@ -350,10 +356,6 @@ header {
       padding-top: 100px;
     }
     
-    .conteudo-principal-escrito-subtitulo{
-     
-    }
-
     .botao {
       margin-left: 90px;   
      }
@@ -367,6 +369,7 @@ header {
     }
 
     .conteudo-secundario-imagem{
+      order: 2;
       width: 100vw;
     }
     
@@ -377,10 +380,13 @@ header {
       padding: 0px 0px 0px 0px;
     }
     
-    .conteudo-secundario-titulo,
+    .conteudo-secundario-titulo{
+      order: 1;
+      font-size: 2em;
+    }
     .conteudo-secundario-paragrafo {
-      font-size: 1em;
- 
+      order: 1;
+      font-size: 1em;   
     }
     .rodape-imagem{
       width: 20vw;
