@@ -337,6 +337,7 @@ header {
         display: block;
     }
 
+   
     .conteudo-principal {
         flex-direction: column; /* para direcionar para baixo da coluna */
     }
@@ -345,6 +346,17 @@ header {
       width: 40vw;
       height: 30vh;
     }
+    .conteudo-principal-escrito-titulo{
+      padding-top: 100px;
+    }
+    
+    .conteudo-principal-escrito-subtitulo{
+     
+    }
+
+    .botao {
+      margin-left: 90px;   
+     }
 
     .mapa-responsivo{
 
