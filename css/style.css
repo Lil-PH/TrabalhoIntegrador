@@ -3,7 +3,7 @@
 /* Abaixo e a estilização da pagina index.html */
 
 * {
-    /* Resetando qualquer estilização vinda do html*/
+    /* Resetando estilização vinda do html*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -253,6 +253,7 @@ header {
 }
  
 .teste{
+  width: 100vw;
   display: flex;
   align-items: center;
   /* border:0.4px solid white;   */
@@ -288,7 +289,7 @@ header {
 }
  
   .rodape-imagem{
-    height: 200px;
+    width: 200px;
     display: block;
     margin: 0 auto;
   }
@@ -336,27 +337,43 @@ header {
         display: block;
     }
 
-    .conteudo-principal-imagem {
-        width: 10%;
+    .conteudo-principal {
         flex-direction: column; /* para direcionar para baixo da coluna */
+    }
+
+    .conteudo-principal-imagem{
+      width: 50vw;
+      height: 30vh;
     }
 
     .mapa-responsivo{
 
-      width: 150%;
+      width: 100vw;
       height: 350;
       flex-direction: column; /* para direcionar para baixo da coluna */
       border: 1px solid black;
- 
     }
+
+    .conteudo-secundario-imagem{
+      width: 100vw;
+    }
+    
 
     .teste {
       flex-direction: column;
+      align-items: center;
+      padding: 0px 0px 0px 0px;
     }
     
     .conteudo-secundario-titulo,
     .conteudo-secundario-paragrafo {
-      margin: 0;
+      font-size: 1em;
+ 
+    }
+    .rodape-imagem{
+      width: 20vw;
+      display: block;
+      margin: 0 auto;
     }
 
 }
