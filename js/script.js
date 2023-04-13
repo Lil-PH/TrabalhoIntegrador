@@ -9,6 +9,16 @@ function menuShow() {
   }
 }
 
+function tornarInvisivel() {
+  var contenedor = document.getElementById("visible");
+  contenedor.style.display = "none";
+}
+
+window.addEventListener("scroll", function() {
+  var contenedor = document.getElementById("visible");
+  contenedor.style.display = "block";
+});
+
 // window.addEventListener('resize', function(event){
 
 //   var paragrafos = document.getElementsByClassName('conteudo-secundario-paragrafo');
