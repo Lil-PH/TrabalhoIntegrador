@@ -13,8 +13,8 @@ form {
 	max-width: 500px;
 	padding: 20px;
 	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	box-shadow: 0 15px 25px rgba(0,0,0,.6);
 }
 
 label {
@@ -28,7 +28,7 @@ input[type="tel"],
 input[type="date"],
 input[type="time"],
 select {
-	width: 100%;
+	width: 95%;
 	padding: 10px;
 	margin-top: 5px;
 	margin-bottom: 10px;
