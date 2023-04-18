@@ -10,6 +10,13 @@
     text-decoration: none;
 }
 
+html {
+
+  scroll-behavior: smooth; /* Faz animacao do scroll no html*/
+  scroll-padding-top: 100px; /* N deixa que os elementos fiquem abaixo do header*/
+
+}
+
 body{
   background: #2E5575;
 }
@@ -394,4 +401,10 @@ header {
       margin: 0 auto;
     }
 
+}
+
+.icons {
+
+  width: 1em;
+  
 }
