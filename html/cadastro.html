@@ -9,37 +9,67 @@
     <link rel="shortcut icon" href="../image/Dente.png" type="image/x-icon">
 </head>
 
-<div class="login-box">
-  <p>CADASTRO</p>
-  <form>
-    <div class="user-box">
-      <input required="" name="nome" type="text" id="nome">
-      <label>NOME</label>
-    </div>
-    <div class="user-box">
-      <input required="" name="telefone" type="tel" id="telefone">
-      <label>TELEFONE</label>
-    </div>
-    <div class="user-box1">
-      <input required="" name="email" type="email" id="email">
-      <span>E-MAIL</span>
-    </div>
-    <div class="user-box">
-      <input required="" name="senha" type="password" minlength="8">
-      <label>SENHA</label>
-    </div>
-    <div class="user-box">
-      <input required="" name="confirma_senha" type="password" minlength="8">
-      <label>CONFIRMAR SENHA</label>
-    </div>
-    <a href=""><button>
-      CADASTRAR
-      <div class="arrow-wrapper">
-          <div class="arrow"></div>
-  
+
+<body>
+
+
+  <div class="login-box">
+
+
+    <p>CADASTRO</p>
+
+
+    <form>
+
+
+      <div class="user-box">
+        <input required="" name="nome" type="text" id="nome">
+        <label>NOME</label>
       </div>
-  </button></a>
-  </form>
-</div>
+
+
+      <div class="user-box">
+        <input required="" name="telefone" type="tel" id="telefone">
+        <label>TELEFONE</label>
+      </div>
+
+
+      <div class="user-box1">
+        <input required="" name="email" type="email" id="email">
+        <span>E-MAIL</span>
+      </div>
+
+
+      <div class="user-box">
+        <input required="" name="senha" id="senha" type="password" minlength="8">
+        <label>SENHA</label>
+      </div>
+
+
+      <div class="user-box">
+        <input required="" name="confirma_senha" id="confirmarSenha" type="password" minlength="8">
+        <label>CONFIRMAR SENHA</label>
+      </div>
+
+
+      <button type="button" onclick="criarConta()">
+        CADASTRAR
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+   
+        </div>
+
+
+      </button>
+
+
+    </form>
+
+
+  </div>
+
+
+ <script src="../js/fazLogin.js"></script>
+ 
 </body>
 </html>
