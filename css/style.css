@@ -234,7 +234,7 @@ header {
   right: 0;
 }
 
-/* textos secundarios */
+/* textos secundários */
 
 
 
@@ -292,7 +292,7 @@ header {
 
 }
 
-/* Rodape */
+/* Rodapé */
 
 .rodape{
     padding: 32px;
@@ -306,8 +306,27 @@ header {
     margin: 0 auto;
   }
 
+  /* Criando o estilo do botão do whatsapp */
+.whatsapp-link{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 1px 1px 2px #888;
+  z-index: 1000;
+}
 
-  /* Responsividade da pagina */
+.fa-whatsapp{
+  margin-top: 16px;
+}
+
+  /* Responsividade da página */
 
   @media screen and (max-width: 768px) {
     .nav-bar {
