@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Cadastro</title>
+  <link rel="stylesheet" href="../css/loginCadastro.css">
+  <link rel="shortcut icon" href="../image/Dente.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="login-box">
+    <div class="buttonsForm">
+      <div class="btnColor"></div>
+      <button id="btnLogin">Login</button>
+      <button id="btnCadastro">Cadastrar</button>
+    </div>
+
+    <form id="login">
+
+      <div class="user-box">
+        <input required="" name="" type="text" id="email1">
+        <label>E-MAIL</label>
+      </div>
+
+
+      <div class="user-box">
+        <input required="" name="" type="password" id="senha1">
+        <label>SENHA</label>
+      </div>
+
+
+      <div class="divCheck">
+        <input type="checkbox" />
+        <span>Lembrar senha</span>
+      </div>
+
+
+        <button type="button" class="btnLogar" onclick="logar()">
+            ENTRAR
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+    
+            </div>
+        </button>
+    </form>
+
+    <form id="cadastro">
+
+      <div class="user-box">
+        <input required="" name="nome" type="text" id="nome">
+        <label>NOME</label>
+      </div>
+
+
+      <div class="user-box">
+        <input required="" name="telefone" type="tel" id="telefone">
+        <label>TELEFONE</label>
+      </div>
+
+
+      <div class="user-box1">
+        <input required="" name="email" type="email" id="email">
+        <span>E-MAIL</span>
+      </div>
+
+
+      <div class="user-box">
+        <input required="" name="senha" id="senha" type="password" minlength="8">
+        <label>SENHA</label>
+      </div>
+
+
+      <div class="user-box">
+        <input required="" name="confirma_senha" id="confirmarSenha" type="password" minlength="8">
+        <label>CONFIRMAR SENHA</label>
+      </div>
+
+        <button type="button" class="btnCadastrar" onclick="criarConta()">
+            CADASTRAR
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+    
+            </div>
+        </button>
+          <!-- <p>Deseja criar uma conta ?<a href="../html/cadastro.html" class="a2"> Criar Conta!</a></p> -->
+    </form>
+  </div>
+
+  <script src="../js/fazLogin.js"></script>
+</body>
+</html>

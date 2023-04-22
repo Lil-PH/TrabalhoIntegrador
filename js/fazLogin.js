@@ -1,3 +1,25 @@
+var formSignin = document.querySelector('#login');
+var formSignup = document.querySelector('#cadastro');
+var btnColor = document.querySelector('.btnColor');
+var loginBox = document.querySelector('.login-box');
+
+document.querySelector('#btnLogin')
+  .addEventListener('click', () => {
+    formSignin.style.left = "25px"
+    formSignup.style.left = "450px"
+    btnColor.style.left = "0px"
+    loginBox.style.height = "350px"
+});
+
+document.querySelector('#btnCadastro')
+  .addEventListener('click', () => {
+    formSignin.style.left = "-450px"
+    formSignup.style.left = "25px"
+    btnColor.style.left = "100px"
+    loginBox.style.height = "500px"
+});
+
+
 function criarConta() {
     // Obtém as informações do formulário
     var nome = document.getElementById("nome").value;
@@ -15,6 +37,10 @@ function criarConta() {
     // Verifica se as senhas correspondem
     if (senha !== confirmarSenha) {
       alert("As senhas não correspondem.");
+        // Limpa o as senhas
+        document.getElementById("senha").value = "";
+        document.getElementById("confirmarSenha").value = "";
+        document.getElementById("senha").focus();
       return;
     }
  
@@ -29,17 +55,16 @@ function criarConta() {
     alert("Conta criada com sucesso!");
  
     // Redireciona o usuário para a página de login
-    window.location.href = "../html/login.html";
+    window.location.href = "../html/loginCadastro.html";
 }
  
 
 
 function logar(){
 
-
   // Obtém as informações do formulário
-  var email = document.getElementById("email").value;
-  var senha = document.getElementById("senha").value;
+  var email = document.getElementById("email1").value;
+  var senha = document.getElementById("senha1").value;
 
 
   // Verifica se o email e a senha foram preenchidos
