@@ -19,6 +19,20 @@ window.addEventListener("scroll", function() {
   contenedor.style.display = "block";
 });
 
+function sendWhatsApp() {
+  var userAgent = navigator.userAgent.toLowerCase();
+  var isAndroid = userAgent.indexOf("android") > -1;
+  var isIos = userAgent.indexOf("iphone") > -1 || userAgent.indexOf("ipad") > -1;
+
+    if (isAndroid) {
+        window.location.href = "https://api.whatsapp.com/send?phone=5527998557801&text=sua%20mensagem";
+    } else if (isIos) {
+        window.location.href = "https://api.whatsapp.com/send?phone=5527998557801&text=sua%20mensagem";
+    } else {
+        window.open("https:web.whatsapp.com/send?phone=5527998557801", '_blank');
+    }
+}
+
 // window.addEventListener('resize', function(event){
 
 //   var paragrafos = document.getElementsByClassName('conteudo-secundario-paragrafo');
