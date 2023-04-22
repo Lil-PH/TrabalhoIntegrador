@@ -29,7 +29,7 @@ function sendWhatsApp() {
     } else if (isIos) {
         window.location.href = "https://api.whatsapp.com/send?phone=5527998557801&text=sua%20mensagem";
     } else {
-        window.open("https:web.whatsapp.com/send?phone=5527998557801", '_blank');
+        window.open("https://web.whatsapp.com/send?phone=5527998557801", '_blank');
     }
 }
 
