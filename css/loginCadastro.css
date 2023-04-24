@@ -71,6 +71,7 @@ form {
   color: #aaa;
 }
 
+
 #login {
   left: 25px;
 }
@@ -97,36 +98,6 @@ i {
 .iPassword2 {
   top: 190px;
 }
-
-
-
-/* .login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  margin: 20px auto;
-  transform: translate(-50%, -55%);
-  background: rgba(0,0,0,.9);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-} */
-
-/* .login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  margin: 20px auto;
-  transform: translate(-50%, -55%);
-  background: rgba(0,0,0,.9);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-} */
 
 .login-box p:first-child {
   margin: 0 0 30px;
@@ -337,4 +308,15 @@ i {
   
   .btnCadastrar:hover .arrow:before {
     right: 0;
-  }  
+  }
+
+  .login-box a.a2 {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-box a.a2:hover {
+    background: transparent;
+    color: #4ac246;
+    border-radius: 5px;
+  }

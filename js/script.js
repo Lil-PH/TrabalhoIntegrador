@@ -33,6 +33,8 @@ function sendWhatsApp() {
     }
 }
 
+
+
 // window.addEventListener('resize', function(event){
 
 //   var paragrafos = document.getElementsByClassName('conteudo-secundario-paragrafo');

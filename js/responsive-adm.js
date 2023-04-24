@@ -35,11 +35,17 @@ class MobileNavbar {
       return this;
     }
   }
-  
-  const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
-  );
-  mobileNavbar.init();
-  
+
+  if(localStorage.length > 0) {
+    // Obtém os dados do localStorage
+    var dados = localStorage.getItem('dados');
+
+    // Converte os dados de string para objeto
+    dados = JSON.parse(dados);
+
+    // Exibe os dados na página
+    document.getElementById('dados').innerHTML = '<pre>' + JSON.stringify(dados, null, 2) + '</pre>';
+  } else {
+    // Exibe mensagem caso não haja dados no localStorage
+    document.getElementById('dados').innerHTML = '<p>Nenhum dado encontrado no LocalStorage.</p>';
+  }

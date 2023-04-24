@@ -1,7 +1,11 @@
+// Pega as informacoes dos itens abaixo
+
 var formSignin = document.querySelector('#login');
 var formSignup = document.querySelector('#cadastro');
 var btnColor = document.querySelector('.btnColor');
 var loginBox = document.querySelector('.login-box');
+
+// altera a estética da div cadastro e login
 
 document.querySelector('#btnLogin')
   .addEventListener('click', () => {
@@ -20,131 +24,155 @@ document.querySelector('#btnCadastro')
 });
 
 
-function criarConta() {
-    // Obtém as informações do formulário
-    var nome = document.getElementById("nome").value;
-    var telefone = document.getElementById("telefone").value;
-    var email = document.getElementById("email").value;
-    var senha = document.getElementById("senha").value;
-    var confirmarSenha = document.getElementById("confirmarSenha").value;
- 
-    // Verifica se todas as informações foram preenchidas
-    if (nome === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
-      alert("Por favor, preencha todos os campos.");
-      return;
-    }
- 
-    // Verifica se as senhas correspondem
-    if (senha !== confirmarSenha) {
-      alert("As senhas não correspondem.");
-        // Limpa o as senhas
-        document.getElementById("senha").value = "";
-        document.getElementById("confirmarSenha").value = "";
-        document.getElementById("senha").focus();
-      return;
-    }
- 
-    // Armazena as informações no localStorage
-    localStorage.setItem("nome", nome);
-    localStorage.setItem("telefone", telefone);
-    localStorage.setItem("email", email);
-    localStorage.setItem("senha", senha);
- 
-    // Exibe uma mensagem de sucesso
-    console.log("Conta criada com sucesso!");
-    alert("Conta criada com sucesso!");
- 
-    // Redireciona o usuário para a página de login
-    window.location.href = "../html/loginCadastro.html";
-}
- 
+// formulário para fazer cadastro
+const formulario = document.getElementById('cadastro');
 
+formulario.addEventListener('submit', function(evento) {
+  evento.preventDefault();
+  cadastrarUsuario();
+});
 
-function logar(){
-
+function cadastrarUsuario() {
   // Obtém as informações do formulário
-  var email = document.getElementById("email1").value;
-  var senha = document.getElementById("senha1").value;
+  const nome = document.getElementById('nome').value;
+  const telefone = document.getElementById('telefone').value;
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+  const confirmaSenha = document.getElementById('confirmarSenha').value;
+  // Verifica se todas as informações foram preenchidas
+  if (nome === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
+    console.log('Por favor, preencha todos os campos');
 
+    swal({
+      title: "Por favor, preencha todos os campos",
+      icon: "error",
+      button: "OK !",
+      timer: 1700,
+    });
+    // alert('Por favor, preencha todos os campos');
+    return;
+  }
 
-  // Verifica se o email e a senha foram preenchidos
-  if (email === "" || senha === "") {
-    alert("Por favor, preencha o email e a senha.");
+  // Verifica se o e-mail já está cadastrado
+  if (localStorage.getItem(email) !== null) {
+    
+    console.log('E-mail já cadastrado');
+    // alerta para "e-mail que já está cadastrado"
+    swal({
+      title: "O e-mail digitado já está cadastrado",
+      icon: "info",
+      button: "OK !",
+      timer: 1700
+    });
     return;
   }
 
 
-  // Obtém as informações armazenadas no localStorage
-  var emailArmazenado = localStorage.getItem("email");
-  var senhaArmazenada = localStorage.getItem("senha");
+  // Verifica se as senhas correspondem
+  if (senha !== confirmarSenha) {
 
+    // alerta para "As senhas não corresdidas"
+    console.log('As senhas não corresdidas');
+    swal({
+      title: "As senhas digitadas, não correspondem",
+      icon: "error",
+      button: "OK !",
+      timer: 1700
+    });
 
-  // Verifica se as informações estão corretas
-  if (email === emailArmazenado && senha === senhaArmazenada) {
-    // Redireciona o usuário para a página inicial
-    console.log("Conta acessada sucesso!");
-    alert("Conta acessada sucesso!");
-    window.location.href = "../html/telaDoDoutor.html";
-  } else {
-    // Exibe uma mensagem de erro
-    alert("Email ou senha inválidos.");
+      // Limpa o as senhas
+      document.getElementById("senha").value = "";
+      document.getElementById("confirmarSenha").value = "";
+      document.getElementById("senha").focus();
+    return;
   }
+
+
+  const usuario = {
+    nome: nome,
+    telefone: telefone,
+    email: email,
+    senha: senha
+  };
+
+  localStorage.setItem(email, JSON.stringify(usuario));
+
+  console.log('Usuário cadastrado com sucesso');
+      // alerta para "Usuário cadastrado com sucesso"
+      swal({
+        title: "Usuário cadastrado com sucesso",
+        icon: "success",
+        timer: 1700
+      });
+
+  // Redireciona o usuário para a página de login
+  window.location.href = "../html/loginCadastro.html";
 }
 
+// formulário para fazer login
 
-// function criarConta() {
-   
-//      var campos = ["nome", "telefone", "email", "senha", "confirmarSenha"];
-     
-//         for (var i = 0; i < campos.length; i++) {
-//           var campo = document.getElementById(campos[i]).value;
-//           if (campo === "") {
-//             alert("Por favor, preencha todos os campos antes de criar a conta.");
-//             return;
-//           }
-//         }
-     
-//         var senha = document.getElementById("senha").value;
-//         var confirmarSenha = document.getElementById("confirmarSenha").value;
-   
-//         if (senha === "" || confirmarSenha === "") {
-   
-//             alert("Por favor, preencha os campos de senha antes de criar a conta.");
-   
-//         } else if (senha !== confirmarSenha) {
+const formularioLogin = document.getElementById('login');
 
+formularioLogin.addEventListener('submit', function(evento) {
+  evento.preventDefault();
+  fazerLogin();
+});
 
-//             alert("As senhas informadas são diferentes. Por favor, verifique e tente novamente.");
-//             document.getElementById("senha").value = "";
-//             document.getElementById("confirmarSenha").value = "";
-//             document.getElementById("senha").focus();
-//             return;
+function fazerLogin() {
+  const email = document.getElementById('email1').value;
+  const senha = document.getElementById('senha1').value;
 
+  const valor = localStorage.getItem(email);
 
-//         } else {
+  // Verifica se todas as informações foram preenchidas
+  if (email === "" || senha === "") {
+    console.log('Por favor, preencha todos os campos');
+    // alerta para "Preencha todos os campos"
+    swal({
+      title: "Por favor, preencha todos os campos",
+      icon: "error",
+      button: "OK !",
+      timer: 1700
+    });
+    return;
+  }
 
+  if (valor !== null) {
+    const usuario = JSON.parse(valor);
+    if (usuario.senha === senha) {
+      console.log('Login bem-sucedido');
+      swal({
+        title: "Login bem sucedido",
+        icon: "success",
+        timer: 1700
+      });
+      // Redireciona o usuário para a página do doutor
+      window.location.href = "../html/telaDoDoutor.html"
 
-//             // Armazena as informações no localStorage
-//             localStorage.setItem("nome", nome);
-//             localStorage.setItem("telefone", telefone);
-//             localStorage.setItem("email", email);
-//             localStorage.setItem("senha", senha);
+    } else {
+      console.log('Senha incorreta');
+      // alerta para "Senha incorreta"
+      swal({
+        title: "Senha incorreta",
+        icon: "error",
+        button: "OK !",
+        timer: 1700
+      });
+      document.getElementById("senha1").value = "";
+    }
+    
+  } else {
+    console.log('Usuário não encontrado');
+    // alerta para "Usuário não encontrado"
+    swal({
+      title: "Usuário não encontrado",
+      icon: "info",
+      button: "OK !",
+      timer: 1700
+    });
+    document.getElementById("email1").value = "";
+    document.getElementById("senha1").value = "";
+  }
 
+}
 
-//             // Código para criar a conta aqui
-//             console.log("Conta criada com sucesso!");
-//             alert("Conta criada com sucesso! Você será redirecionado para a página de login.");
-
-
-//             // Limpa o formulário
-//             // document.getElementById("nome").value = "";
-//             // document.getElementById("telefone").value = "";
-//             // document.getElementById("email").value = "";
-//             // document.getElementById("senha").value = "";
-//             // document.getElementById("confirmarSenha").value = "";
-
-
-//             window.location.href = "../html/login.html";
-           
-//         }
-// }

@@ -7,7 +7,8 @@
   <title>Login/Cadastro</title>
   <link rel="stylesheet" href="../css/loginCadastro.css">
   <link rel="shortcut icon" href="../image/Dente.png" type="image/x-icon">
-  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script> -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,13 +22,13 @@
     <form id="login">
 
       <div class="user-box">
-        <input required="" name="" type="text" id="email1">
+        <input id="email1"  name="" type="text" required>
         <label>E-MAIL</label>
       </div>
 
 
       <div class="user-box">
-        <input required="" name="" type="password" id="senha1">
+        <input id="senha1" name="" type="password" required>
         <label>SENHA</label>
       </div>
 
@@ -38,7 +39,7 @@
       </div>
 
 
-        <button type="button" class="btnLogar" onclick="logar()">
+        <button type="submit" class="btnLogar" onclick="fazerLogin()">
             ENTRAR
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -50,42 +51,41 @@
     <form id="cadastro">
 
       <div class="user-box">
-        <input required="" name="nome" type="text" id="nome">
+        <input id="nome" name="nome" type="text" required>
         <label>NOME</label>
       </div>
 
 
       <div class="user-box">
-        <input required="" name="telefone" type="tel" id="telefone">
+        <input id="telefone" name="telefone" type="tel" required>
         <label>TELEFONE</label>
       </div>
 
 
       <div class="user-box1">
-        <input required="" name="email" type="email" id="email">
+        <input id="email" name="email" type="email" required>
         <span>E-MAIL</span>
       </div>
 
 
       <div class="user-box">
-        <input required="" name="senha" id="senha" type="password" minlength="8">
+        <input id="senha" name="senha" type="password" minlength="8" required>
         <label>SENHA</label>
       </div>
 
 
       <div class="user-box">
-        <input required="" name="confirma_senha" id="confirmarSenha" type="password" minlength="8">
+        <input id="confirmarSenha" name="confirma_senha" type="password" minlength="8" required>
         <label>CONFIRMAR SENHA</label>
       </div>
 
-        <button type="button" class="btnCadastrar" onclick="criarConta()">
+        <button type="submit" class="btnCadastrar" onclick="cadastrarUsuario()">
             CADASTRAR
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
     
             </div>
         </button>
-          <!-- <p>Deseja criar uma conta ?<a href="../html/cadastro.html" class="a2"> Criar Conta!</a></p> -->
     </form>
   </div>
 
