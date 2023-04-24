@@ -38,7 +38,7 @@ function cadastrarUsuario() {
   const telefone = document.getElementById('telefone').value;
   const email = document.getElementById('email').value;
   const senha = document.getElementById('senha').value;
-  const confirmaSenha = document.getElementById('confirmarSenha').value;
+  const confirmarSenha = document.getElementById('confirmarSenha').value;
   // Verifica se todas as informações foram preenchidas
   if (nome === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
     console.log('Por favor, preencha todos os campos');
