@@ -34,6 +34,7 @@
 
 		// Preenche os campos de entrada com os dados do usuário
 		document.getElementById('nome').value = usuario.nome || '';
+		document.getElementById('cpf').value = usuario.cpf || '';
 		document.getElementById('email').value = usuario.email || '';
 		document.getElementById('senha').value = usuario.senha || '';
 		document.getElementById('confirmarSenha').value = usuario.senha || '';
@@ -51,6 +52,7 @@
 
       		const usuario = {
 				nome: document.getElementById('nome').value,
+				nome: document.getElementById('cpf').value,
 				email: document.getElementById('email').value,
 				senha: document.getElementById('senha').value,
 				telefone: document.getElementById('telefone').value

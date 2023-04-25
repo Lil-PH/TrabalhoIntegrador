@@ -1,24 +1,23 @@
-function mascara_cpf(){
-     /*  Função para formatar o campo de CPF de acordo com os caracteres apropriados.*/
-    var cpf = document.getElementById('cpf')
-    if (cpf.value.length == 3 || cpf.value.length == 7){
-        cpf.value += "."
-    }else if(cpf.value.length == 11 ){
-        cpf.value += "-"
+// Pega as informacoes dos itens abaixo
 
-    }
-}
+var conta = document.querySelector('#conta');
+var agenda = document.querySelector('#agenda');
+var minhaAgenda = document.querySelector('.minha-agenda');
+var minhaConta = document.querySelector('.minha-conta');
 
-function mascara_telefone(){
-    /*  Função para formatar o campo de telefone de acordo com os caracteres apropriados.*/
-    var telefone = document.getElementById('telefone')
-    if (telefone.value.length == 2){
-        telefone.value = "(" + telefone.value;
-        telefone.value += ")";
-    }else if(telefone.value.length == 9){
-        telefone.value += "-";
-    }
-}
+// altera a estética da div cadastro e login
+
+document.querySelector('#agenda')
+  .addEventListener('click', () => {
+    minhaConta.style.display = "none"
+    minhaAgenda.style.display = "flex"
+});
+
+document.querySelector('#conta')
+  .addEventListener('click', () => {
+    minhaAgenda.style.display = "none"
+    minhaConta.style.display = "flex"
+});
 
 const form = document.getElementById('agendando');
 const nomeInput = document.getElementById('nome');
@@ -63,3 +62,27 @@ form.addEventListener('submit', function(event) {
 
 
 });
+
+
+		// Obtém os dados do localStorage
+		var eventos = localStorage.getItem('eventos');
+
+		// Converte os dados de string para objeto
+		eventos = JSON.parse(eventos);
+
+		// Cria uma variável para armazenar a marcação HTML da tabela de eventos
+		var tabela = '';
+
+		// Verifica se há eventos agendados
+		if(eventos && eventos.length > 0) {
+			// Loop pelos eventos e adiciona cada um à tabela
+			for(var i = 0; i < eventos.length; i++) {
+				tabela += '<tr><td>' + eventos[i].data + '</td><td>' + eventos[i].evento + '</td></tr>';
+			}
+		} else {
+			// Exibe mensagem caso não haja eventos agendados
+			tabela += '<tr><td colspan="2">Nenhum evento agendado.</td></tr>';
+		}
+
+		// Adiciona a tabela de eventos à página
+		document.getElementById('eventos').innerHTML = tabela;

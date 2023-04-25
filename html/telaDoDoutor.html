@@ -7,12 +7,13 @@
   <title>Agendamentos</title>
   <link rel="stylesheet" href="../css/telaAdm.css">
   <link rel="shortcut icon" href="../image/Dente.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <header>
       <nav>
-        <a class="logo" name="ini">Odonto Bia</a>
+        <a id="inicio" class="logo" name="ini">Odonto Bia</a>
         <div class="mobile-menu">
           <div class="line0"></div>
           <div class="line1"></div>
@@ -20,13 +21,71 @@
         </div>
         
         <ul class="nav-list">
-          <li><a href="#"><img src="../image/calendar-svgrepo-com.svg" class="icons" alt="">Agenda</a></li>
+          <li id="agenda"><a><img src="../image/calendar-svgrepo-com.svg" class="icons" alt="">Agenda</a></li>
           <li><a href="../index.html"><img src="../image/external-link-svgrepo-com.svg" class="icons" alt="">Ver Site</a></li>
-          <li><a href="../html/alterarDados.html"><img src="../image/user-svgrepo-com.svg" class="icons" alt="">Conta</a></li>
+          <li id="conta"><a><img src="../image/user-svgrepo-com.svg" class="icons" alt="">Conta</a></li>
           <li><a href="../html/loginCadastro.html"><img src="../image/user-remove-svgrepo-com.svg" class="icons" alt="">Sair</a></li>
         </ul>
       </nav>
     </header>
+
+    <div class="tela-inicial">
+
+      <h1 class="bem-vindo">BEM VINDO</h1>
+
+    </div>
+
+    <div class="minha-agenda">
+      <h1>Consultas Agendadas</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>Doutor</th>
+              <th>Procedimento</th>
+              <th>Data</th>
+              <th>Hora</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+          </tbody>
+        </table>
+        <tr><button id="listar"><img src="../image/pesquisar.svg" alt="Lupa"></button></tr>
+        <div class="icons8-pesquisar"></div>
+        <tr>
+          <div class="confirmar-cancelar">
+            <button>Confirmar Consulta</button>
+            <button>Cancelar Consulta</button>
+          </div>
+        </tr>
+    </div>
+
+    <div class="minha-conta">
+      <h1>Alterar dados do usuário</h1>
+      <form id="alterar">
+        <label for="name">Nome:</label>
+        <input type="text" id="nome" name="name" required>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Senha:</label>
+        <input type="password" id="senha" name="password" required>
+        
+        <label for="confirm-password">Confirmar senha:</label>
+        <input type="password" id="confirmarSenha" name="confirm-password" required>
+        
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="telefone" name="phone" required>
+        
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+
     <script src="../js/responsive-adm.js"></script>
 </body>
 </html>

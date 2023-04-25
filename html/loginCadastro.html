@@ -22,13 +22,13 @@
     <form id="login">
 
       <div class="user-box">
-        <input id="email1"  name="" type="text" required>
-        <label>E-MAIL</label>
+        <input id="cpfLogin" name="" type="text" required>
+        <label>CPF</label>
       </div>
 
 
       <div class="user-box">
-        <input id="senha1" name="" type="password" required>
+        <input id="senhaLogin" name="" type="password" required>
         <label>SENHA</label>
       </div>
 
@@ -57,6 +57,12 @@
 
 
       <div class="user-box">
+        <input id="cpf" name="cpf" type="text" required>
+        <label>CPF</label>
+      </div>
+
+
+      <div class="user-box">
         <input id="telefone" name="telefone" type="tel" required>
         <label>TELEFONE</label>
       </div>
@@ -79,7 +85,7 @@
         <label>CONFIRMAR SENHA</label>
       </div>
 
-        <button type="submit" class="btnCadastrar" onclick="cadastrarUsuario()">
+        <button type="submit" class="btnCadastrar">
             CADASTRAR
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
@@ -88,7 +94,7 @@
         </button>
     </form>
   </div>
-
+  <script src="../js/mascaras.js"></script>
   <script src="../js/fazLogin.js"></script>
 </body>
 </html>

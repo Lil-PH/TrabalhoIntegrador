@@ -20,7 +20,7 @@ document.querySelector('#btnCadastro')
     formSignin.style.left = "-450px"
     formSignup.style.left = "25px"
     btnColor.style.left = "100px"
-    loginBox.style.height = "500px"
+    loginBox.style.height = "570px"
 });
 
 
@@ -35,12 +35,13 @@ formulario.addEventListener('submit', function(evento) {
 function cadastrarUsuario() {
   // Obtém as informações do formulário
   const nome = document.getElementById('nome').value;
+  const cpf = document.getElementById('cpf').value;
   const telefone = document.getElementById('telefone').value;
   const email = document.getElementById('email').value;
   const senha = document.getElementById('senha').value;
   const confirmarSenha = document.getElementById('confirmarSenha').value;
   // Verifica se todas as informações foram preenchidas
-  if (nome === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
+  if (nome === "" || cpf === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
     console.log('Por favor, preencha todos os campos');
 
     swal({
@@ -53,19 +54,28 @@ function cadastrarUsuario() {
     return;
   }
 
-  // Verifica se o e-mail já está cadastrado
-  if (localStorage.getItem(email) !== null) {
-    
-    console.log('E-mail já cadastrado');
-    // alerta para "e-mail que já está cadastrado"
+  // Verifica se o cpf já está cadastrado
+  if (localStorage.getItem(cpf) !== null || localStorage.getItem(email) !== null) {
+    console.log('CPF ou Email já está cadastrado');
+    // alerta para "CPF que já está cadastrado"
     swal({
-      title: "O e-mail digitado já está cadastrado",
+      title: "O CPF ou Email digitado já está cadastrado",
       icon: "info",
-      button: "OK !",
-      timer: 1700
+      button: "OK !"
     });
     return;
   }
+
+  // if (localStorage.getItem(email) !== null) {
+  //   console.log('O e-mail já está cadastrado');
+  //   // alerta para "email que já está cadastrado"
+  //   swal({
+  //     title: "O email digitado já está cadastrado",
+  //     icon: "info",
+  //     button: "OK !"
+  //   });
+  //   return;
+  // }
 
 
   // Verifica se as senhas correspondem
@@ -90,23 +100,23 @@ function cadastrarUsuario() {
 
   const usuario = {
     nome: nome,
+    cpf: cpf,
     telefone: telefone,
     email: email,
     senha: senha
   };
 
-  localStorage.setItem(usuario, JSON.stringify(usuario));// acaso de erro coloque no primeiro usuario como: (email)
+  localStorage.setItem(cpf, JSON.stringify(usuario));
 
-  console.log('Usuário cadastrado com sucesso');
+    console.log('Usuário cadastrado com sucesso');
       // alerta para "Usuário cadastrado com sucesso"
       swal({
         title: "Usuário cadastrado com sucesso",
         icon: "success",
-        timer: 1700
+        button: "OK !"
       });
-
-  // Redireciona o usuário para a página de login
-  window.location.href = "../html/loginCadastro.html";
+    // Redireciona o usuário para a página de login
+    window.location.href = "../html/loginCadastro.html";
 }
 
 // formulário para fazer login
@@ -119,13 +129,13 @@ formularioLogin.addEventListener('submit', function(evento) {
 });
 
 function fazerLogin() {
-  const email = document.getElementById('email1').value;
-  const senha = document.getElementById('senha1').value;
+  const cpf = document.getElementById('cpfLogin').value;
+  const senha = document.getElementById('senhaLogin').value;
 
-  const valor = localStorage.getItem(email);
+  const valor = localStorage.getItem(cpf);
 
   // Verifica se todas as informações foram preenchidas
-  if (email === "" || senha === "") {
+  if (cpf === "" || senha === "") {
     console.log('Por favor, preencha todos os campos');
     // alerta para "Preencha todos os campos"
     swal({
@@ -141,11 +151,6 @@ function fazerLogin() {
     const usuario = JSON.parse(valor);
     if (usuario.senha === senha) {
       console.log('Login bem-sucedido');
-      swal({
-        title: "Login bem sucedido",
-        icon: "success",
-        timer: 1700
-      });
       // Redireciona o usuário para a página do doutor
       window.location.href = "../html/telaDoDoutor.html"
 
@@ -158,7 +163,7 @@ function fazerLogin() {
         button: "OK !",
         timer: 1700
       });
-      document.getElementById("senha1").value = "";
+      document.getElementById("senhaLogin").value = "";
     }
     
   } else {
@@ -170,8 +175,8 @@ function fazerLogin() {
       button: "OK !",
       timer: 1700
     });
-    document.getElementById("email1").value = "";
-    document.getElementById("senha1").value = "";
+    document.getElementById("cpfLogin").value = "";
+    document.getElementById("senhaLogin").value = "";
   }
 
 }

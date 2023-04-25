@@ -210,3 +210,52 @@
     background-color: #0069d9;
   }
   
+.tela-inicial {
+
+ display: flex;
+
+}
+
+.bem-vindo{
+
+  text-align: center;
+  color: #008CBA;
+}
+
+.minha-agenda{
+
+  background-color: gray;
+  display: none;
+  flex-direction: column;
+
+}
+
+.minha-conta{
+
+  background-color: gray;
+  display: none;
+  flex-direction: column;
+
+}
+
+.confirmar-cancelar{
+
+  display: none;
+
+}
+
+#listar {
+
+  display: none;
+
+}
+
+@media screen and (max-width: 768px) {
+
+  #listar{
+    cursor: pointer;
+    display: flex;
+    margin-top: 20% auto;
+  }
+
+}
