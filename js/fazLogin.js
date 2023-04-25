@@ -95,7 +95,7 @@ function cadastrarUsuario() {
     senha: senha
   };
 
-  localStorage.setItem(email, JSON.stringify(usuario));
+  localStorage.setItem(usuario, JSON.stringify(usuario));// acaso de erro coloque no primeiro usuario como: (email)
 
   console.log('Usuário cadastrado com sucesso');
       // alerta para "Usuário cadastrado com sucesso"
