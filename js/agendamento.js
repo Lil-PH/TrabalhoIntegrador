@@ -19,6 +19,9 @@
 //     minhaConta.style.display = "flex"
 // });
 
+
+
+
 // Obtém os elementos do formulário pelo id
 const form = document.getElementById('agendando');
 const nomeInput = document.getElementById('nome');
@@ -57,12 +60,25 @@ form.addEventListener('submit', function(event) {
         hora
     };
 
-    // Salva o agendamento no localStorage como uma string JSON
-    localStorage.setItem('agendamento', JSON.stringify(agendamento));
+   //Condição para que o agendamento seja feito
+    if (localStorage.setItem('agendamento', JSON.stringify(agendamento)) === null) {
+        // Exibe uma mensagem de erro ao usuário
+        swal({
+            title: "Agendamento não foi realizado",
+            icon: "error",
+            button: "OK !"
+        });
+        
+    } else {
+        // Exibe uma mensagem de sucesso ao usuário
+        swal({
+            title: "Agendamento foi realizado com sucesso",
+            icon: "success",
+            button: "OK !"
+        });
+            window.location.href = "../index.html"
 
-    // Exibe uma mensagem de sucesso ao usuário
-    alert('Agendamento salvo com sucesso!');
-
+    }
 
 });
 

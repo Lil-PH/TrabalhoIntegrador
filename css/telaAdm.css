@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');/* importação de fonts do google fonts */
-/* Abaixo está a estilização da pagina index.html */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@700&family=Sigmar&display=swap');/* importação de fonts do google fonts */
 
+/* Abaixo está a estilização da página telaDoDoutor.html */
+
+/* Este seletor aplica o reset de estilização a todos os elementos da página */
 * {
     /* Resetando estilização vinda do html*/
     padding: 0;
@@ -9,6 +11,7 @@
     text-decoration: none;
 }
 
+/* Este seletor aplica a animação de scroll suave em toda a página */
 html {
 
   scroll-behavior: smooth; /* Faz animacao do scroll no html*/
@@ -20,6 +23,7 @@ html {
   background: #2E5575;
 } */
 
+/* Definindo o estilo do cabeçalho (header) */
 header {
   background-color: #2E5575;
   box-shadow: 0px 3px 10px #464646;
@@ -29,50 +33,54 @@ header {
   position: relative;
 }
 
-  
-  body{
-    background: gray;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
+/* Definindo o estilo do corpo da página (body) */
+body{
+  font-family: 'Righteous', cursive;
+  background: gray;
+  font-family: Arial, sans-serif;
+  background-color: rgb(174 174 174);
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    font-family: 'Righteous', cursive;
-  }
+/* Definindo o estilo da logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Righteous', cursive;
+}
   
-  .logo h1 {
-    color: #fff;
-  }
+.logo h1 {
+  color: #fff;
+}
   
-  
-  .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 6rem;
-  }
+/* Definindo o estilo da barra de navegação (nav-bar) */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+}
   
    /* lista da NavBar */
+
+/* Definindo o estilo da lista de navegação (nav-list) */
+.nav-list {
+  display: flex;
+  align-items: center;
+}
   
-   .nav-list {
-    display: flex;
-    align-items: center;
-  }
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
   
-  .nav-list ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  .nav-item {
+.nav-item {
     margin: 0 15px;
-  }
+}
 
 
 /* Guia de Menu */
 
+/* Definindo o estilo dos itens do menu de navegação (item-menu) */
 .item-menu {
   font-size: 18px;
   color: #e1e1e1;
@@ -89,17 +97,23 @@ header {
  
 }
 
+/* Definindo o estilo dos itens do menu de navegação quando estão 
+com foco ou hover (item-menu:focus, item-menu:hover) */
 .item-menu:focus,
 .item-menu:hover {
   color: #fff;
 }
 
+/* Definindo o estilo do indicador dos itens do menu de navegação 
+quando estão com foco ou hover (item-menu:focus:after, item-menu:hover:after) */
 .item-menu:focus:after,
 .item-menu:hover:after {
   width: 100%;
   left: 0%;
 }
 
+/* Definindo o estilo do indicador dos itens do menu de 
+navegação (item-menu:after) */
 .item-menu:after {
   content: "";
   pointer-events: none;
@@ -116,6 +130,7 @@ header {
  
 }
 
+/* Define o estilo dos links na barra de navegação */
 .nav-link {
   text-decoration: none;
   font-size: 1.15rem;
@@ -123,80 +138,90 @@ header {
   font-weight: 400;
 }
 
+/* Define o estilo do ícone de menu na versão mobile */
 .mobile-menu-icon {
   display: none;
 }
 
+/* Define o estilo do menu na versão mobile */
 .mobile-menu {
   display: none;
 }
 
+/* Define o estilo do título da página */
 .title {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 30px;
- }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  thead {
-    background-color: #008CBA;
-    color: #fff;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tr:hover {
-    background-color: #ddd;
-  }
+}
 
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
+
+/* Define o estilo da tabela */
+.table-agendamento {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Define o estilo do cabeçalho da tabela */
+thead {
+  background-color: #008CBA;
+  color: #fff;
+}
+
+/* Define o estilo das células de cabeçalho e dados da tabela */
+.lista-elementos{
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.elementos {
+
+  text-align: center;
+} 
+
+/* Define o estilo das linhas pares da tabela */
+.lista-elementos:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Define o estilo das linhas que o mouse está sobre na tabela */
+.lista-elementos:hover {
+  background-color: #ddd;
+}
+
+/* Define o estilo do formulário */
+.altera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Define as regras de estilo para o grupo de formulários */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Define as regras de estilo para as etiquetas */
+.texto-alterar {
+  margin-bottom: 5px;
+}
   
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
-  select, input[type="date"], input[type="time"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-  }
-  
+/* Define as regras de estilo para as seleções, datas e horários */
+select, input[type="date"], input[type="time"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+/* Define as regras de estilo para o botão salvar */
 .btn-salvar {
   padding: 10px;
   background-color: #007bff;
@@ -207,22 +232,30 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-  
+
+/* Define as regras de estilo para o botão salvar quando hover */
 .btn-salvar:hover {
   background-color: #0069d9;
 }
-  
+
+/* Define as regras de estilo para a tela inicial */
 .tela-inicial {
  display: flex;
 
 }
 
+/* Define as regras de estilo para a mensagem de boas-vindas */
 .bem-vindo{
-
+  opacity: 0.5;
+  font-family: 'Sigmar', cursive;
+  padding-top: 20rem;
+  font-size: 5rem;
+  margin: 0 auto;
   text-align: center;
-  color: #008CBA;
+  color: rgb(144 144 144);
 }
 
+/* Define as regras de estilo para a seção da agenda */
 .minha-agenda{
   background-color: gray;
   display: none;
@@ -230,6 +263,7 @@ header {
 
 }
 
+/* Define as regras de estilo para a seção da conta do usuário */
 .minha-conta{
   background-color: gray;
   display: none;
@@ -237,36 +271,67 @@ header {
 
 }
 
+/* Define o estilo para um elemento com a classe "confirmar-cancelar" e o torna invisível */
 .confirmar-cancelar{
 
   display: none;
 
 }
 
+/* Define o estilo para um elemento com o id "listar" e o torna invisível. */
 #listar {
 
   display: none;
 
 }
 
+/* Define o estilo para um elemento com a classe "mensagem" e centraliza 
+seu conteúdo horizontal e verticalmente, além de definir sua altura 
+e tamanho da fonte. */
+.tr-mensagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 2em;
+}
+
+.btn-confirma{
+
+  display: none;
+    
+}
+
+.btn-cancela{
+    
+  display: none;
+}
+
+/* Definição das regras de estilo para telas com largura máxima de 768px */
 @media screen and (max-width: 768px) {
+  /* Define o espaçamento interno da barra de navegação  */
   .nav-bar {
       padding: 1.5rem 4rem;
   }
+  /* Esconde os itens da barra de navegação */
   .nav-item {
       display: none;
   }
+  /* Esconde os itens do menu */
   .item-menu {
       display: none;
   }
+  /* Exibe o ícone do menu mobile */
   .mobile-menu-icon {
       display: block;
   }
+  /* Remove o fundo do botão do ícone do menu mobile */
   .mobile-menu-icon button {
       background-color: transparent;
       border: none;
       cursor: pointer;
   }
+  /* Define o alinhamento e espaçamento dos itens do menu mobile  */
   .mobile-menu ul {
       display: flex;
       flex-direction: column;
@@ -274,39 +339,47 @@ header {
       align-items: center;
       padding-bottom: 1rem;
   }
+  /* Exibe os itens da barra de navegação no menu mobile */
   .mobile-menu .nav-item {
       display: block;
       padding-top: 1.2rem;
   }
+  /* Define o espaçamento dos itens do menu mobile */
   .mobile-menu .item-menu {
       display: block;
       padding: 1rem 2rem;
   }
+  /* Define a largura do botão do menu mobile */
   .mobile-menu .item-menu button {
       width: 100%;
   }
+  /* Exibe o menu mobile quando é aberto */
   .open {
       display: block;
   }
 
- 
+  /* Define a direção da flexbox do conteúdo principal para coluna */
   .conteudo-principal {
       flex-direction: column; /* para direcionar para baixo da coluna */
       margin-bottom: 50px;
   }
 
+  /* Define a largura e altura da imagem no conteúdo principal para tela mobile */
   .conteudo-principal-imagem{
     width: 40vw;
     height: 30vh;
   }
+  /* Define o espaçamento superior do título no conteúdo principal para tela mobile */
   .conteudo-principal-escrito-titulo{
     padding-top: 100px;
   }
   
+  /* Define a margem esquerda do botão no conteúdo principal para tela mobile */
   .botao {
     margin-left: 90px;   
    }
 
+  /* Define a largura e altura do mapa responsivo para tela mobile */
   .mapa-responsivo{
 
     width: 100vw;
@@ -314,33 +387,37 @@ header {
     flex-direction: column; /* para direcionar para baixo da coluna */
     border: 1px solid black;
   }
-
+  /* Define a ordem da imagem no conteúdo secundário para tela mobile */
   .conteudo-secundario-imagem{
     order: 2;
     width: 100vw;
   }
   
-
+  /* Definição das regras de estilo para a classe .teste */
   .teste {
     flex-direction: column;
     align-items: center;
     padding: 0px 0px 0px 0px;
   }
   
+  /* Definição das regras de estilo para a classe .conteudo-secundario-titulo*/
   .conteudo-secundario-titulo{
     order: 1;
     font-size: 2em;
   }
+  /* Definição das regras de estilo para a classe .conteudo-secundario-paragrafo */
   .conteudo-secundario-paragrafo {
     order: 1;
     font-size: 1em;   
   }
+  /* Definição das regras de estilo para a classe .rodape-imagem */
   .rodape-imagem{
     width: 20vw;
     display: block;
     margin: 0 auto;
   }
 
+  /* Definição das regras de estilo para o elemento com o id #listar */
   #listar{
     cursor: pointer;
     display: flex;

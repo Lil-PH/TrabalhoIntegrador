@@ -10,45 +10,56 @@
   <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+    <!-- Cabeçalho da página -->
     <header>
         <!--nav aonde fica os elementos do menu-->
         <nav class="nav-bar">
+            <!--div para o logo-->
             <div class="logo">
                 <h1 id="inicio">Odonto Bia</h1>
             </div>
+            <!--div para a lista de itens do menu-->
             <div class="nav-list">
                 <ul>
+                    <!--item de agenda-->
                     <li id="agenda" class="nav-item"><button class="item-menu">
                         Agenda
                     </button></li>
+                    <!--item para ver o site-->
                     <li class="nav-item"><a href="../index.html"><button class="item-menu">
                         Ver Site
                     </button></a></li>
+                    <!--item para a conta-->
                     <li id="conta" class="nav-item"><button class="item-menu">
                         Conta
                     </button></li>
+                    <!--item para sair-->
                     <li class="nav-item"><a href="../html/loginCadastro.html"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
             </div>
-    
+            <!--botão para menu responsivo-->
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
             </div>
         </nav>
+        <!--menu responsivo-->
         <div class="mobile-menu">
                 <ul>
-                    <li id="agenda" class="nav-item"><button class="item-menu">
+                    <!--item de agenda-->
+                    <li id="agenda-responsiva" class="nav-item"><button class="item-menu">
                         Agenda
                     </button></li>
+                    <!--item para ver o site-->
                     <li class="nav-item"><a href="../index.html"><button class="item-menu">
                         Ver Site
                     </button></a></li>
-                    <li id="conta" class="nav-item"><button class="item-menu">
+                    <!--item para a conta-->
+                    <li id="conta-responsiva" class="nav-item"><button class="item-menu">
                         Conta
                     </button></li>
+                    <!--item para sair-->
                     <li class="nav-item"><a href="../html/loginCadastro.html"><button class="item-menu">
                         Sair
                     </button></a></li>
@@ -58,63 +69,76 @@
     </header>
 
     <div class="tela-inicial">  
-
+      <!--Título de boas-vindas-->
       <h1 class="bem-vindo">BEM VINDO</h1>
 
     </div>
 
     <div class="minha-agenda">
+      <!--Título da seção de agendamentos-->
       <h1 class="title">Consultas Agendadas</h1>
-        <table>
+        <!--Tabela de agendamentos-->
+        <table class="table-agendamento">
           <thead>
-            <tr>
-              <th>Nome</th>
-              <th>CPF</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
-              <th>Doutor</th>
-              <th>Procedimento</th>
-              <th>Data</th>
-              <th>Hora</th>
-              <th></th>
+            <!--Cabeçalho da tabela-->
+            <tr class="lista-elementos">
+              <th class="elementos">Nome</th>
+              <th class="elementos">CPF</th>
+              <th class="elementos">E-mail</th>
+              <th class="elementos">Telefone</th>
+              <th class="elementos">Doutor</th>
+              <th class="elementos">Procedimento</th>
+              <th class="elementos">Data</th>
+              <th class="elementos">Hora</th>
+              <th class="elementos">Status</th>
             </tr>
           </thead>
+          <!--Corpo da tabela (conteúdo dinâmico gerado por JavaScript)-->
           <tbody id="tbody">
           </tbody>
         </table>
+        <!--Botão para listar agendamentos-->
         <tr><button id="listar"><img src="../img/pesquisar.svg" alt="Lupa"></button></tr>
+        <!--Ícone da lupa (para exibição em telas menores)-->
         <div class="icons8-pesquisar"></div>
-        <tr>
+        <!--Botões para confirmar ou cancelar agendamento (habilitados dinamicamente)-->
+        <tr class="acoes">
           <div class="confirmar-cancelar">
-            <button>Confirmar Consulta</button>
-            <button>Cancelar Consulta</button>
+            <button id="confirmar">Confirmar Consulta</button>
+            <button id="cancelar">Cancelar Consulta</button>
           </div>
         </tr>
     </div>
 
-    
+    <!-- Seção para alterar os dados do usuário -->
     <div class="minha-conta">
+      <!-- Título da página -->
       <h1 class="title">Alterar dados do usuário</h1>
-      <form id="alterar">
-        <label for="name">Nome:</label>
+      <form id="alterar" class="altera">
+        <!-- Sessão de alteração do nome  -->
+        <label for="name" class="texto-alterar">Nome:</label>
         <input id="nome" type="text" name="name" required>
         
-        <label for="email">E-mail:</label>
+        <!-- Sessão de alteração do e-mail  -->
+        <label for="email" class="texto-alterar">E-mail:</label>
         <input id="email" type="email" name="email" required>
         
-        <label for="password">Senha:</label>
+        <!-- Sessão de alteração da senha  -->
+        <label for="password" class="texto-alterar">Senha:</label>
         <input id="senha" type="password" name="password" required>
         
-        <label for="confirm-password">Confirmar senha:</label>
+        <label for="confirm-password" class="texto-alterar">Confirmar senha:</label>
         <input id="confirmarSenha" type="password" name="confirm-password" required>
         
-        <label for="phone">Telefone:</label>
+        <!-- Sessão de alteração do telefone  -->
+        <label for="phone" class="texto-alterar">Telefone:</label>
         <input id="telefone" type="tel" name="phone" required>
         
+        <!-- Botão que salva as alterações feitas  -->
         <button class="btn-salvar" type="submit">Salvar</button>
       </form>
     </div>
-
+    <!-- Script para responsividade da página -->
     <script src="../js/responsive-adm.js"></script>
 </body>
 </html>

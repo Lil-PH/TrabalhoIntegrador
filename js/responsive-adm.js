@@ -17,35 +17,50 @@ function menuShow() {
 // O código abaixo seleciona elementos HTML através dos seus IDs e classes, e atribui a variáveis para manipulação posterior
 var conta = document.querySelector('#conta');
 var agenda = document.querySelector('#agenda');
+var contaResponsiva = document.querySelector('#conta-responsiva');
+var agendaResponsiva = document.querySelector('#agenda-responsiva');
 var inicio = document.querySelector('#inicio');
 var listar = document.querySelector('#listar');
 var confirmarCancelar = document.querySelector('.confirmar-cancelar');
+var btnConfirmar = document.querySelector('#confirmar');
+var btnCancelar = document.querySelector('#cancelar');
 var minhaAgenda = document.querySelector('.minha-agenda');
 var minhaConta = document.querySelector('.minha-conta');
 var telaInicial = document.querySelector('.tela-inicial');
 
 // Quando o elemento com id "agenda" for clicado, irá ocultar as telas iniciais e de conta, e exibir a tela da agenda
-document.querySelector('#agenda')
-  .addEventListener('click', () => {
-    telaInicial.style.display = "none"
-    minhaConta.style.display = "none"
-    minhaAgenda.style.display = "flex"
+agenda.addEventListener('click', function() {
+  telaInicial.style.display = "none"
+  minhaConta.style.display = "none"
+  minhaAgenda.style.display = "flex"
 });
 
 // Quando o elemento com id "conta" for clicado, irá ocultar as telas iniciais e da agenda, e exibir a tela da conta
-document.querySelector('#conta')
-  .addEventListener('click', () => {
-    telaInicial.style.display = "none"
-    minhaAgenda.style.display = "none"
-    minhaConta.style.display = "flex"
+conta.addEventListener('click', function() {
+  telaInicial.style.display = "none"
+  minhaAgenda.style.display = "none"
+  minhaConta.style.display = "flex"
 });
 
 // Quando o elemento com id "inicio" for clicado, irá ocultar as telas da agenda e de conta, e exibir a tela inicial
-document.querySelector('#inicio')
-  .addEventListener('click', () => {
+inicio.addEventListener('click', function() {
+  minhaAgenda.style.display = 'none';
+  minhaConta.style.display = 'none';
+  telaInicial.style.display = 'flex';
+});
+
+// Quando o elemento com id "agenda-responsiva" for clicado, irá ocultar as telas iniciais e de conta, e exibir a tela da agenda
+agendaResponsiva.addEventListener('click', function() {
+  telaInicial.style.display = "none"
+  minhaConta.style.display = "none"
+  minhaAgenda.style.display = "flex"
+});
+
+// Quando o elemento com id "conta-responsiva" for clicado, irá ocultar as telas iniciais e da agenda, e exibir a tela da conta
+contaResponsiva.addEventListener('click', function() {
+    telaInicial.style.display = "none"
     minhaAgenda.style.display = "none"
-    minhaConta.style.display = "none"
-    telaInicial.style.display = "flex"
+    minhaConta.style.display = "flex"
 });
 
 // Classe MobileNavbar que cria um menu de navegação móvel
@@ -91,33 +106,32 @@ class MobileNavbar {
       // Retorno do objeto da própria classe para permitir a encadeação de métodos
       return this;
     }
-  }
+}
 
-
-
-
-
-// Seleciona o elemento tbody da tabela
+// Obtém o tbody da tabela
 const tbody = document.getElementById('tbody');
 
-// Obtém os dados do agendamento armazenados no localStorage e converte em objeto JavaScript
+// Obtém os dados do localStorage
 const agendamento = JSON.parse(localStorage.getItem('agendamento'));
 
 // Cria uma nova linha na tabela com os dados do agendamento
-const novaLinha = document.createElement('tr');
-novaLinha.innerHTML = `
-  <td>${agendamento.nome}</td>
-  <td>${agendamento.cpf}</td>
-  <td>${agendamento.email}</td>
-  <td>${agendamento.telefone}</td>
-  <td>${agendamento.doutor}</td>
-  <td>${agendamento.procedimento}</td>
-  <td>${agendamento.data}</td>
-  <td>${agendamento.hora}</td>
-`;
+  const novaLinha = document.createElement('tr');
+  novaLinha.innerHTML = `
+    <td>${agendamento.nome}</td>
+    <td>${agendamento.cpf}</td>
+    <td>${agendamento.email}</td>
+    <td>${agendamento.telefone}</td>
+    <td>${agendamento.doutor}</td>
+    <td>${agendamento.procedimento}</td>
+    <td>${agendamento.data}</td>
+    <td>${agendamento.hora}</td>
+    <td>${agendamento.status}</td>
+  `;
+  //atualiza as linha de frequentemente
+  tbody.appendChild(novaLinha);
 
-// Adiciona a nova linha ao final do tbody da tabela
-tbody.appendChild(novaLinha);
+
+  // Adiciona a nova linha ao final do tbody da tabela
 
 // Adiciona um ouvinte de evento "click" para a nova linha
 novaLinha.addEventListener('click', function() {
@@ -128,22 +142,20 @@ novaLinha.addEventListener('click', function() {
   } else {
     confirmarCancelar.style.display = "table-row"
   }
-  // // Exibe um prompt de confirmação
-  // const confirmacao = confirm('Deseja confirmar este agendamento?');
-  
-  // if (confirmacao) {
-  //   // Se o usuário confirmar, define o status do agendamento como "confirmado"
-  //   agendamento.status = 'confirmado';
-  //   localStorage.setItem('agendamento', JSON.stringify(agendamento));
-    
-  //   // Atualiza a linha na tabela
-  //   novaLinha.classList.add('confirmado');
-  // } else {
-  //   // Se o usuário cancelar, define o status do agendamento como "cancelado"
-  //   agendamento.status = 'cancelado';
-  //   localStorage.setItem('agendamento', JSON.stringify(agendamento));
-    
-  //   // Atualiza a linha na tabela
-  //   novaLinha.classList.add('cancelado');
-  // }
-});  
+
+      // Adiciona um status de "confimada" em "agendamento" ao botao de confirmar ser clicado
+    btnConfirmar.addEventListener("click", function() {
+      // Adiciona um status de "confirmada" em "agendamento"
+      agendamento.status = "confirmada";
+      // Salva o agendamento no localStorage
+      localStorage.setItem('agendamento', JSON.stringify(agendamento));
+    }) // Adiciona um status de "cancelada" em "agendamento" ao botao de cancelar ser clicado
+
+    btnCancelar.addEventListener("click", function() {
+      // Adiciona um status de "cancelada" em "agendamento"
+      agendamento.status = "cancelada";
+      // Salva o agendamento no localStorage
+      localStorage.setItem('agendamento', JSON.stringify(agendamento));
+    })
+
+});

@@ -1,15 +1,19 @@
 /* Estilo da tela de agendamento.html */
 
+/* Define a cor de fundo para o corpo da página e a fonte padrão */
 body {
 	background-color: #2E5575;
 	font-family: Arial, sans-serif;
 }
 	
+/* Centraliza o título e defina sua cor */
 h1 {
 	text-align: center;
 	color: #fff;
 }
-	
+
+/* Estiliza o formulário de agendamento, definindo margens, largura, 
+preenchimento, cor de fundo, bordas arredondadas e sombra */
 .formulario-agendamento {
 	margin: 0 auto;
 	max-width: 31.25rem; 
@@ -18,12 +22,15 @@ h1 {
 	border-radius: 0.625rem; 
 	box-shadow: 0 0.9375rem 1.5625rem rgba(0,0,0,.6); 
 }
-	
+
+/* Estiliza os rótulos, definindo uma margem superior */
 label {
 	display: block;
 	margin-top: 0.625rem; 
 }
-	
+
+/* Estiliza os campos de entrada, definindo a largura, 
+preenchimento, margem superior e inferior, bordas arredondadas e sombra */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -39,6 +46,8 @@ select {
 	box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
+/* Estiliza o botão de envio, definindo a cor de fundo, cor do texto, 
+preenchimento, bordas arredondadas, borda e cursor */
 input[type="submit"] {
 	background-color: #008CBA;
 	color: #fff;
@@ -48,6 +57,8 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
+/* Estiliza o botão de envio quando o cursor passa sobre ele, 
+definindo uma nova cor de fundo */
 input[type="submit"]:hover {
 	background-color: #006D9F;
 }
