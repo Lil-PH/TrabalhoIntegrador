@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
+/* Estilo da tela de loginCadastro.html */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,97 +16,94 @@ body {
   align-items: center;
   justify-content: center;
   background: #2E5575;
-
 }
-
+  
 .login-box {
   background-color: black;
-  padding: 6px;
-  width: 350px;
-  height: 350px;
+  padding: 0.375rem;
+  width: 21.875rem;
+  height: 21.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 20px 0  rgba(0,0,0,.6);
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.6);
 }
-
+  
 form {
   position: absolute;
-  margin-top: 75px;
-  transition: .5s;
-  width: 300px;
-  height: 400px;
+  margin-top: 4.688rem;
+  transition: 0.5s;
+  width: 18.75rem;
+  height: 25rem;
 }
-
+  
 .buttonsForm {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   position: relative;
-  border-radius: 30px;
-  box-shadow: 0 0 7px 0 blueviolet;
+  border-radius: 1.875rem;
+  box-shadow: 0 0 0.4375rem 0 blueviolet;
 }
-
+  
 .buttonsForm button {
   cursor: pointer;
   background: transparent;
   border: none;
   position: relative;
-  padding: 10px 25px;
+  padding: 0.625rem 1.5625rem;
   color: white;
 }
-
+  
 .btnColor {
   position: absolute;
-  width: 108px;
+  width: 6.75rem;
   height: 100%;
   background: linear-gradient(to right, #00aafb, #a963f8);
-  border-radius: 30px;
-  transition: .3s;
+  border-radius: 1.875rem;
+  transition: 0.3s;
 }
-
+  
 .divCheck {
-  margin: 10px 0 0 5px;
-  width: 80%;
-  font-size: 13px;
+  margin: 0.625rem 0 0 0.3125rem;
+  width: 8rem;
+  font-size: 0.8125rem;
   color: #aaa;
 }
-
-
+  
 #login {
-  left: 25px;
+  left: 1.5625rem;
 }
-
+  
 #cadastro {
-  left: 450px;
+  left: 28.125rem;
 }
-
 
 i {
   position: absolute;
   left: 0;
-  padding: 10px 10px;
+  padding: 0.625em; 
 }
 
 .iEmail {
-  top: 40px;
+  top: 2.5em; 
 }
 
 .iPassword {
-  top: 114px;
+  top: 7.125em; 
 }
 
 .iPassword2 {
-  top: 190px;
+  top: 11.875em; 
 }
 
 .login-box p:first-child {
-  margin: 0 0 30px;
+  margin: 0 0 1.875em; 
   padding: 0;
   color: #fff;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.5rem; 
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -117,27 +116,26 @@ i {
   position: relative;
 }
 
-
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em; 
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 0.063em solid #fff; 
   outline: none;
   background: transparent;
 }
 
 .login-box .user-box1 input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em; 
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 0.063em solid #fff; 
   outline: none;
   background: transparent;
 }
@@ -146,8 +144,8 @@ i {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 0.625em 0; 
+  font-size: 1rem;
   color: #fff;
   pointer-events: none;
   transition: .5s;
@@ -155,10 +153,10 @@ i {
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
-  top: -20px;
+  top: -1.25em;
   left: 0;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.75em;
 }
 
 .login-box .user-box1 span {
@@ -166,7 +164,7 @@ i {
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 1em;
   color: #fff;
   pointer-events: none;
   transition: .5s;
@@ -174,149 +172,149 @@ i {
 
 .login-box .user-box1 input:focus ~ span,
 .login-box .user-box1 input:valid ~ span {
-  top: -20px;
+  top: -1.25em;
   left: 0;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.75em;
 }
 
 /* Botao de login */
 
 .btnLogar {
-    --primary-color: #303134;
-    --secondary-color: #fff;
-    --hover-color: #00aafb;
-    --arrow-width: 10px;
-    --arrow-stroke: 2px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    color: var(--secondary-color);
-    padding: 1em 1.8em;
-    background: var(--primary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-    height: 50px;
-    width: 110px;
-    margin: 20px auto;
-  }
-  
-  .btnLogar .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .btnLogar .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
-    background: var(--primary-color);
-    height: var(--arrow-stroke);
-    position: relative;
-    transition: 0.2s;
-  }
-  
-  .btnLogar .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid var(--secondary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.2s;
-    padding: 3px;
-    transform: rotate(-45deg);
-  }
-  
-  .btnLogar:hover {
-    background-color: var(--hover-color);
-  }
-  
-  .btnLogar:hover .arrow {
-    background: var(--secondary-color);
-  }
-  
-  .btnLogar:hover .arrow:before {
-    right: 0;
-  }
+  --primary-color: #303134;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 0.625em;
+  --arrow-stroke: 0.125em;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 1.25em;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 3.5em;
+  width: 7.5em;
+  margin: 1.25em auto;
+}
+
+.btnLogar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnLogar .arrow {
+  margin-top: 0.0625em;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btnLogar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -0.1875em;
+  right: 0.1875em;
+  transition: 0.2s;
+  padding: 0.1875em;
+  transform: rotate(-45deg);
+}
+
+.btnLogar:hover {
+  background-color: var(--hover-color);
+}
+
+.btnLogar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btnLogar:hover .arrow:before {
+  right: 0;
+}
 
 /* Botao de cadastro */
 
-  .btnCadastrar {
-    --primary-color: #303134;
-    --secondary-color: #fff;
-    --hover-color: #00aafb;
-    --arrow-width: 10px;
-    --arrow-stroke: 2px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    color: var(--secondary-color);
-    padding: 1em 1.8em;
-    background: var(--primary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-    height: 50px;
-    width: 140px;
-    margin: 20px auto;
-  }
-  
-  .btnCadastrar .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .btnCadastrar .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
-    background: var(--primary-color);
-    height: var(--arrow-stroke);
-    position: relative;
-    transition: 0.2s;
-  }
-  
-  .btnCadastrar .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid var(--secondary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.2s;
-    padding: 3px;
-    transform: rotate(-45deg);
-  }
-  
-  .btnCadastrar:hover {
-    background-color: var(--hover-color);
-  }
-  
-  .btnCadastrar:hover .arrow {
-    background: var(--secondary-color);
-  }
-  
-  .btnCadastrar:hover .arrow:before {
-    right: 0;
-  }
+.btnCadastrar {
+  --primary-color: #303134;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 0.625rem; 
+  --arrow-stroke: 0.125rem; 
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 1.25rem; 
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 3.125rem; 
+  width: 8.75rem; 
+  margin: 1.25rem auto; 
+}
 
-  .login-box a.a2 {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .login-box a.a2:hover {
-    background: transparent;
-    color: #4ac246;
-    border-radius: 5px;
-  }
+.btnCadastrar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnCadastrar .arrow {
+  margin-top: 0.0625rem; 
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btnCadastrar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -0.1875rem; 
+  right: 0.1875rem; 
+  transition: 0.2s;
+  padding: 0.1875rem; 
+  transform: rotate(-45deg);
+}
+
+.btnCadastrar:hover {
+  background-color: var(--hover-color);
+}
+
+.btnCadastrar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btnCadastrar:hover .arrow:before {
+  right: 0;
+}
+
+.login-box a.a2 {
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-box a.a2:hover {
+  background: transparent;
+  color: #4ac246;
+  border-radius: 0.3125rem; /* converted from 5px */
+}

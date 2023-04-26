@@ -1,27 +1,29 @@
+/* Estilo da tela de agendamento.html */
+
 body {
 	background-color: #2E5575;
 	font-family: Arial, sans-serif;
 }
-
+	
 h1 {
 	text-align: center;
 	color: #fff;
 }
-
-form {
+	
+.formulario-agendamento {
 	margin: 0 auto;
-	max-width: 500px;
-	padding: 20px;
+	max-width: 31.25rem; 
+	padding: 1.25rem; 
 	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 15px 25px rgba(0,0,0,.6);
+	border-radius: 0.625rem; 
+	box-shadow: 0 0.9375rem 1.5625rem rgba(0,0,0,.6); 
 }
-
+	
 label {
 	display: block;
-	margin-top: 10px;
+	margin-top: 0.625rem; 
 }
-
+	
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -29,12 +31,12 @@ input[type="date"],
 input[type="time"],
 select {
 	width: 95%;
-	padding: 10px;
-	margin-top: 5px;
-	margin-bottom: 10px;
-	border-radius: 5px;
+	padding: 0.625rem; 
+	margin-top: 0.3125rem; 
+	margin-bottom: 0.625rem; 
+	border-radius: 0.3125rem; 
 	border: none;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
 input[type="submit"] {

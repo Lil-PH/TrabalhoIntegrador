@@ -1,3 +1,18 @@
+// A função 'menuShow()' é responsável por exibir ou ocultar o menu mobile da página,
+// alterando a classe do elemento com a classe 'mobile-menu' e a imagem do ícone
+function menuShow() {
+  let menuMobile = document.querySelector('.mobile-menu');
+  if (menuMobile.classList.contains('open')) {
+      menuMobile.classList.remove('open');
+      // Altera a imagem do ícone para o ícone do menu quando o menu está fechado
+      document.querySelector('.icon').src = "../img/menu_white_36dp.svg";
+  } else {
+      menuMobile.classList.add('open');
+      // Altera a imagem do ícone para o ícone de fechar quando o menu está aberto
+      document.querySelector('.icon').src = "../img/close_white_36dp.svg";
+  }
+}
+
 // Pega as informacoes dos itens abaixo
 // O código abaixo seleciona elementos HTML através dos seus IDs e classes, e atribui a variáveis para manipulação posterior
 var conta = document.querySelector('#conta');
@@ -8,19 +23,6 @@ var confirmarCancelar = document.querySelector('.confirmar-cancelar');
 var minhaAgenda = document.querySelector('.minha-agenda');
 var minhaConta = document.querySelector('.minha-conta');
 var telaInicial = document.querySelector('.tela-inicial');
-
-// altera a estética da div cadastro e login
-
-// function menuShow() {
-//   let menuMobile = document.querySelector('.mobile-menu');
-//   if (menuMobile.classList.contains('open')) {
-//       menuMobile.classList.remove('open');
-//       document.querySelector('.icon').src = "./image/menu_white_36dp.svg";
-//   } else {
-//       menuMobile.classList.add('open');
-//       document.querySelector('.icon').src = "./image/close_white_36dp.svg";
-//   }
-// }
 
 // Quando o elemento com id "agenda" for clicado, irá ocultar as telas iniciais e de conta, e exibir a tela da agenda
 document.querySelector('#agenda')
@@ -68,14 +70,14 @@ class MobileNavbar {
       });
     }
     
-    //método handleClick que irá executar quando ocorrer um evento de clique em um dos links do menu de navegação
+    // Método handleClick que irá executar quando ocorrer um evento de clique em um dos links do menu de navegação
     handleClick() {
       this.navList.classList.toggle(this.activeClass);
       this.mobileMenu.classList.toggle(this.activeClass);
       this.animateLinks();
     }
     
-    //método que irá adicionar eventos de clique para cada link do menu de navegação
+    // Método que irá adicionar eventos de clique para cada link do menu de navegação
     addClickEvent() {
       this.mobileMenu.addEventListener("click", this.handleClick);
     }

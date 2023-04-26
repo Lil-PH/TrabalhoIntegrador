@@ -1,12 +1,14 @@
-// Seleciona os elementos HTML do formulário de login e de cadastro
+// Seleciona o elemento HTML com o ID 'login' e o armazena na variável 'formSignin'
 var formSignin = document.querySelector('#login');
-var formSignup = document.querySelector('#cadastro');
+// Seleciona o elemento HTML com o ID 'cadastro' e o armazena na variável 'formSignup'
 
+var formSignup = document.querySelector('#cadastro');
+// Seleciona o elemento HTML com a classe 'btnColor' e o armazena na variável 'btnColor'
 var btnColor = document.querySelector('.btnColor');
+// Seleciona o elemento HTML com a classe 'login-box' e o armazena na variável 'loginBox'
 var loginBox = document.querySelector('.login-box');
 
-// altera a estética da div cadastro e login
-
+// Adiciona um evento de clique ao botão com o ID 'btnLogin'
 document.querySelector('#btnLogin')
   .addEventListener('click', () => {
     formSignin.style.left = "25px"
@@ -15,6 +17,7 @@ document.querySelector('#btnLogin')
     loginBox.style.height = "350px"
 });
 
+// Adiciona um evento de clique ao botão com o ID 'btnCadastro'
 document.querySelector('#btnCadastro')
   .addEventListener('click', () => {
     formSignin.style.left = "-450px"
@@ -24,16 +27,23 @@ document.querySelector('#btnCadastro')
 });
 
 
-// formulário para fazer cadastro
+// Obtém a referência do elemento HTML com o ID "cadastro" 
+// e armazena na variável 'formulario'
 const formulario = document.getElementById('cadastro');
 
+// Adiciona um evento de envio de formulário ao elemento 'formulario'
 formulario.addEventListener('submit', function(evento) {
+  // Previne o comportamento padrão do formulário, que é enviar os 
+  // dados para um servidor e recarregar a página
   evento.preventDefault();
+  // Chama a função 'cadastrarUsuario'
   cadastrarUsuario();
 });
 
+// Define a função 'cadastrarUsuario'
 function cadastrarUsuario() {
-  // Obtém as informações do formulário
+  // Obtém os valores inseridos nos campos do formulário HTML
+  // e armazena nas respectivas variáveis
   const nome = document.getElementById('nome').value;
   const cpf = document.getElementById('cpf').value;
   const telefone = document.getElementById('telefone').value;
@@ -44,25 +54,27 @@ function cadastrarUsuario() {
   if (nome === "" || cpf === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
     console.log('Por favor, preencha todos os campos');
 
+    // Exibe uma mensagem de erro para o usuário usando a biblioteca 'sweetalert'
     swal({
       title: "Por favor, preencha todos os campos",
       icon: "error",
       button: "OK !",
       timer: 1700,
     });
-    // alert('Por favor, preencha todos os campos');
+    // Para a execução da função caso algum campo esteja vazio
     return;
   }
 
-  // Verifica se o cpf já está cadastrado
+  // Verifica se o CPF ou o e-mail já estão cadastrados no banco de dados local
   if (localStorage.getItem(cpf) !== null || localStorage.getItem(email) !== null) {
     console.log('CPF ou Email já está cadastrado');
-    // alerta para "CPF que já está cadastrado"
+    // Exibe uma mensagem informativa para o usuário usando a biblioteca 'sweetalert'
     swal({
       title: "O CPF ou Email digitado já está cadastrado",
       icon: "info",
       button: "OK !"
     });
+    // Para a execução da função caso o CPF ou o e-mail já estejam cadastrados
     return;
   }
 
@@ -78,10 +90,10 @@ function cadastrarUsuario() {
   // }
 
 
-  // Verifica se as senhas correspondem
+  // Verifica se a senha digitada é igual à senha de confirmação
   if (senha !== confirmarSenha) {
 
-    // alerta para "As senhas não corresdidas"
+    // Exibe uma mensagem de erro para o usuário usando a biblioteca 'sweetalert'
     console.log('As senhas não corresdidas');
     swal({
       title: "As senhas digitadas, não correspondem",
@@ -90,14 +102,16 @@ function cadastrarUsuario() {
       timer: 1700
     });
 
-      // Limpa o as senhas
+      // Limpa os campos de senha e confirmação
       document.getElementById("senha").value = "";
       document.getElementById("confirmarSenha").value = "";
+      // Coloca o foco no campo de senha
       document.getElementById("senha").focus();
+    // Para a execução da função caso as senhas não correspondam
     return;
   }
 
-
+  // Se a senha estiver correta, prossegue com o cadastro do usuário
   const usuario = {
     nome: nome,
     cpf: cpf,
@@ -106,10 +120,12 @@ function cadastrarUsuario() {
     senha: senha
   };
 
+  // Armazena os dados do usuário no armazenamento local, 
+  // usando o CPF como chave e os dados do usuário como valor
   localStorage.setItem(cpf, JSON.stringify(usuario));
 
     console.log('Usuário cadastrado com sucesso');
-      // alerta para "Usuário cadastrado com sucesso"
+      // Exibe uma mensagem de sucesso para o usuário usando a biblioteca 'sweetalert'
       swal({
         title: "Usuário cadastrado com sucesso",
         icon: "success",
@@ -119,25 +135,29 @@ function cadastrarUsuario() {
     window.location.href = "../html/loginCadastro.html";
 }
 
-// formulário para fazer login
+// Seleciona o elemento do formulário de login
 
 const formularioLogin = document.getElementById('login');
 
+// Adiciona um evento de escuta para o envio do formulário
 formularioLogin.addEventListener('submit', function(evento) {
   evento.preventDefault();
   fazerLogin();
 });
 
+// Define a função para realizar o login
 function fazerLogin() {
+  // Obtém as informações do formulário
   const cpf = document.getElementById('cpfLogin').value;
   const senha = document.getElementById('senhaLogin').value;
 
+  // Obtém o valor armazenado no localStorage para o CPF digitado
   const valor = localStorage.getItem(cpf);
 
   // Verifica se todas as informações foram preenchidas
   if (cpf === "" || senha === "") {
     console.log('Por favor, preencha todos os campos');
-    // alerta para "Preencha todos os campos"
+    // Alerta o usuário para preencher todos os campos
     swal({
       title: "Por favor, preencha todos os campos",
       icon: "error",
@@ -147,8 +167,11 @@ function fazerLogin() {
     return;
   }
 
+  // Verifica se o valor para o CPF digitado existe no localStorage
   if (valor !== null) {
+    // Converte o valor em um objeto de usuário
     const usuario = JSON.parse(valor);
+    // Verifica se a senha digitada é igual à senha armazenada
     if (usuario.senha === senha) {
       console.log('Login bem-sucedido');
       // Redireciona o usuário para a página do doutor
@@ -156,25 +179,27 @@ function fazerLogin() {
 
     } else {
       console.log('Senha incorreta');
-      // alerta para "Senha incorreta"
+      // Alerta o usuário que a senha está incorreta
       swal({
         title: "Senha incorreta",
         icon: "error",
         button: "OK !",
         timer: 1700
       });
+      // Limpa o campo de senha
       document.getElementById("senhaLogin").value = "";
     }
     
   } else {
     console.log('Usuário não encontrado');
-    // alerta para "Usuário não encontrado"
+    // Alerta o usuário que o usuário não foi encontrado
     swal({
       title: "Usuário não encontrado",
       icon: "info",
       button: "OK !",
       timer: 1700
     });
+    // Limpa os campos de CPF e senha
     document.getElementById("cpfLogin").value = "";
     document.getElementById("senhaLogin").value = "";
   }

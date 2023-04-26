@@ -255,37 +255,31 @@ header {
   font-weight: 300;
   font-size: 2rem;
   color:white;
-  
-  
-
 }
 
-.teste2{
-  width: 100vw; 
-}
- 
-.teste{
+.elementos{
   width: 100vw;
   display: flex;
   align-items: center;
   /* border:0.4px solid white;   */
   justify-content: space-between;
-  padding: 0 350px 0 250px;
+  padding: 0 300px;
   margin: 0 0 100px 0;
+}
 
+.conteudo-secundario-escrito{
+  width: 30vw;
+  height: 25vh; 
+  word-wrap: break-word;
 
 }
 
 .conteudo-secundario-imagem{
   width: 25vw;
   height: 25vh;
-  
-
- 
 }
 
 .mapa-responsivo{
-
   width: 25vw;
   height: 25vh;
   border: 1px solid black;
@@ -387,23 +381,28 @@ header {
      }
 
     .mapa-responsivo{
-
+      order: 3;
       width: 100vw;
-      height: 350;
       flex-direction: column; /* para direcionar para baixo da coluna */
       border: 1px solid black;
     }
 
     .conteudo-secundario-imagem{
-      order: 2;
+      order: 3;
       width: 100vw;
     }
     
 
-    .teste {
+    .elementos {
       flex-direction: column;
       align-items: center;
       padding: 0px 0px 0px 0px;
+    }
+
+    .conteudo-secundario-escrito{
+      width: 100vw; 
+      word-wrap: break-word;
+    
     }
     
     .conteudo-secundario-titulo{
@@ -411,8 +410,7 @@ header {
       font-size: 2em;
     }
     .conteudo-secundario-paragrafo {
-      order: 1;
-      font-size: 1em;   
+      font-size: 2em;   
     }
     .rodape-imagem{
       width: 20vw;

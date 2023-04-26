@@ -6,37 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agendamentos</title>
   <link rel="stylesheet" href="../css/telaAdm.css">
-  <link rel="shortcut icon" href="../image/Dente.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../img/Dente.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <header>
-      <nav>
-        <a id="inicio" class="logo" name="ini">Odonto Bia</a>
+        <!--nav aonde fica os elementos do menu-->
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1 id="inicio">Odonto Bia</h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li id="agenda" class="nav-item"><button class="item-menu">
+                        Agenda
+                    </button></li>
+                    <li class="nav-item"><a href="../index.html"><button class="item-menu">
+                        Ver Site
+                    </button></a></li>
+                    <li id="conta" class="nav-item"><button class="item-menu">
+                        Conta
+                    </button></li>
+                    <li class="nav-item"><a href="../html/loginCadastro.html"><button class="item-menu">
+                        Sair
+                    </button></a></li>
+                </ul>
+            </div>
+    
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
         <div class="mobile-menu">
-          <div class="line0"></div>
-          <div class="line1"></div>
-          <div class="line2"></div>
+                <ul>
+                    <li id="agenda" class="nav-item"><button class="item-menu">
+                        Agenda
+                    </button></li>
+                    <li class="nav-item"><a href="../index.html"><button class="item-menu">
+                        Ver Site
+                    </button></a></li>
+                    <li id="conta" class="nav-item"><button class="item-menu">
+                        Conta
+                    </button></li>
+                    <li class="nav-item"><a href="../html/loginCadastro.html"><button class="item-menu">
+                        Sair
+                    </button></a></li>
+                </ul>
         </div>
-        
-        <ul class="nav-list">
-          <li id="agenda"><a><img src="../image/calendar-svgrepo-com.svg" class="icons" alt="">Agenda</a></li>
-          <li><a href="../index.html"><img src="../image/external-link-svgrepo-com.svg" class="icons" alt="">Ver Site</a></li>
-          <li id="conta"><a><img src="../image/user-svgrepo-com.svg" class="icons" alt="">Conta</a></li>
-          <li><a href="../html/loginCadastro.html"><img src="../image/user-remove-svgrepo-com.svg" class="icons" alt="">Sair</a></li>
-        </ul>
-      </nav>
+    
     </header>
 
-    <div class="tela-inicial">
+    <div class="tela-inicial">  
 
       <h1 class="bem-vindo">BEM VINDO</h1>
 
     </div>
 
     <div class="minha-agenda">
-      <h1>Consultas Agendadas</h1>
+      <h1 class="title">Consultas Agendadas</h1>
         <table>
           <thead>
             <tr>
@@ -54,7 +82,7 @@
           <tbody id="tbody">
           </tbody>
         </table>
-        <tr><button id="listar"><img src="../image/pesquisar.svg" alt="Lupa"></button></tr>
+        <tr><button id="listar"><img src="../img/pesquisar.svg" alt="Lupa"></button></tr>
         <div class="icons8-pesquisar"></div>
         <tr>
           <div class="confirmar-cancelar">
@@ -64,25 +92,26 @@
         </tr>
     </div>
 
+    
     <div class="minha-conta">
-      <h1>Alterar dados do usuário</h1>
+      <h1 class="title">Alterar dados do usuário</h1>
       <form id="alterar">
         <label for="name">Nome:</label>
-        <input type="text" id="nome" name="name" required>
+        <input id="nome" type="text" name="name" required>
         
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+        <input id="email" type="email" name="email" required>
         
         <label for="password">Senha:</label>
-        <input type="password" id="senha" name="password" required>
+        <input id="senha" type="password" name="password" required>
         
         <label for="confirm-password">Confirmar senha:</label>
-        <input type="password" id="confirmarSenha" name="confirm-password" required>
+        <input id="confirmarSenha" type="password" name="confirm-password" required>
         
         <label for="phone">Telefone:</label>
-        <input type="tel" id="telefone" name="phone" required>
+        <input id="telefone" type="tel" name="phone" required>
         
-        <button type="submit">Salvar</button>
+        <button class="btn-salvar" type="submit">Salvar</button>
       </form>
     </div>
 

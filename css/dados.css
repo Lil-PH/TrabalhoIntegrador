@@ -1,6 +1,74 @@
-/* Estilos gerais */
+/* Estilos gerais da tela alterarDados.html */
 
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+  
+  h1 {
+  text-align: center;
+}
+  
+form {
+  margin: 1.25rem auto;
+  max-width: 31.25rem;
+  padding: 1.25rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
+}
+  
+label {
+  display: block;
+  margin-bottom: 0.625rem;
+}
+  
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+border: 0.0625rem solid #ccc;
+border-radius: 0.25rem;
+box-sizing: border-box;
+padding: 0.625rem;
+width: 100%;
+}
+  
+button[type="submit"] {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 0.625rem;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1rem;
+border-radius: 0.25rem;
+cursor: pointer;
+margin-top: 1.25rem;
+}
+  
+button[type="submit"]:hover {
+background-color: #45a049;
+}
+  
+.error {
+background-color: #f8d7da;
+border: 0.0625rem solid #f5c6cb;
+color: #721c24;
+padding: 0.625rem;
+margin-bottom: 1.25rem;
+}
+  
+.success {
+background-color: #d4edda;
+border: 0.0625rem solid #c3e6cb;
+color: #155724;
+padding: 0.625rem;
+margin-bottom: 1.25rem;
+}
+
+/* body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -66,7 +134,7 @@ button[type="submit"]:hover {
 	color: #155724;
 	padding: 10px;
 	margin-bottom: 20px;
-}
+} */
 
 
 

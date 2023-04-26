@@ -19,7 +19,7 @@
 //     minhaConta.style.display = "flex"
 // });
 
-// obtém os elementos do formulário pelo id
+// Obtém os elementos do formulário pelo id
 const form = document.getElementById('agendando');
 const nomeInput = document.getElementById('nome');
 const cpfInput = document.getElementById('cpf');
@@ -30,11 +30,11 @@ const procedimentoInput = document.getElementById('procedimento');
 const dataInput = document.getElementById('data');
 const horaInput = document.getElementById('hora');
 
-// adiciona um evento de envio ao formulário
+// Adiciona um evento de envio ao formulário
 form.addEventListener('submit', function(event) {
     event.preventDefault(); // impede o envio padrão do formulário
 
-    // obtém os valores selecionados pelo usuário dos elementos do formulário
+    // Obtém os valores selecionados pelo usuário dos elementos do formulário
     const nome = nomeInput.value;
     const cpf = cpfInput.value;
     const email = emailInput.value;
@@ -44,7 +44,7 @@ form.addEventListener('submit', function(event) {
     const data = dataInput.value;
     const hora = horaInput.value;
 
-    // cria um objeto com os valores do agendamento
+    // Cria um objeto com os valores do agendamento
     const agendamento = {
 
         nome,
@@ -57,10 +57,10 @@ form.addEventListener('submit', function(event) {
         hora
     };
 
-    // salva o agendamento no localStorage como uma string JSON
+    // Salva o agendamento no localStorage como uma string JSON
     localStorage.setItem('agendamento', JSON.stringify(agendamento));
 
-    // exibe uma mensagem de sucesso ao usuário
+    // Exibe uma mensagem de sucesso ao usuário
     alert('Agendamento salvo com sucesso!');
 
 
