@@ -1,7 +1,7 @@
-// Pega as informacoes dos itens abaixo
-
+// Seleciona os elementos HTML do formulário de login e de cadastro
 var formSignin = document.querySelector('#login');
 var formSignup = document.querySelector('#cadastro');
+
 var btnColor = document.querySelector('.btnColor');
 var loginBox = document.querySelector('.login-box');
 

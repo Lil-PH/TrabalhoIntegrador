@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<title>Agendamento Odontológico</title>
 	<meta charset="UTF-8">
@@ -8,20 +8,30 @@
     <link rel="shortcut icon" href="../image/Dente.png" type="image/x-icon">
 </head>
 <body>
+
+ 	<!-- Este é um título para o formulário -->
     <h1>Agendamento Odontológico</h1>
+
+	<!-- Este é o formulário para agendamento de consulta odontológica -->
 	<form id="agendando">
+
+		<!-- Este rótulo e entrada solicitam o nome do paciente -->
 		<label for="nome">Nome:</label>
 		<input id="nome" type="text" name="nome" required><br>
 
+		<!-- Esta etiqueta e entrada solicitam o CPF do paciente -->
 		<label for="nome">CPF:</label>
 		<input id="cpf" type="text" name="CPF" maxlength="14" autocomplete="off" onkeyup="mascara_cpf()" required><br>
 
+		<!-- Este rótulo e entrada solicitam o e-mail do paciente -->
 		<label for="email">E-mail:</label>
 		<input id="email" type="email" name="email" required><br>
-
+		
+		<!-- Este rótulo e entrada solicitam o telefone do paciente -->
 		<label for="telefone">Telefone:</label>
-		<input id="telefone" type="tel" name="telefone" maxlength="14" placeholder="(00)00000-0000" onkeyup="mascara_telefone()" required><br>
+		<input id="telefone" type="tel" name="telefone" maxlength="14" onkeyup="mascara_telefone()" required><br>
 
+		<!-- Este rótulo e selecione pergunte pelo dentista preferido do paciente -->
         <label for="doutor">Doutor:</label>
 		<select id="doutor" name="doutor" required>
 			<option value="">Selecione o doutor</option>
@@ -31,6 +41,7 @@
 			<option value="Dr. José">Dr. José</option>
 		</select><br>
 
+		<!-- Este rótulo e selecione pergunte pelo tipo de agendamento -->
         <label for="procedimento">Procedimento:</label>
 		<select id="procedimento" name="procedimento" required>
 			<option value="">Selecione o Procedimento</option>
@@ -40,15 +51,19 @@
 			<option value="Extração">Extração</option>
 		</select><br>
 
+		<!-- Este rótulo e entrada solicitam a data do compromisso -->
 		<label for="data">Data:</label>
 		<input id="data" type="date" name="data" required><br>
 
+		<!-- Este rótulo e entrada solicitam a hora do compromisso -->
 		<label for="hora">Hora:</label>
 		<input id="hora" type="time" name="hora" required><br>
-
+		
+		<!-- Este botão envia o formulário -->
 		<button type="submit" class="button">Agendar</button>
 		
 	</form>
+
 	
 	<script src="../js/agendamento.js"></script>
 	

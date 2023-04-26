@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');/* importação de fonts do google fonts */
 
-/* Abaixo e a estilização da pagina index.html */
+/* Abaixo está a estilização da pagina index.html */
 
 * {
     /* Resetando estilização vinda do html*/
@@ -319,7 +319,7 @@ header {
   text-align: center;
   font-size: 30px;
   box-shadow: 1px 1px 2px #888;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .fa-whatsapp{

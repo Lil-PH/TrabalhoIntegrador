@@ -21,18 +21,24 @@
 //   alert("Cadastro atualizado com sucesso!");
 // }
 
+  // Obtém as informações do formulário
+
+
+
+
+     
 
 
 		
-// Recupera os dados do usuário do localStorage, se existirem
-
+	// Obtém o valor do campo de email do usuário a partir do elemento com o id 'email'
     const userEmail = document.getElementById('email').value;
+	// Obtém um objeto de usuário correspondente do localStorage ou cria um objeto vazio caso não exista
     const usuario = JSON.parse(localStorage.getItem(userEmail)) || {};
 
 		// const usuario = JSON.parse(localStorage.getItem('email')) || {};
     
 
-		// Preenche os campos de entrada com os dados do usuário
+		// Preenche os campos de entrada do formulário com os dados do objeto de usuário
 		document.getElementById('nome').value = usuario.nome || '';
 		document.getElementById('cpf').value = usuario.cpf || '';
 		document.getElementById('email').value = usuario.email || '';
@@ -50,6 +56,7 @@
 				return;
 			}
 
+			// Cria um objeto de usuário com os valores dos campos do formulário
       		const usuario = {
 				nome: document.getElementById('nome').value,
 				nome: document.getElementById('cpf').value,
@@ -58,13 +65,13 @@
 				telefone: document.getElementById('telefone').value
 			};
 
-			// Salva os dados do usuário no localStorage
+		// Salva o objeto de usuário atualizado no localStorage, sobrescrevendo o objeto anterior, se existir
       localStorage.setItem(usuario.email, JSON.stringify(usuario));
 
       // localStorage.setItem(usuario.email, JSON.stringify(usuario));
 			// localStorage.setItem('email', usuario.email);
 
-			// Exibe uma mensagem de sucesso
+		// Exibe uma mensagem de sucesso no console
       console.log('Dados salvos com sucesso!');
 			// showMessage('Dados salvos com sucesso!', 'success');
 	});

@@ -1,24 +1,25 @@
-// Pega as informacoes dos itens abaixo
+// // Pega as informacoes dos itens abaixo
 
-var conta = document.querySelector('#conta');
-var agenda = document.querySelector('#agenda');
-var minhaAgenda = document.querySelector('.minha-agenda');
-var minhaConta = document.querySelector('.minha-conta');
+// var conta = document.querySelector('#conta');
+// var agenda = document.querySelector('#agenda');
+// var minhaAgenda = document.querySelector('.minha-agenda');
+// var minhaConta = document.querySelector('.minha-conta');
 
-// altera a estética da div cadastro e login
+// // altera a estética da div cadastro e login
 
-document.querySelector('#agenda')
-  .addEventListener('click', () => {
-    minhaConta.style.display = "none"
-    minhaAgenda.style.display = "flex"
-});
+// document.querySelector('#agenda')
+//   .addEventListener('click', () => {
+//     minhaConta.style.display = "none"
+//     minhaAgenda.style.display = "flex"
+// });
 
-document.querySelector('#conta')
-  .addEventListener('click', () => {
-    minhaAgenda.style.display = "none"
-    minhaConta.style.display = "flex"
-});
+// document.querySelector('#conta')
+//   .addEventListener('click', () => {
+//     minhaAgenda.style.display = "none"
+//     minhaConta.style.display = "flex"
+// });
 
+// obtém os elementos do formulário pelo id
 const form = document.getElementById('agendando');
 const nomeInput = document.getElementById('nome');
 const cpfInput = document.getElementById('cpf');
@@ -29,10 +30,11 @@ const procedimentoInput = document.getElementById('procedimento');
 const dataInput = document.getElementById('data');
 const horaInput = document.getElementById('hora');
 
+// adiciona um evento de envio ao formulário
 form.addEventListener('submit', function(event) {
     event.preventDefault(); // impede o envio padrão do formulário
 
-    // obtém os valores selecionados pelo usuário
+    // obtém os valores selecionados pelo usuário dos elementos do formulário
     const nome = nomeInput.value;
     const cpf = cpfInput.value;
     const email = emailInput.value;
@@ -55,34 +57,43 @@ form.addEventListener('submit', function(event) {
         hora
     };
 
-    // salva o agendamento no localStorage
+    // salva o agendamento no localStorage como uma string JSON
     localStorage.setItem('agendamento', JSON.stringify(agendamento));
 
+    // exibe uma mensagem de sucesso ao usuário
     alert('Agendamento salvo com sucesso!');
 
 
 });
 
+// Obtém os dados do localStorage
 
-		// Obtém os dados do localStorage
-		var eventos = localStorage.getItem('eventos');
 
-		// Converte os dados de string para objeto
-		eventos = JSON.parse(eventos);
 
-		// Cria uma variável para armazenar a marcação HTML da tabela de eventos
-		var tabela = '';
 
-		// Verifica se há eventos agendados
-		if(eventos && eventos.length > 0) {
-			// Loop pelos eventos e adiciona cada um à tabela
-			for(var i = 0; i < eventos.length; i++) {
-				tabela += '<tr><td>' + eventos[i].data + '</td><td>' + eventos[i].evento + '</td></tr>';
-			}
-		} else {
-			// Exibe mensagem caso não haja eventos agendados
-			tabela += '<tr><td colspan="2">Nenhum evento agendado.</td></tr>';
-		}
 
-		// Adiciona a tabela de eventos à página
-		document.getElementById('eventos').innerHTML = tabela;
+
+
+
+		// // Obtém os dados do localStorage
+		// var eventos = localStorage.getItem('eventos');
+
+		// // Converte os dados de string para objeto
+		// eventos = JSON.parse(eventos);
+
+		// // Cria uma variável para armazenar a marcação HTML da tabela de eventos
+		// var tabela = '';
+
+		// // Verifica se há eventos agendados
+		// if(eventos && eventos.length > 0) {
+		// 	// Loop pelos eventos e adiciona cada um à tabela
+		// 	for(var i = 0; i < eventos.length; i++) {
+		// 		tabela += '<tr><td>' + eventos[i].data + '</td><td>' + eventos[i].evento + '</td></tr>';
+		// 	}
+		// } else {
+		// 	// Exibe mensagem caso não haja eventos agendados
+		// 	tabela += '<tr><td colspan="2">Nenhum evento agendado.</td></tr>';
+		// }
+
+		// // Adiciona a tabela de eventos à página
+		// document.getElementById('eventos').innerHTML = tabela;
