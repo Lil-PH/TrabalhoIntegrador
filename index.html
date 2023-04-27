@@ -32,11 +32,11 @@
                     <li class="nav-item" ><a href="#sobre"><button class="item-menu">
                         SOBRE
                     </button></a></li>
-                    <li class="nav-item"><a href="#funcionalidade"><button class="item-menu">
-                        FUNCIONALIDADE
-                    </button></a></li>
                     <li class="nav-item"><a href="#localizacao"><button class="item-menu">
                         LOCALIZAÇÃO
+                    </button></a></li>
+                    <li class="nav-item"><a href="#funcionalidade"><button class="item-menu">
+                        FUNCIONALIDADE
                     </button></a></li>
                     <li class="nav-item"><a href="#contato"><button class="item-menu">
                         CONTATO
@@ -62,11 +62,11 @@
                     <li class="nav-item"><a href="#sobre"><button class="item-menu">
                         SOBRE
                     </button></a></li>
-                    <li class="nav-item"><a href="#funcionalidade"><button class="item-menu">
-                        FUNCIONALIDADE
-                    </button></a></li>
                     <li class="nav-item"><a href="#localizacao"><button class="item-menu">
                         LOCALIZAÇÃO
+                    </button></a></li>
+                    <li class="nav-item"><a href="#funcionalidade"><button class="item-menu">
+                        FUNCIONALIDADE
                     </button></a></li>
                     <li class="nav-item"><a href="#contato"><button class="item-menu">
                         CONTATO
@@ -113,48 +113,10 @@
         <section class="conteudo-secundario">
 
             <!-- O primeiro elemento contém um título e uma descrição -->
-            <div class="elementos">
-                <div class="conteudo-secundario-escrito">
-                    <h1 class="conteudo-secundario-titulo"><a name="funcionalidade"></a>FUNCIONALIDADE</h1>
-                    <p class="conteudo-secundario-paragrafo">Agendamento simples e rapido de consultas! </p>
-                </div>
-                <!-- A imagem complementa a descrição da funcionalidade -->
-                <img class="conteudo-secundario-imagem" src="./img/Teste.jpg" alt="imgem teste" >
-                
-            </div>
-            
-            <!-- O segundo elemento contém um mapa interativo da localização da clínica -->
-            <div class="elementos">
-                <div>
-                    <!-- Inclusão de um mapa responsivo através de um iframe -->
-                    <iframe class="mapa-responsivo" src="https://www.openstreetmap.org/export/embed.html?bbox=-40.203250050544746%2C-20.04729651170039%2C-40.198770761489875%2C-20.04493050131225&amp;layer=mapnik&amp;marker=-20.0461135109626%2C-40.2010104060173">
-                    <!-- Adição de um link para ver o mapa ampliado -->
-                    </iframe><br/><small class="conteudo-secundario-paragrafo"><a href="https://goo.gl/maps/EpYzCrizPWRUkgS2A">Ver mapa ampliado</a></small>
-                </div>
 
-                <div class="conteudo-secundario-escrito">
-                    <!-- Título para a seção de localização -->
-                    <h1 class="conteudo-secundario-titulo"><a name="localizacao"></a>LOCALIZAÇÃO</h1>
-                    <!-- Informação sobre o endereço da clínica -->
-                    <p class="conteudo-secundario-paragrafo">AV.Belo Horizonte, 1098, Praiamar - nova almeida</p>
-                </div>
-            </div>
-                
-            <div class="elementos">
-                <div class="conteudo-secundario-escrito">
-                    <!-- Título para a seção de contato -->
-                    <h1 class="conteudo-secundario-titulo"><a name="contato"></a>REDES SOCIAIS</h1>
-                    <!-- Informação sobre o número de telefone para contato -->
-                    <p class="conteudo-secundario-paragrafo">contato (27)99855-7801</p>
-                </div>
-                <!-- Imagem para a seção de contato -->
-                <img class="conteudo-secundario-imagem" src="./img/Teste.jpg" alt="imgem teste" >
-                    
-            </div>
-                
             <div class="elementos">
                 <!-- Imagem para a seção sobre -->
-                <img class="conteudo-secundario-imagem" src="./img/Teste.jpg" alt="imgem teste" >
+                <img class="conteudo-secundario-imagem imagem" src="./img/dentista.jpeg" alt="imgem teste" >
                 <div class="conteudo-secundario-escrito">
                     <!-- Título para a seção sobre -->
                     <h1 class="conteudo-secundario-titulo"><a name="sobre"></a>SOBRE</h1>
@@ -163,6 +125,37 @@
                 </div>
             </div>
 
+            <!-- O segundo elemento contém um mapa interativo da localização da clínica -->
+
+            <div class="elementos">
+                
+                <div class="conteudo-secundario-escrito">
+                    <!-- Título para a seção de localização -->
+                    <h1 class="conteudo-secundario-titulo"><a name="localizacao"></a>LOCALIZAÇÃO</h1>
+                    <!-- Informação sobre o endereço da clínica -->
+                    <p class="conteudo-secundario-paragrafo">AV.Belo Horizonte, 1098, Praiamar - nova almeida</p>
+                </div>
+
+                <div>
+                    <!-- Inclusão de um mapa responsivo através de um iframe -->
+                    <iframe class="mapa-responsivo" src="https://www.openstreetmap.org/export/embed.html?bbox=-40.203250050544746%2C-20.04729651170039%2C-40.198770761489875%2C-20.04493050131225&amp;layer=mapnik&amp;marker=-20.0461135109626%2C-40.2010104060173">
+                    <!-- Adição de um link para ver o mapa ampliado -->
+                    </iframe><br/><small class="conteudo-secundario-paragrafo"><a class="cor_link" href="https://goo.gl/maps/EpYzCrizPWRUkgS2A" target="_blank">Ver mapa ampliado</a></small>
+                </div>
+
+            </div>
+
+            <div class="elementos">
+                <!-- A imagem complementa a descrição da funcionalidade -->
+                <img class="conteudo-secundario-imagem" src="./img/agendando.jpeg" alt="imgem teste" >
+                
+                <div class="conteudo-secundario-escrito">
+                    <h1 class="conteudo-secundario-titulo"><a name="funcionalidade"></a>FUNCIONALIDADE</h1>
+                    <p class="conteudo-secundario-paragrafo">Agendamento simples e rápido de consultas! </p>
+                </div>
+
+            </div>
+                
         </section>
             
     </main>
@@ -173,8 +166,17 @@
     <!-- Rodapé da pagina -->    
     <footer class="rodape">
         <!-- Imagem do rodapé -->
-        <img class="rodape-imagem" src="./img/Logo roda pé.png" alt="Logo OdontoBia">
+        
+            <div class="conteudo-footer-escrito">
+                <h1 class="conteudo-footer-titulo"><a name="contato">CONTATOS:</a></h1>
+                <p class="conteudo-footer-paragrafo">Bem-vindo(a) ao nosso site de agendamentos odontológico. Estamos presentes em diversas redes sociais para manter uma comunicação fácil e acessível com nossos pacientes.</p>
+            </div>
 
+            <a class="facebook-footer" href="https://www.facebook.com/profile.php?id=100041564055788" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a class="whatsapp-footer" href="https://web.whatsapp.com/send?phone=5527998557801" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            <a class="instagram-footer" href="https://www.instagram.com/odontobiaserra/" target="_blank"><i class="fa fa-instagram"></i></a>
+       
+     
     </footer>
 
 </body>

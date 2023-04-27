@@ -5,10 +5,10 @@
 /* Este seletor aplica o reset de estilização a todos os elementos da página */
 * {
     /* Resetando estilização vinda do html*/
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 /* Este seletor aplica a animação de scroll suave em toda a página */
@@ -19,26 +19,19 @@ html {
 
 }
 
-/* body{
+/* Definindo o estilo do corpo da página (body) */
+body{
   background: #2E5575;
-} */
+}
 
 /* Definindo o estilo do cabeçalho (header) */
 header {
-  background-color: #2E5575;
-  box-shadow: 0px 3px 10px #464646;
+  background-color: #1A3042;
+  box-shadow: 0px 3px 10px #000000;
   position: fixed; /* Fixa o header*/
   width: 100vw;  /* Define o header com 100% da largura do dispositivo*/
   z-index: 999; /* Posiciona o header a frente dos demais elementos*/
   position: relative;
-}
-
-/* Definindo o estilo do corpo da página (body) */
-body{
-  font-family: 'Righteous', cursive;
-  background: gray;
-  font-family: Arial, sans-serif;
-  background-color: rgb(174 174 174);
 }
 
 /* Definindo o estilo da logo */
@@ -50,6 +43,7 @@ body{
   
 .logo h1 {
   color: #fff;
+  cursor: pointer;
 }
   
 /* Definindo o estilo da barra de navegação (nav-bar) */
@@ -59,8 +53,7 @@ body{
   padding: 1.5rem 6rem;
 }
   
-   /* lista da NavBar */
-
+/* lista da NavBar */
 /* Definindo o estilo da lista de navegação (nav-list) */
 .nav-list {
   display: flex;
@@ -74,17 +67,15 @@ body{
 }
   
 .nav-item {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
-
 /* Guia de Menu */
-
 /* Definindo o estilo dos itens do menu de navegação (item-menu) */
 .item-menu {
   font-size: 18px;
   color: #e1e1e1;
-  font-family: 'Sarala', sans-serif;;
+  font-family: 'Sarala', sans-serif;
   font-weight: 800;
   cursor: pointer;
   position: relative;
@@ -148,13 +139,38 @@ navegação (item-menu:after) */
   display: none;
 }
 
-/* Define o estilo do título da página */
-.title {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
+/* Define as regras de estilo para a tela inicial */
+.tela-inicial {
+  display: flex;
+ 
+ }
+ 
+ /* Define as regras de estilo para a mensagem de boas-vindas */
+ .bem-vindo{
+   opacity: 0.5;
+   font-family: 'Sigmar', cursive;
+   padding-top: 20rem;
+   font-size: 5rem;
+   margin: 0 auto;
+   text-align: center;
+   color: rgb(144 144 144);
+   cursor: default;
+ }
+
+/* Define as regras de estilo para a seção da agenda */
+.minha-agenda{
+  background-color: gray;
+  display: none;
+  flex-direction: column;
+
 }
 
+.title{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  background-color: #2E5575;
+}
 
 /* Define o estilo da tabela */
 .table-agendamento {
@@ -194,11 +210,6 @@ thead {
 }
 
 /* Define o estilo do formulário */
-.altera {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 /* Define as regras de estilo para o grupo de formulários */
 .form-group {
@@ -207,76 +218,24 @@ thead {
   margin-bottom: 20px;
 }
 
-/* Define as regras de estilo para as etiquetas */
-.texto-alterar {
-  margin-bottom: 5px;
-}
-  
-/* Define as regras de estilo para as seleções, datas e horários */
-select, input[type="date"], input[type="time"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-}
-
-/* Define as regras de estilo para o botão salvar */
-.btn-salvar {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Define as regras de estilo para o botão salvar quando hover */
-.btn-salvar:hover {
-  background-color: #0069d9;
-}
-
-/* Define as regras de estilo para a tela inicial */
-.tela-inicial {
- display: flex;
-
-}
-
-/* Define as regras de estilo para a mensagem de boas-vindas */
-.bem-vindo{
-  opacity: 0.5;
-  font-family: 'Sigmar', cursive;
-  padding-top: 20rem;
-  font-size: 5rem;
-  margin: 0 auto;
-  text-align: center;
-  color: rgb(144 144 144);
-}
-
-/* Define as regras de estilo para a seção da agenda */
-.minha-agenda{
-  background-color: gray;
-  display: none;
-  flex-direction: column;
-
-}
-
-/* Define as regras de estilo para a seção da conta do usuário */
-.minha-conta{
-  background-color: gray;
-  display: none;
-  flex-direction: column;
-
-}
-
 /* Define o estilo para um elemento com a classe "confirmar-cancelar" e o torna invisível */
 .confirmar-cancelar{
-
+  background-color: #2E5575;
   display: none;
 
 }
+
+.btn-confirma{
+
+  display: none;
+    
+}
+
+.btn-cancela{
+    
+  display: none;
+}
+
 
 /* Define o estilo para um elemento com o id "listar" e o torna invisível. */
 #listar {
@@ -296,15 +255,192 @@ e tamanho da fonte. */
   height: 2em;
 }
 
-.btn-confirma{
-
+/* Define as propriedades da caixa de login */
+.minha-conta {
+  margin: 0 auto;
   display: none;
-    
+  margin-top: 4em;
+  margin-bottom: 4em;
+  background-color: black;
+  font-family: 'Sarala', sans-serif;
+  padding: 1.5rem;
+  width: 21.8rem;
+  height: 28.5rem;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.6);
 }
 
-.btn-cancela{
-    
-  display: none;
+/* Define o estilo do título da página */
+.title-altera-dados {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: white;
+  cursor: default;
+}
+
+.minha-conta .altera-dados {
+  position: relative;
+}
+
+/* Define o estilo do elemento com classes "minha-conta" e "altera-dados1", tornando-o 
+relativo para permitir que seus filhos sejam posicionados de maneira absoluta */
+.minha-conta .altera-dados1 {
+  position: relative;
+}
+/* Define o estilo dos <input> filhos do elemento com classe "altera-dados", definindo
+ a largura, o preenchimento, o tamanho da fonte, a cor do texto,
+ a margem inferior, a borda e o fundo */
+.minha-conta .altera-dados input {
+  width: 100%;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
+  color: #fff;
+  margin-bottom: 1.25em; 
+  border: none;
+  border-bottom: 0.063em solid #fff; 
+  outline: none;
+  background: transparent;
+}
+
+/* Define o estilo dos <input> filhos do elemento com classe "altera-dados1", definindo
+ a largura, o preenchimento, o tamanho da fonte, a cor do texto,
+ a margem inferior, a borda e o fundo */
+.minha-conta .altera-dados1 input {
+  width: 100%;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
+  color: #fff;
+  margin-bottom: 1.25em;
+  margin-top: 20% auto;
+  border: none;
+  border-bottom: 0.063em solid #fff; 
+  outline: none;
+  background: transparent;
+}
+
+/* Define o estilo das <label> filhas do elemento com classe "altera-dados", 
+posicionando-as de maneira absoluta no topo e à esquerda do <input>, 
+definindo o preenchimento, o tamanho da fonte, a cor do texto, 
+as propriedades do ponteiro do mouse e a transição */
+.minha-conta .altera-dados label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.625em 0; 
+  font-size: 1rem;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Define o estilo das <label> filhas do elemento com classe "altera-dados", 
+quando o <input> correspondente recebe foco ou está válido, 
+posicionando-as acima do <input>, definindo a cor do texto e 
+o tamanho da fonte */
+.minha-conta .altera-dados input:focus ~ label,
+.minha-conta .altera-dados input:valid ~ label {
+  top: -1.25em;
+  left: 0;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* Define o estilo dos <span> filhos do elemento com classe "altera-dados1", 
+posicionando-os de maneira absoluta no topo e à esquerda do <input>, 
+definindo o preenchimento, o tamanho da fonte, a cor do texto, 
+as propriedades do ponteiro do mouse e a transição */
+.minha-conta .altera-dados1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Define o estilo dos <span> filhos do elemento com classe "altera-dados1", 
+quando o <input> correspondente recebe foco ou está válido, 
+posicionando-os acima do <input>, definindo a cor do texto e 
+o tamanho da fonte */
+.minha-conta .altera-dados1 input:focus ~ span,
+.minha-conta .altera-dados1 input:valid ~ span {
+  top: -1.25em;
+  left: 0;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* Define as variáveis de cores e tamanhos do botão de login */
+.btn-salvar {
+  --primary-color: #303134;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 0.625em;
+  --arrow-stroke: 0.2em;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 1.25em;
+  color: var(--secondary-color);
+  padding: 1em 1.25em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 3.5em;
+  width: 7.5em;
+  margin: 1.25em auto;
+  cursor: pointer;
+}
+
+/* Estilo da seta no botão */
+.btn-salvar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-salvar .arrow {
+  margin-top: 0.0625em;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btn-salvar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -0.1875em;
+  right: 0.1875em;
+  transition: 0.2s;
+  padding: 0.1875em;
+  transform: rotate(-45deg);
+}
+
+/* Estilo do botão no hover */
+.btn-salvar:hover {
+  background-color: var(--hover-color);
+}
+
+.btn-salvar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btn-salvar:hover .arrow:before {
+  right: 0;
 }
 
 /* Definição das regras de estilo para telas com largura máxima de 768px */
@@ -358,65 +494,23 @@ e tamanho da fonte. */
       display: block;
   }
 
-  /* Define a direção da flexbox do conteúdo principal para coluna */
-  .conteudo-principal {
-      flex-direction: column; /* para direcionar para baixo da coluna */
-      margin-bottom: 50px;
+  .minha-conta {
+    display: flex;
+    margin-top: 4em;
+    width: 18em;
   }
 
-  /* Define a largura e altura da imagem no conteúdo principal para tela mobile */
-  .conteudo-principal-imagem{
-    width: 40vw;
-    height: 30vh;
-  }
-  /* Define o espaçamento superior do título no conteúdo principal para tela mobile */
-  .conteudo-principal-escrito-titulo{
-    padding-top: 100px;
-  }
-  
-  /* Define a margem esquerda do botão no conteúdo principal para tela mobile */
+  .bem-vindo {
+    padding-top: 16rem;
+    font-size: 3rem;
+    cursor: default;
+  } 
+
+  /* Define a largura do botão no conteúdo principal para tela mobile */
   .botao {
     margin-left: 90px;   
-   }
-
-  /* Define a largura e altura do mapa responsivo para tela mobile */
-  .mapa-responsivo{
-
-    width: 100vw;
-    height: 350;
-    flex-direction: column; /* para direcionar para baixo da coluna */
-    border: 1px solid black;
-  }
-  /* Define a ordem da imagem no conteúdo secundário para tela mobile */
-  .conteudo-secundario-imagem{
-    order: 2;
-    width: 100vw;
   }
   
-  /* Definição das regras de estilo para a classe .teste */
-  .teste {
-    flex-direction: column;
-    align-items: center;
-    padding: 0px 0px 0px 0px;
-  }
-  
-  /* Definição das regras de estilo para a classe .conteudo-secundario-titulo*/
-  .conteudo-secundario-titulo{
-    order: 1;
-    font-size: 2em;
-  }
-  /* Definição das regras de estilo para a classe .conteudo-secundario-paragrafo */
-  .conteudo-secundario-paragrafo {
-    order: 1;
-    font-size: 1em;   
-  }
-  /* Definição das regras de estilo para a classe .rodape-imagem */
-  .rodape-imagem{
-    width: 20vw;
-    display: block;
-    margin: 0 auto;
-  }
-
   /* Definição das regras de estilo para o elemento com o id #listar */
   #listar{
     cursor: pointer;

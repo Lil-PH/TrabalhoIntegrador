@@ -4,11 +4,11 @@
 
 /* Este seletor aplica o reset de estilização a todos os elementos da página */
 * {
-    /* Resetando estilização vinda do html*/
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  /* Resetando estilização vinda do html*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 /* Este seletor aplica a animação de scroll suave em toda a página */
@@ -24,10 +24,10 @@ body{
   background: #2E5575;
 }
 
-/* Este seletor define o estilo do cabeçalho da página */
+/* Este seletor define o estilo do cabeçalho da página #464646 */
 header {
-  background-color: #2E5575;
-  box-shadow: 0px 3px 10px #464646;
+  background-color: #1A3042;
+  box-shadow: 0px 3px 10px #000000;
   position: fixed; /* Fixa o header*/
   width: 100vw;  /* Define o header com 100% da largura do dispositivo*/
   z-index: 999; /* Posiciona o header a frente dos demais elementos*/
@@ -38,6 +38,7 @@ header {
   display: flex;
   align-items: center;
   font-family: 'Righteous', cursive;
+  cursor: pointer;
 }
 
 
@@ -166,6 +167,7 @@ ou está com o cursor em cima */
 
 /* Definição do estilo do título do conteúdo principal escrito */
 .conteudo-principal-escrito-titulo{
+  margin-top: 1em;
   font-family: 'Righteous', cursive;
   font-weight: 400;
   font-size: 64px;
@@ -184,10 +186,10 @@ ou está com o cursor em cima */
 
 /* Definição do estilo da imagem do conteúdo principal */
 .conteudo-principal-imagem{
-  /*altura da imagen*/
-  display: flex;
+  position: none;
+  display: inline-flex;
   margin-top: 5.5em;
-  width: 25%;
+  width: 15%;
   justify-content: space-around;
 }
 
@@ -213,6 +215,7 @@ ou está com o cursor em cima */
   font-weight: bold;
   height: 50px;
   width: 205px;
+  cursor: pointer;
 }
 
 /* Definição do estilo do wrapper da seta do botão de cadastro */
@@ -277,15 +280,17 @@ ou está com o cursor em cima */
   font-family: 'Righteous', cursive;
   font-weight: 300;
   font-size: 2rem;
-  color:white;
+  color:rgb(255, 255, 255);
+}
+
+.cor_link{
+  color: #ffffff; /*cor do link*/
 }
 
 /* Definição do estilo dos elementos */
 .elementos{
   width: 100vw;
   display: flex;
-  align-items: center;
-  /* border:0.4px solid white;   */
   justify-content: space-between;
   padding: 0 300px;
   margin: 0 0 100px 0;
@@ -301,7 +306,7 @@ ou está com o cursor em cima */
 /* Estilização do conteúdo secundário em forma de imagem */
 .conteudo-secundario-imagem{
   width: 25vw;
-  height: 25vh;
+  height: 30vh;
 }
 
 /* Estilização do mapa responsivo */
@@ -317,16 +322,69 @@ ou está com o cursor em cima */
 /* Estilização do rodapé */
 .rodape{
     padding: 32px;
-    border-top:0.4px solid white;
-    background: #2E5575;
+    box-shadow: 0px 3px 10px #000000;
+    /* border-top:0.4px solid rgb(0, 0, 0); */
+    background: #1A3042;
+    
+    
 }
 
-/* Estilização da imagem do rodapé */
-.rodape-imagem{
-    width: 200px;
-    display: block;
-    margin: 0 auto;
+.whatsapp-footer{
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 30px;
+  margin: 0, 20px;
 }
+
+.facebook-footer{
+  background-color: rgba(58, 85, 159, 1);
+  color: #fff;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 100px;
+  font-size: 30px;
+  margin: 0, 20px;
+}
+
+.instagram-footer{
+  background:linear-gradient(#5557ca,#e7476d);
+  color: #fff;
+  border-radius: 50px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 30px;
+  margin: 0, 20px;
+}
+
+
+
+/* Estilização do conteúdo do footer escrito */
+.conteudo-footer-escrito{
+  width: 25vw;
+  height: 25vh; 
+  word-wrap: break-word;
+}
+
+.conteudo-footer-titulo{
+  font-family: 'Sarala', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color:white;
+  margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
+}
+
+.conteudo-footer-paragrafo{
+  max-width: 100%;
+  word-wrap: break-word;
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  font-size: 1rem;
+  color: white;
+}
+
 
 /* Criando o estilo do botão do whatsapp */
 .whatsapp-link{
@@ -411,7 +469,6 @@ ou está com o cursor em cima */
     tem no máximo 768px de largura */
     .conteudo-principal-imagem{
       width: 40vw;
-      height: 30vh;
     }
     /* Estilos para o título do conteúdo principal quando a tela tem no máximo 768px de largura */
     .conteudo-principal-escrito-titulo{
@@ -427,15 +484,20 @@ ou está com o cursor em cima */
     em dispositivos móveis */
     .mapa-responsivo{
       order: 3;
-      width: 100vw;
+      width: 50vw;
       flex-direction: column; /* para direcionar para baixo da coluna */
       border: 1px solid black;
     }
 
     .conteudo-secundario-imagem{
       order: 3;
-      width: 100vw;
+      width: 50vw;
     }
+
+    .imagem{
+      margin-top: 250px;
+    }
+   
     
     /* Alinha os elementos na vertical para dispositivos móveis */
     .elementos {
@@ -458,11 +520,10 @@ ou está com o cursor em cima */
     .conteudo-secundario-paragrafo {
       font-size: 2em;   
     }
-    /* Ajusta o tamanho da imagem do rodapé */
-    .rodape-imagem{
-      width: 20vw;
-      display: block;
-      margin: 0 auto;
+
+    .conteudo-footer-escrito{
+      width: 75vw; 
+      word-wrap: break-word;
     }
 
 }

@@ -112,33 +112,53 @@
 
     <!-- Seção para alterar os dados do usuário -->
     <div class="minha-conta">
-      <!-- Título da página -->
-      <h1 class="title">Alterar dados do usuário</h1>
-      <form id="alterar" class="altera">
-        <!-- Sessão de alteração do nome  -->
-        <label for="name" class="texto-alterar">Nome:</label>
-        <input id="nome" type="text" name="name" required>
-        
-        <!-- Sessão de alteração do e-mail  -->
-        <label for="email" class="texto-alterar">E-mail:</label>
-        <input id="email" type="email" name="email" required>
-        
-        <!-- Sessão de alteração da senha  -->
-        <label for="password" class="texto-alterar">Senha:</label>
-        <input id="senha" type="password" name="password" required>
-        
-        <label for="confirm-password" class="texto-alterar">Confirmar senha:</label>
-        <input id="confirmarSenha" type="password" name="confirm-password" required>
-        
-        <!-- Sessão de alteração do telefone  -->
-        <label for="phone" class="texto-alterar">Telefone:</label>
-        <input id="telefone" type="tel" name="phone" required>
-        
-        <!-- Botão que salva as alterações feitas  -->
-        <button class="btn-salvar" type="submit">Salvar</button>
+      <form id="alterar">
+
+        <!-- Título da página -->
+
+        <h2 class="title-altera-dados">Alterar Dados</h2>
+
+          <!-- Sessão de alteração do nome  -->
+          <div class="altera-dados">
+            <input id="nome" name="nome" type="text" autocomplete="off" required>
+            <label>NOME</label>
+          </div>
+      
+          <!-- Sessão de alteração do telefone  -->
+          <div class="altera-dados">
+            <input id="telefone" name="telefone" type="tel" maxlength="14" autocomplete="off" onkeyup="mascara_telefone()" required>
+            <label>TELEFONE</label>
+          </div>
+      
+          <!-- Sessão de alteração do e-mail  -->
+          <div class="altera-dados1">
+            <input id="email" name="email" type="email" autocomplete="off" required>
+            <span>E-MAIL</span>
+          </div>
+      
+          <!-- Sessão de alteração da senha  -->
+          <div class="altera-dados">
+            <input id="senha" name="senha" type="password" autocomplete="off" minlength="8" required>
+            <label>SENHA</label>
+          </div>
+      
+          <!-- Sessão de confirmacao da senha  -->
+          <div class="altera-dados">
+            <input id="confirmarSenha" name="confirma_senha" type="password" autocomplete="off" minlength="8" required>
+            <label>CONFIRMAR SENHA</label>
+          </div>
+      
+          <!-- Botão que salva as alterações feitas  -->
+          <button type="submit" class="btn-salvar">
+              SALVAR
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+          
+                </div>
+          </button>
       </form>
     </div>
-    <!-- Script para responsividade da página -->
-    <script src="../js/responsive-adm.js"></script>
+  <!-- Script para responsividade da página -->
+  <script src="../js/responsive-adm.js"></script>
 </body>
 </html>

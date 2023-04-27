@@ -115,47 +115,59 @@ const tbody = document.getElementById('tbody');
 const agendamento = JSON.parse(localStorage.getItem('agendamento'));
 
 // Cria uma nova linha na tabela com os dados do agendamento
-  const novaLinha = document.createElement('tr');
-  novaLinha.innerHTML = `
-    <td>${agendamento.nome}</td>
-    <td>${agendamento.cpf}</td>
-    <td>${agendamento.email}</td>
-    <td>${agendamento.telefone}</td>
-    <td>${agendamento.doutor}</td>
-    <td>${agendamento.procedimento}</td>
-    <td>${agendamento.data}</td>
-    <td>${agendamento.hora}</td>
-    <td>${agendamento.status}</td>
-  `;
-  //atualiza as linha de frequentemente
-  tbody.appendChild(novaLinha);
+const novaLinha = document.createElement('tr');
 
-
-  // Adiciona a nova linha ao final do tbody da tabela
-
-// Adiciona um ouvinte de evento "click" para a nova linha
-novaLinha.addEventListener('click', function() {
-
-  // Alterna a exibição do elemento com id "confirmarCancelar" entre "table-row" e "none"
-  if (confirmarCancelar.style.display === "table-row"){
-    confirmarCancelar.style.display = "none"
+// Adiciona a nova linha ao final do tbody da tabela
+tbody.appendChild(novaLinha);
+//se nao haver agendamentos
+if (!agendamento) {
+    // Adiciona uma mensagem de aviso
+    const mensagem = document.createElement('p');
+    mensagem.innerHTML = 'Não há agendamentos.';
+    novaLinha.style.textAlign = 'center';
+    tbody.appendChild(mensagem);
+    //centraliza p no meio da linha
   } else {
-    confirmarCancelar.style.display = "table-row"
-  }
+    // Adiciona os dados do agendamento na linha
 
-      // Adiciona um status de "confimada" em "agendamento" ao botao de confirmar ser clicado
-    btnConfirmar.addEventListener("click", function() {
-      // Adiciona um status de "confirmada" em "agendamento"
-      agendamento.status = "confirmada";
-      // Salva o agendamento no localStorage
-      localStorage.setItem('agendamento', JSON.stringify(agendamento));
-    }) // Adiciona um status de "cancelada" em "agendamento" ao botao de cancelar ser clicado
 
-    btnCancelar.addEventListener("click", function() {
-      // Adiciona um status de "cancelada" em "agendamento"
-      agendamento.status = "cancelada";
-      // Salva o agendamento no localStorage
-      localStorage.setItem('agendamento', JSON.stringify(agendamento));
-    })
+    novaLinha.innerHTML = `
+      <td>${agendamento.nome}</td>
+      <td>${agendamento.cpf}</td>
+      <td>${agendamento.email}</td>
+      <td>${agendamento.telefone}</td>
+      <td>${agendamento.doutor}</td>
+      <td>${agendamento.procedimento}</td>
+      <td>${agendamento.data}</td>
+      <td>${agendamento.hora}</td>
+      <td>${agendamento.status}</td>
+    `;
+    //atualiza as linha de frequentemente
+    tbody.appendChild(novaLinha);
 
-});
+    // Adiciona um ouvinte de evento "click" para a nova linha
+    novaLinha.addEventListener('click', function() {
+
+    // Alterna a exibição do elemento com id "confirmarCancelar" entre "table-row" e "none"
+    if (confirmarCancelar.style.display === "table-row"){
+      confirmarCancelar.style.display = "none"
+    } else {
+      confirmarCancelar.style.display = "table-row"
+    }
+
+        // Adiciona um status de "confimada" em "agendamento" ao botao de confirmar ser clicado
+      btnConfirmar.addEventListener("click", function() {
+        // Adiciona um status de "confirmada" em "agendamento"
+        agendamento.status = "confirmada";
+        // Salva o agendamento no localStorage
+        localStorage.setItem('agendamento', JSON.stringify(agendamento));
+      }) // Adiciona um status de "cancelada" em "agendamento" ao botao de cancelar ser clicado
+
+      btnCancelar.addEventListener("click", function() {
+        // Adiciona um status de "cancelada" em "agendamento"
+        agendamento.status = "cancelada";
+        // Salva o agendamento no localStorage
+        localStorage.setItem('agendamento', JSON.stringify(agendamento));
+      })
+
+})};

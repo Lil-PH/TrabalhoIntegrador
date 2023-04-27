@@ -78,6 +78,7 @@ form {
   width: 8rem;
   font-size: 0.8125rem;
   color: #aaa;
+  cursor: default;
 }
 
 /* Define as posições dos elementos com ID "login" */
@@ -237,6 +238,7 @@ o tamanho da fonte */
   height: 3.5em;
   width: 7.5em;
   margin: 1.25em auto;
+  cursor: pointer;
 }
 
 /* Estilo da seta no botão */
@@ -303,7 +305,8 @@ o tamanho da fonte */
   font-weight: bold;
   height: 3.125rem; 
   width: 8.75rem; 
-  margin: 1.25rem auto; 
+  margin: 1.25rem auto;
+  cursor: pointer; 
 }
 
 /* Estilos para a seta do botão de cadastro */
