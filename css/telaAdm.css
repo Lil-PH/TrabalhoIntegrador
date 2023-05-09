@@ -146,77 +146,48 @@ navegação (item-menu:after) */
  }
  
  /* Define as regras de estilo para a mensagem de boas-vindas */
- .bem-vindo{
-   opacity: 0.5;
-   font-family: 'Sigmar', cursive;
-   padding-top: 20rem;
-   font-size: 5rem;
-   margin: 0 auto;
-   text-align: center;
-   color: rgb(144 144 144);
-   cursor: default;
- }
+.bem-vindo{
+  opacity: 0.5;
+  font-family: 'Sigmar', cursive;
+  padding-top: 20rem;
+  font-size: 5rem;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(144 144 144);
+  cursor: default;
+}
 
 /* Define as regras de estilo para a seção da agenda */
 .minha-agenda{
-  background-color: gray;
   display: none;
   flex-direction: column;
-
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px
 }
 
 .title{
   font-family: Arial, sans-serif;
   text-align: center;
   color: #fff;
-  background-color: #2E5575;
 }
 
 /* Define o estilo da tabela */
-.table-agendamento {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
 
 /* Define o estilo do cabeçalho da tabela */
-thead {
-  background-color: #008CBA;
-  color: #fff;
-}
 
 /* Define o estilo das células de cabeçalho e dados da tabela */
-.lista-elementos{
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.elementos {
-
-  text-align: center;
-} 
 
 /* Define o estilo das linhas pares da tabela */
-.lista-elementos:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
 /* Define o estilo das linhas que o mouse está sobre na tabela */
-.lista-elementos:hover {
-  background-color: #ddd;
-}
 
 /* Define o estilo do formulário */
 
 /* Define as regras de estilo para o grupo de formulários */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
 
 /* Define o estilo para um elemento com a classe "confirmar-cancelar" e o torna invisível */
 .confirmar-cancelar{
@@ -225,35 +196,31 @@ thead {
 
 }
 
-.btn-confirma{
-
-  display: none;
-    
-}
-
-.btn-cancela{
-    
-  display: none;
-}
-
-
-/* Define o estilo para um elemento com o id "listar" e o torna invisível. */
-#listar {
-
-  display: none;
-
-}
-
 /* Define o estilo para um elemento com a classe "mensagem" e centraliza 
 seu conteúdo horizontal e verticalmente, além de definir sua altura 
 e tamanho da fonte. */
-.tr-mensagem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 2em;
+/* #tr-Mensagem{
+
+  display: none;
+
 }
+
+.mensagem {
+
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-family: 'Sarala', sans-serif;
+
+} */
+
+/* Define o estilo para um elemento com o id "listar" e o torna invisível. */
+/* #listar {
+
+  display: none;
+
+} */
+
 
 /* Define as propriedades da caixa de login */
 .minha-conta {
@@ -447,55 +414,55 @@ o tamanho da fonte */
 @media screen and (max-width: 768px) {
   /* Define o espaçamento interno da barra de navegação  */
   .nav-bar {
-      padding: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
   }
   /* Esconde os itens da barra de navegação */
   .nav-item {
-      display: none;
+    display: none;
   }
   /* Esconde os itens do menu */
   .item-menu {
-      display: none;
+    display: none;
   }
   /* Exibe o ícone do menu mobile */
   .mobile-menu-icon {
-      display: block;
+    display: block;
   }
   /* Remove o fundo do botão do ícone do menu mobile */
   .mobile-menu-icon button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
   /* Define o alinhamento e espaçamento dos itens do menu mobile  */
   .mobile-menu ul {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 1rem;
   }
   /* Exibe os itens da barra de navegação no menu mobile */
   .mobile-menu .nav-item {
-      display: block;
-      padding-top: 1.2rem;
+    display: block;
+    padding-top: 1.2rem;
   }
   /* Define o espaçamento dos itens do menu mobile */
   .mobile-menu .item-menu {
-      display: block;
-      padding: 1rem 2rem;
+    display: block;
+    padding: 1rem 2rem;
   }
   /* Define a largura do botão do menu mobile */
   .mobile-menu .item-menu button {
-      width: 100%;
+    width: 100%;
   }
   /* Exibe o menu mobile quando é aberto */
   .open {
-      display: block;
+    display: block;
   }
 
   .minha-conta {
-    display: flex;
+    display: none;
     margin-top: 4em;
     width: 18em;
   }

@@ -82,15 +82,15 @@
           <thead>
             <!--Cabeçalho da tabela-->
             <tr class="lista-elementos">
-              <th class="elementos">Nome</th>
-              <th class="elementos">CPF</th>
-              <th class="elementos">E-mail</th>
-              <th class="elementos">Telefone</th>
-              <th class="elementos">Doutor</th>
-              <th class="elementos">Procedimento</th>
-              <th class="elementos">Data</th>
-              <th class="elementos">Hora</th>
-              <th class="elementos">Status</th>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>Doutor</th>
+              <th>Procedimento</th>
+              <th>Data</th>
+              <th>Hora</th>
+              <th>Status</th>
             </tr>
           </thead>
           <!--Corpo da tabela (conteúdo dinâmico gerado por JavaScript)-->
@@ -102,10 +102,15 @@
         <!--Ícone da lupa (para exibição em telas menores)-->
         <div class="icons8-pesquisar"></div>
         <!--Botões para confirmar ou cancelar agendamento (habilitados dinamicamente)-->
-        <tr class="acoes">
+        <tr>
           <div class="confirmar-cancelar">
             <button id="confirmar">Confirmar Consulta</button>
             <button id="cancelar">Cancelar Consulta</button>
+          </div>
+        </tr>
+        <tr>
+          <div class="tr-Mensagem">
+            <p class="mensagem">Não há agendamentos.</p>
           </div>
         </tr>
     </div>

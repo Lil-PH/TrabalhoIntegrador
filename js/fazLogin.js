@@ -27,6 +27,53 @@ document.querySelector('#btnCadastro')
 });
 
 
+function validarCPF(cpf) {
+  // Remove caracteres não numéricos do CPF
+  cpf = cpf.replace(/[^\d]+/g,'');
+
+  // Verifica se o CPF tem 11 dígitos
+  if (cpf.length !== 11) {
+    return false;
+  }
+
+  // Verifica se todos os dígitos são iguais (ex: 111.111.111-11)
+  if (/^(\d)\1+$/.test(cpf)) {
+    return false;
+  }
+
+  // Verifica se os dígitos verificadores são válidos
+  var soma = 0;
+  var resto;
+  for (var i = 1; i <= 9; i++) {
+    soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+  }
+  resto = (soma * 10) % 11;
+  if ((resto === 10) || (resto === 11)) {
+    resto = 0;
+  }
+  if (resto !== parseInt(cpf.substring(9, 10))) {
+    return false;
+  }
+  soma = 0;
+  for (var i = 1; i <= 10; i++) {
+    soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
+  }
+  resto = (soma * 10) % 11;
+  if ((resto === 10) || (resto === 11)) {
+    resto = 0;
+  }
+  if (resto !== parseInt(cpf.substring(10, 11))) {
+    return false;
+  }
+
+  // Se chegou até aqui, o CPF é válido
+  return true;
+}
+
+
+
+
+
 // Obtém a referência do elemento HTML com o ID "cadastro" 
 // e armazena na variável 'formulario'
 const formulario = document.getElementById('cadastro');
@@ -50,6 +97,22 @@ function cadastrarUsuario() {
   const email = document.getElementById('email').value;
   const senha = document.getElementById('senha').value;
   const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+  // Valida o CPF
+  if (!validarCPF(cpf)) {
+    console.log('CPF inválido');
+    // Exibe uma mensagem de erro para o usuário usando a biblioteca 'sweetalert'
+    swal({
+      title: "CPF inválido",
+      icon: "error",
+      button: "OK !",
+      timer: 1700,
+    });
+    // Para a execução da função caso o CPF seja inválido
+    return;
+  }
+
+
   // Verifica se todas as informações foram preenchidas
   if (nome === "" || cpf === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
     console.log('Por favor, preencha todos os campos');
@@ -130,9 +193,13 @@ function cadastrarUsuario() {
         title: "Usuário cadastrado com sucesso",
         icon: "success",
         button: "OK !"
+      }).then(function() {
+        // Redireciona o usuário para a página de login após o usuário clicar no botão OK na caixa de diálogo
+        window.location.href = "../html/loginCadastro.html";
+      }).catch(function(error) {
+        console.log(error);
       });
     // Redireciona o usuário para a página de login
-    window.location.href = "../html/loginCadastro.html";
 }
 
 // Seleciona o elemento do formulário de login

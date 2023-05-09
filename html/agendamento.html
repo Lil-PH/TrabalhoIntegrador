@@ -22,7 +22,7 @@
 
 		<!-- Esta etiqueta e entrada solicitam o CPF do paciente -->
 		<label for="nome">CPF:</label>
-		<input id="cpf" type="text" name="CPF" maxlength="14" autocomplete="off" onkeyup="mascara_cpf()" required><br>
+		<input id="cpf" type="text" name="CPF" maxlength="14" autocomplete="off" required><br>
 
 		<!-- Este rótulo e entrada solicitam o e-mail do paciente -->
 		<label for="email">E-mail:</label>
@@ -61,7 +61,7 @@
 		<input id="hora" type="time" name="hora" required><br>
 		
 		<!-- Este botão envia o formulário -->
-		<button type="submit" class="button">Agendar</button>
+		<button type="submit" class="button" onclick="agendar()">Agendar</button>
 		
 	</form>
 

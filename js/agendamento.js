@@ -19,69 +19,72 @@
 //     minhaConta.style.display = "flex"
 // });
 
+const formAgenda = document.getElementById('agendando');
 
-
-
-// Obtém os elementos do formulário pelo id
-const form = document.getElementById('agendando');
-const nomeInput = document.getElementById('nome');
-const cpfInput = document.getElementById('cpf');
-const emailInput = document.getElementById('email');
-const telefoneInput = document.getElementById('telefone');
-const doutorInput = document.getElementById('doutor');
-const procedimentoInput = document.getElementById('procedimento');
-const dataInput = document.getElementById('data');
-const horaInput = document.getElementById('hora');
-
-// Adiciona um evento de envio ao formulário
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // impede o envio padrão do formulário
-
-    // Obtém os valores selecionados pelo usuário dos elementos do formulário
-    const nome = nomeInput.value;
-    const cpf = cpfInput.value;
-    const email = emailInput.value;
-    const telefone = telefoneInput.value;
-    const doutor = doutorInput.value;
-    const procedimento = procedimentoInput.value;
-    const data = dataInput.value;
-    const hora = horaInput.value;
-
-    // Cria um objeto com os valores do agendamento
-    const agendamento = {
-
-        nome,
-        cpf,
-        email,
-        telefone,
-        doutor,
-        procedimento,
-        data,
-        hora
-    };
-
-   //Condição para que o agendamento seja feito
-    if (localStorage.setItem('agendamento', JSON.stringify(agendamento)) === null) {
-        // Exibe uma mensagem de erro ao usuário
-        swal({
-            title: "Agendamento não foi realizado",
-            icon: "error",
-            button: "OK !"
-        });
-        
-    } else {
-        // Exibe uma mensagem de sucesso ao usuário
-        swal({
-            title: "Agendamento foi realizado com sucesso",
-            icon: "success",
-            button: "OK !"
-        });
-            window.location.href = "../index.html"
-
-    }
-
+formAgenda.addEventListener('submit', function(evento) {
+    // Previne o comportamento padrão do formulário, que é enviar os 
+    // dados para um servidor e recarregar a página
+    evento.preventDefault();
+    // Chama a função 'cadastrarUsuario'
+    agendar();
 });
 
+function agendar() {
+
+    // Obtém os elementos do formulário pelo id
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
+    const doutor = document.getElementById('doutor').value;
+    const procedimento = document.getElementById('procedimento').value;
+    const data = document.getElementById('data').value;
+    const hora = document.getElementById('hora').value;
+    const status = 'Pendente';
+
+        const agendamento = {
+            nome: nome,
+            email: email,
+            cpf: cpf,
+            telefone: telefone,
+            doutor: doutor,
+            procedimento: procedimento,
+            data: data,
+            hora: hora,
+            status: status
+            // id: id
+          };
+        
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+
+            let id;
+            do {
+                id = Math.floor(Math.random() * 1000000);
+            } while (agendamentos.find(agendamento => agendamento.id === id));
+            agendamento.id = id;
+
+            agendamentos.push(agendamento);
+
+            localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+
+                alert('Agendamento realizado com sucesso!');
+                formAgenda.reset();
+
+
+                     console.log('Agendamento foi realizado com sucesso');
+                        // Exibe uma mensagem de sucesso para o usuário usando a biblioteca 'sweetalert'
+                        swal({
+                            title: "Agendamento foi realizado com sucesso",
+                            icon: "success",
+                            button: "OK !"
+                        }).then(function() {
+                            // Redireciona o cliente para a página de inicio após o usuário clicar no botão OK na caixa de diálogo
+                            window.location.href = "../index.html"
+                          }).catch(function(error) {
+                            console.log(error);
+                          });
+    
+}
 // Obtém os dados do localStorage
 
 
