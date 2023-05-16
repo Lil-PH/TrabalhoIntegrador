@@ -79,7 +79,7 @@ function agendar() {
                             button: "OK !"
                         }).then(function() {
                             // Redireciona o cliente para a página de inicio após o usuário clicar no botão OK na caixa de diálogo
-                            window.location.href = "../index.html"
+                            window.location.href = "../index.php"
                           }).catch(function(error) {
                             console.log(error);
                           });

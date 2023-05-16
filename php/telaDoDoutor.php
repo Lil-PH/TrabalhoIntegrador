@@ -26,7 +26,7 @@
                         Agenda
                     </button></li>
                     <!--item para ver o site-->
-                    <li class="nav-item"><a href="../index.html"><button class="item-menu">
+                    <li class="nav-item"><a href="../index.php"><button class="item-menu">
                         Ver Site
                     </button></a></li>
                     <!--item para a conta-->
@@ -34,7 +34,7 @@
                         Conta
                     </button></li>
                     <!--item para sair-->
-                    <li class="nav-item"><a href="../html/loginCadastro.html"><button class="item-menu">
+                    <li class="nav-item"><a href="../php/loginCadastro.php"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
@@ -52,7 +52,7 @@
                         Agenda
                     </button></li>
                     <!--item para ver o site-->
-                    <li class="nav-item"><a href="../index.html"><button class="item-menu">
+                    <li class="nav-item"><a href="../index.php"><button class="item-menu">
                         Ver Site
                     </button></a></li>
                     <!--item para a conta-->
@@ -60,7 +60,7 @@
                         Conta
                     </button></li>
                     <!--item para sair-->
-                    <li class="nav-item"><a href="../html/loginCadastro.html"><button class="item-menu">
+                    <li class="nav-item"><a href="../php/loginCadastro.php"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
@@ -109,27 +109,6 @@
               </tr>
             </tbody>
           </table>
-
-
-
-
-
-          <!--Botão para listar agendamentos-->
-          <tr><button id="listar"><img src="../img/pesquisar.svg" alt="Lupa"></button></tr>
-          <!--Ícone da lupa (para exibição em telas menores)-->
-          <div class="icons8-pesquisar"></div>
-          <!--Botões para confirmar ou cancelar agendamento (habilitados dinamicamente)-->
-          <tr>
-            <div class="confirmar-cancelar">
-              <button id="confirmar">Confirmar Consulta</button>
-              <button id="cancelar">Cancelar Consulta</button>
-            </div>
-          </tr>
-          <tr>
-            <div class="tr-Mensagem">
-              <p class="mensagem">Não há agendamentos.</p>
-            </div>
-          </tr>
       </div>  
     </div>
 

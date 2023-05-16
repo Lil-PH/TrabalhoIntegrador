@@ -195,7 +195,7 @@ function cadastrarUsuario() {
         button: "OK !"
       }).then(function() {
         // Redireciona o usuário para a página de login após o usuário clicar no botão OK na caixa de diálogo
-        window.location.href = "../html/loginCadastro.html";
+        window.location.href = "../php/loginCadastro.php";
       }).catch(function(error) {
         console.log(error);
       });
@@ -242,7 +242,7 @@ function fazerLogin() {
     if (usuario.senha === senha) {
       console.log('Login bem-sucedido');
       // Redireciona o usuário para a página do doutor
-      window.location.href = "../html/telaDoDoutor.html"
+      window.location.href = "../php/telaDoDoutor.php"
 
     } else {
       console.log('Senha incorreta');

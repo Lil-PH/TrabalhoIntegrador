@@ -1,3 +1,5 @@
+<?php ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -42,7 +44,7 @@
                         CONTATO
                     </button></a></li>
                     <!-- Link para a página de login/cadastro -->
-                    <li class="nav-item"><a href="./html/loginCadastro.html"><button class="item-menu">
+                    <li class="nav-item"><a href="./php/loginCadastro.php"><button class="item-menu">
                         LOGIN
                         <!-- Ícone de usuário -->
                         <img src="./img/user-svgrepo-com.svg" class="icons" alt="user">
@@ -72,7 +74,7 @@
                         CONTATO
                     </button></a></li>
                     <!-- Link para a página de login/cadastro -->
-                    <li class="nav-item"><a href="./html/loginCadastro.html"><button class="item-menu">
+                    <li class="nav-item"><a href="./php/loginCadastro.php"><button class="item-menu">
                         LOGIN
                     </button></a></li>
                 </ul>
@@ -93,7 +95,7 @@
                 
                 <!-- Um botão de agendamento é adicionado para facilitar 
                 o acesso ao formulário de agendamento -->
-                <a href="./html/agendamento.html"><button class="botao">
+                <a href="./php/agendamento.php"><button class="botao">
                     FAZER AGENDAMENTO
                     <div class="arrow-wrapper">
                         <div class="arrow"></div>
