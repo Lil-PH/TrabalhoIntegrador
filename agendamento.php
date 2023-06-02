@@ -4,8 +4,8 @@
 	<title>Agendamento Odontológico</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/agendar.css">
-    <link rel="shortcut icon" href="../img/Dente.png" type="image/x-icon">
+	<link rel="stylesheet" href="./css/agendar.css">
+    <link rel="shortcut icon" href="./img/Dente.png" type="image/x-icon">
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -66,8 +66,8 @@
 	</form>
 
 	<!-- Adicionando o arquivo de script -->
-	<script src="../js/agendamento.js"></script>
-	<script src="../js/mascaras.js"></script>
+	<script src="./js/agendamento.js"></script>
+	<script src="./js/mascaras.js"></script>
 
 </body>
 </html>

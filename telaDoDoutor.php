@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agendamentos</title>
-  <link rel="stylesheet" href="../css/telaAdm.css">
-  <link rel="shortcut icon" href="../img/Dente.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/telaAdm.css">
+  <link rel="shortcut icon" href="./img/Dente.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
                         Agenda
                     </button></li>
                     <!--item para ver o site-->
-                    <li class="nav-item"><a href="../index.php"><button class="item-menu">
+                    <li class="nav-item"><a href="./index.php"><button class="item-menu">
                         Ver Site
                     </button></a></li>
                     <!--item para a conta-->
@@ -34,14 +34,14 @@
                         Conta
                     </button></li>
                     <!--item para sair-->
-                    <li class="nav-item"><a href="../php/loginCadastro.php"><button class="item-menu">
+                    <li class="nav-item"><a href="./loginCadastro.php"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
             </div>
             <!--botão para menu responsivo-->
             <div class="mobile-menu-icon">
-                <button onclick="menuShow()"><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
+                <button onclick="menuShow()"><img class="icon" src="./img/menu_white_36dp.svg" alt=""></button>
             </div>
         </nav>
         <!--menu responsivo-->
@@ -52,7 +52,7 @@
                         Agenda
                     </button></li>
                     <!--item para ver o site-->
-                    <li class="nav-item"><a href="../index.php"><button class="item-menu">
+                    <li class="nav-item"><a href="./index.php"><button class="item-menu">
                         Ver Site
                     </button></a></li>
                     <!--item para a conta-->
@@ -60,7 +60,7 @@
                         Conta
                     </button></li>
                     <!--item para sair-->
-                    <li class="nav-item"><a href="../php/loginCadastro.php"><button class="item-menu">
+                    <li class="nav-item"><a href="./loginCadastro.php"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
@@ -161,6 +161,6 @@
       </form>
     </div>
   <!-- Script para responsividade da página -->
-  <script src="../js/responsive-adm.js"></script>
+  <script src="./js/responsive-adm.js"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login/Cadastro</title>
-  <link rel="stylesheet" href="../css/loginCadastro.css">
-  <link rel="shortcut icon" href="../img/Dente.png" type="img/x-icon">
+  <link rel="stylesheet" href="./css/loginCadastro.css">
+  <link rel="shortcut icon" href="./img/Dente.png" type="img/x-icon">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" crossorigin="anonymous"></script>
 </head>
 
@@ -100,7 +100,7 @@
     </form>
   </div>
   <!-- scripts a serem utilizados -->
-  <script src="../js/mascaras.js"></script>
-  <script src="../js/fazLogin.js"></script>
+  <script src="./js/mascaras.js"></script>
+  <script src="./js/fazLogin.js"></script>
 </body>
 </html>
