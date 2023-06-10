@@ -27,13 +27,13 @@
 
       <!-- Campo de entrada para CPF-->
       <div class="user-box">
-        <input  name="email1" type="text" autocomplete="off" required>
-        <label>Email</label>
+        <input name="email1" type="text" autocomplete="off" required>
+        <label>Email ou CRM</label>
       </div>
 
       <!-- Campo de entrada para senha -->
       <div class="user-box">
-        <input  name="senha1" type="password" autocomplete="off" required>
+        <input name="senha1" type="password" autocomplete="off" required>
         <label>SENHA</label>
       </div>
 

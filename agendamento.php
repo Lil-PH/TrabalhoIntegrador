@@ -1,3 +1,7 @@
+<?php
+include('./php/protect.php');
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,23 +18,23 @@
     <h1>Agendamento Odontológico</h1>
 
 	<!-- Este é o formulário para agendamento de consulta odontológica -->
-	<form id="agendando" class ="formulario-agendamento">
+	<form id="agendando" class ="formulario-agendamento" action="" method="POST">
 
 		<!-- Este rótulo e entrada solicitam o nome do paciente -->
 		<label for="nome">Nome:</label>
-		<input id="nome" type="text" name="nome" required><br>
+		<input value="<?php echo $_SESSION['nome_paciente']; ?>" id="nome" type="text" name="nome" disabled="" required><br>
 
 		<!-- Esta etiqueta e entrada solicitam o CPF do paciente -->
 		<label for="nome">CPF:</label>
-		<input id="cpf" type="text" name="CPF" maxlength="14" autocomplete="off" required><br>
+		<input value="<?php echo $_SESSION['cpf_paciente']; ?>" id="cpf" type="text" name="CPF" maxlength="14" disabled="" required><br>
 
 		<!-- Este rótulo e entrada solicitam o e-mail do paciente -->
 		<label for="email">E-mail:</label>
-		<input id="email" type="email" name="email" required><br>
+		<input value="<?php echo $_SESSION['email_paciente']; ?>" id="email" type="email" name="email" disabled="" required><br>
 		
 		<!-- Este rótulo e entrada solicitam o telefone do paciente -->
 		<label for="telefone">Telefone:</label>
-		<input id="telefone" type="tel" name="telefone" maxlength="14" onkeyup="mascara_telefone()" required><br>
+		<input value="<?php echo $_SESSION['telefone_paciente']; ?>" id="telefone" type="tel" name="telefone" disabled="" maxlength="14" onkeyup="mascara_telefone()" required><br>
 
 		<!-- Este rótulo e selecione pergunte pelo tipo de agendamento -->
 		<label for="procedimento">Procedimento:</label>
@@ -53,15 +57,27 @@
 		</select><br>
 
 		<!-- Este rótulo e entrada solicitam a data do compromisso -->
-		<label for="data">Data:</label>
-		<input id="data" type="date" name="data" required><br>
+        <label for="doutor">Data:</label>
+		<select id="doutor" name="doutor" required>
+			<option value="">Selecione o doutor</option>
+			<option value="Dr. João">Dr. João</option>
+			<option value="Dra. Maria">Dra. Maria</option>
+			<option value="Dr. Pedro">Dr. Pedro</option>
+			<option value="Dr. José">Dr. José</option>
+		</select><br>
 
 		<!-- Este rótulo e entrada solicitam a hora do compromisso -->
-		<label for="hora">Hora:</label>
-		<input id="hora" type="time" name="hora" required><br>
+        <label for="doutor">Horário:</label>
+		<select id="doutor" name="doutor" required>
+			<option value="">Selecione o doutor</option>
+			<option value="Dr. João">Dr. João</option>
+			<option value="Dra. Maria">Dra. Maria</option>
+			<option value="Dr. Pedro">Dr. Pedro</option>
+			<option value="Dr. José">Dr. José</option>
+		</select><br>
 		
 		<!-- Este botão envia o formulário -->
-		<button type="submit" class="button" onclick="agendar()">Agendar</button>
+		<button type="submit" class="button" >Agendar</button>
 		
 	</form>
 

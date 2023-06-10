@@ -64,7 +64,7 @@ include('./php/protect.php');
                         Conta
                     </button></li>
                     <!--item para sair-->
-                    <li class="nav-item"><a href="./loginCadastro.php"><button class="item-menu">
+                    <li class="nav-item"><a href="./php/logout.php"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
@@ -74,8 +74,21 @@ include('./php/protect.php');
 
     <div class="tela-inicial">  
       <!--Título de boas-vindas-->
-      <h1 class="bem-vindo">BEM VINDO</h1>
-      <?php echo $_SESSION['nome_paciente']; ?>
+      <h1 class="bem-vindo">
+      <?php
+      
+        if (isset($_SESSION['nome_paciente'])) {
+          $nome = $_SESSION['nome_paciente'];
+          echo "Bem-vindo $nome!";
+
+        } elseif (isset($_SESSION['nome_medico'])) {
+          $nome = $_SESSION['nome_medico'];
+          echo "Bem-vindo, doutor $nome!";
+
+        }
+        
+      ?>
+      </h1>
     </div>
 
     <div class="minha-agenda">

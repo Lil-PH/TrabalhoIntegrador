@@ -93,7 +93,7 @@
                 
                 <!-- Um botão de agendamento é adicionado para facilitar 
                 o acesso ao formulário de agendamento -->
-                <a href="./agendamento.php"><button class="botao">
+                <a href="./loginCadastro.php"><button class="botao">
                     FAZER AGENDAMENTO
                     <div class="arrow-wrapper">
                         <div class="arrow"></div>
