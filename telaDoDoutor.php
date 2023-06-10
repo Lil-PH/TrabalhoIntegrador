@@ -1,3 +1,7 @@
+<?php
+include('./php/protect.php');
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,7 +38,7 @@
                         Conta
                     </button></li>
                     <!--item para sair-->
-                    <li class="nav-item"><a href="./loginCadastro.php"><button class="item-menu">
+                    <li class="nav-item"><a href="./php/logout.php"><button class="item-menu">
                         Sair
                     </button></a></li>
                 </ul>
@@ -71,7 +75,7 @@
     <div class="tela-inicial">  
       <!--Título de boas-vindas-->
       <h1 class="bem-vindo">BEM VINDO</h1>
-
+      <?php echo $_SESSION['nome_paciente']; ?>
     </div>
 
     <div class="minha-agenda">
