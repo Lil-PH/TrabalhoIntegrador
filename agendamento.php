@@ -1,5 +1,6 @@
 <?php
 include('./php/protect.php');
+include('./php/createAgendamento.php');
 
 ?>
 <!DOCTYPE html>
@@ -40,20 +41,17 @@ include('./php/protect.php');
 		<label for="procedimento">Procedimento:</label>
 		<select id="procedimento" name="procedimento" required>
 			<option value="">Selecione o Procedimento</option>
-			<option value="Limpeza">Limpeza</option>
+			<?php echo $optionProcedimento ?>
+			<!-- <option value="Limpeza">Limpeza</option>
 			<option value="Manutenção">Manutenção</option>
 			<option value="Clareamento">Clareamento</option>
-			<option value="Extração">Extração</option>
+			<option value="Extração">Extração</option> -->
 		</select><br>
 
 		<!-- Este rótulo e selecione pergunte pelo dentista preferido do paciente -->
         <label for="doutor">Doutor:</label>
 		<select id="doutor" name="doutor" required>
-			<option value="">Selecione o doutor</option>
-			<option value="Dr. João">Dr. João</option>
-			<option value="Dra. Maria">Dra. Maria</option>
-			<option value="Dr. Pedro">Dr. Pedro</option>
-			<option value="Dr. José">Dr. José</option>
+			<?php echo $optionMedico ?>
 		</select><br>
 
 		<!-- Este rótulo e entrada solicitam a data do compromisso -->

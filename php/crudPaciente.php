@@ -4,7 +4,8 @@ include('banco.php');
 if(isset($_POST['email1']) && isset($_POST['senha1'])) {
 
     if(strlen($_POST['email1']) == 0) {
-        echo "Preencha seu e-mail";
+         // Chamada da função JavaScript 
+         echo "Preencha seu email";
     } else if(strlen($_POST['senha1']) == 0) {
         echo "Preencha sua senha";
     } else {
@@ -13,66 +14,58 @@ if(isset($_POST['email1']) && isset($_POST['senha1'])) {
         $senha = $mysqli->real_escape_string($_POST['senha1']);
 
         // Check if it's a patient login
-        $sql_patient = "SELECT * FROM paciente WHERE email_paciente = '$email' AND senha_paciente = '$senha'";
+        $sql_patient = "SELECT * FROM paciente WHERE email_paciente = '$email'";
         $result_patient = $mysqli->query($sql_patient) or die("Falha na execução do código SQL: " . $mysqli->error);
         $num_rows_patient = $result_patient->num_rows;
 
         // Check if it's a doctor login
-        $sql_doctor = "SELECT * FROM medico WHERE crm_medico = '$email' AND senha_medico = '$senha'";
+        $sql_doctor = "SELECT * FROM medico WHERE crm_medico = '$email'";
         $result_doctor = $mysqli->query($sql_doctor) or die("Falha na execução do código SQL: " . $mysqli->error);
         $num_rows_doctor = $result_doctor->num_rows;
 
 
-    if($num_rows_doctor == 1) {
-        // Doctor login successful
-        $doctor = $result_doctor->fetch_assoc();
+        if($num_rows_doctor == 1) {
+            // Doctor login
+            $doctor = $result_doctor->fetch_assoc();
+            if(password_verify($senha, $doctor['senha_medico'])) {
+                // Password verification successful
+                if(!isset($_SESSION)) {
+                    session_start();
+                }
 
-        if(!isset($_SESSION)) {
-            session_start();
-        }
+                $_SESSION['id_medico'] = $doctor['id_medico'];
+                $_SESSION['nome_medico'] = $doctor['nome_medico'];
+                $_SESSION['crm_medico'] = $doctor['crm_medico'];
+                $_SESSION['email_medico'] = $doctor['email_medico'];
+                $_SESSION['telefone_medico'] = $doctor['telefone_medico'];
 
-        $_SESSION['id_medico'] = $doctor['id_medico'];
-        $_SESSION['nome_medico'] = $doctor['nome_medico'];
-        $_SESSION['crm_medico'] = $doctor['crm_medico'];
-        $_SESSION['email_medico'] = $doctor['email_medico'];
-        $_SESSION['telefone_medico'] = $doctor['telefone_medico'];
-
-        header("Location: ../telaDoDoutor.php");
-
-    }else if($num_rows_patient == 1) {
-            // Patient login successful
-            $patient = $result_patient->fetch_assoc();
-
-            if(!isset($_SESSION)) {
-                session_start();
+                header("Location: ../telaDoDoutor.php");
+                exit();
+            } else {
+                echo "Falha ao logar! E-mail ou senha incorretos";
             }
 
-            $_SESSION['id_paciente'] = $patient['id_paciente'];
-            $_SESSION['nome_paciente'] = $patient['nome_paciente'];
-            $_SESSION['cpf_paciente'] = $patient['cpf_paciente'];
-            $_SESSION['email_paciente'] = $patient['email_paciente'];
-            $_SESSION['telefone_paciente'] = $patient['telefone_paciente'];
+        } else if($num_rows_patient == 1) {
+            // Patient login
+            $patient = $result_patient->fetch_assoc();
+            if(password_verify($senha, $patient['senha_paciente'])) {
+                // Password verification successful
+                if(!isset($_SESSION)) {
+                    session_start();
+                }
 
-            header("Location: ../telaDoDoutor.php");
+                $_SESSION['id_paciente'] = $patient['id_paciente'];
+                $_SESSION['nome_paciente'] = $patient['nome_paciente'];
+                $_SESSION['cpf_paciente'] = $patient['cpf_paciente'];
+                $_SESSION['email_paciente'] = $patient['email_paciente'];
+                $_SESSION['telefone_paciente'] = $patient['telefone_paciente'];
 
-        // } else if($num_rows_doctor == 1) {
-        //     // Doctor login successful
-        //     $doctor = $result_doctor->fetch_assoc();
-
-        //     if(!isset($_SESSION)) {
-        //         session_start();
-        //     }
-
-        //     $_SESSION['id_medico'] = $doctor['id_medico'];
-        //     $_SESSION['nome_medico'] = $doctor['nome_medico'];
-        //     $_SESSION['crm_medico'] = $doctor['crm_medico'];
-        //     $_SESSION['email_medico'] = $doctor['email_medico'];
-        //     $_SESSION['telefone_medico'] = $doctor['telefone_medico'];
-
-        //     header("Location: ../telaDoDoutor.php");
-
-        }else {
-
+                header("Location: ../telaDoDoutor.php");
+                exit();
+            } else {
+                echo "Falha ao logar! E-mail ou senha incorretos";
+            }
+        } else {
             echo "Falha ao logar! E-mail ou senha incorretos";
         }
     }

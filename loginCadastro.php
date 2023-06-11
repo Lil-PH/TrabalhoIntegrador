@@ -10,7 +10,6 @@
   <title>Login/Cadastro</title>
   <link rel="stylesheet" href="./css/loginCadastro.css">
   <link rel="shortcut icon" href="./img/Dente.png" type="img/x-icon">
-  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -27,13 +26,13 @@
 
       <!-- Campo de entrada para CPF-->
       <div class="user-box">
-        <input name="email1" type="text" autocomplete="off" required>
+        <input name="email1" type="text" autocomplete="off">
         <label>Email ou CRM</label>
       </div>
 
       <!-- Campo de entrada para senha -->
       <div class="user-box">
-        <input name="senha1" type="password" autocomplete="off" required>
+        <input name="senha1" type="password" autocomplete="off">
         <label>SENHA</label>
       </div>
 
