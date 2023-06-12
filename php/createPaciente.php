@@ -25,7 +25,7 @@
                     $sql = "INSERT INTO paciente (nome_paciente, telefone_paciente, cpf_paciente, email_paciente, senha_paciente) VALUES ('$nomeCadastro', '$telefoneCadastro', '$cpfCadastro', '$emailCadastro', '$senhaCadastro')";
                     if ($mysqli->query($sql) === TRUE) {
                         echo "Cadastro realizado com sucesso!";
-                        $sql = "SELECT * FROM paciente WHERE email_paciente = '$emailCadastro'";
+                        $sql = "SELECT * FROM medico WHERE email_medico = '$emailCadastro'";
                         $resultSenha = $mysqli->query($sql);
                         if ($resultSenha->num_rows > 0) {
                             while ($row = $resultSenha->fetch_assoc()) {
