@@ -1,5 +1,6 @@
 <?php
 include('./php/protect.php');
+include('./php/updateMedico.php');
 
 ?>
 <!DOCTYPE html>
@@ -29,6 +30,10 @@ include('./php/protect.php');
                     <li id="agenda" class="nav-item"><button class="item-menu">
                         Agenda
                     </button></li>
+                    <!--item de Fazer Agendamento-->
+                    <li class="nav-item"><a href="./agendamento.php"><button class="item-menu">
+                        Fazer Agendamento
+                    </button></a></li>
                     <!--item para ver o site-->
                     <li class="nav-item"><a href="./index.php"><button class="item-menu">
                         Ver Site
@@ -55,6 +60,10 @@ include('./php/protect.php');
                     <li id="agenda-responsiva" class="nav-item"><button class="item-menu">
                         Agenda
                     </button></li>
+                    <!--item de Fazer Agendamento-->
+                    <li class="nav-item"><a href="./agendamento.php"><button class="item-menu">
+                        Fazer Agendamento
+                    </button></a></li>
                     <!--item para ver o site-->
                     <li class="nav-item"><a href="./index.php"><button class="item-menu">
                         Ver Site
@@ -83,7 +92,7 @@ include('./php/protect.php');
 
         } elseif (isset($_SESSION['nome_medico'])) {
           $nome = $_SESSION['nome_medico'];
-          echo "Bem-vindo, doutor $nome!";
+          echo "Bem-vindo, Dr $nome!";
 
         }
         
@@ -101,28 +110,20 @@ include('./php/protect.php');
               <!--Cabeçalho da tabela-->
               <tr class="lista-elementos">
                   <th class="column1">Nome</th>
-                  <th class="column2">CPF</th>
-                  <th class="column3">E-mail</th>
-                  <th class="column4">Telefone</th>
-                  <th class="column5">Doutor</th>
-                  <th class="column6">Procedimento</th>
-                  <th class="column7">Data</th>
-                  <th class="column8">Hora</th>
-                  <th class="column9">Status</th>
+                  <th class="column2">Doutor</th>
+                  <th class="column3">Data</th>
+                  <th class="column4">Horario inicial</th>
+                  <th class="column5">Horario final</th>
               </tr>
             </thead>
             <!--Corpo da tabela (conteúdo dinâmico gerado por JavaScript)-->
             <tbody id="tbody">
               <tr>
-                <td class="column1">_</td>
-                <td class="column2">_</td>
-                <td class="column3">_</td>
-                <td class="column4">_</td>
-                <td class="column5">_</td>
-                <td class="column6">_</td>
-                <td class="column7">_</td>
-                <td class="column8">_</td>
-                <td class="column9">_</td>
+                <!-- <td><?php echo $agendamento['nome_paciente']; ?></td>
+                <td><?php echo $agendamento['nome_medico']; ?></td>
+                <td><?php echo $agendamento['data']; ?></td>
+                <td><?php echo $agendamento['horario_inicial']; ?></td>
+                <td><?php echo $agendamento['horario_final']; ?></td> -->
               </tr>
             </tbody>
           </table>
@@ -131,44 +132,44 @@ include('./php/protect.php');
 
     <!-- Seção para alterar os dados do usuário -->
     <div class="minha-conta">
-      <form id="alterar">
+      <form id="alterar" action="./php/updateMedico.php" method="POST">
 
         <!-- Título da página -->
 
         <h2 class="title-altera-dados">Alterar Dados</h2>
-
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
           <!-- Sessão de alteração do nome  -->
           <div class="altera-dados">
-            <input id="nome" name="nome" type="text" autocomplete="off" required>
+            <input value="" id="nome" name="nome" type="text">
             <label>NOME</label>
           </div>
       
           <!-- Sessão de alteração do telefone  -->
           <div class="altera-dados">
-            <input id="telefone" name="telefone" type="tel" maxlength="14" autocomplete="off" onkeyup="mascara_telefone()" required>
+            <input value="" id="telefone" name="telefone" type="tel" maxlength="14">
             <label>TELEFONE</label>
           </div>
       
           <!-- Sessão de alteração do e-mail  -->
           <div class="altera-dados1">
-            <input id="email" name="email" type="email" autocomplete="off" required>
+            <input value="" id="email" name="email" type="email">
             <span>E-MAIL</span>
           </div>
       
           <!-- Sessão de alteração da senha  -->
           <div class="altera-dados">
-            <input id="senha" name="senha" type="password" autocomplete="off" minlength="8" required>
+            <input id="senha" name="senha" type="password" minlength="8">
             <label>SENHA</label>
           </div>
       
           <!-- Sessão de confirmacao da senha  -->
           <div class="altera-dados">
-            <input id="confirmarSenha" name="confirma_senha" type="password" autocomplete="off" minlength="8" required>
+            <input id="confirmarSenha" name="confirma_senha" type="password" minlength="8">
             <label>CONFIRMAR SENHA</label>
           </div>
       
           <!-- Botão que salva as alterações feitas  -->
-          <button type="submit" class="btn-salvar">
+          <button type="submit" name="btn-salvar" class="btn-salvar">
               SALVAR
             <div class="arrow-wrapper">
                 <div class="arrow"></div>

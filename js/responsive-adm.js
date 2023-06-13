@@ -5,11 +5,11 @@ function menuShow() {
   if (menuMobile.classList.contains('open')) {
       menuMobile.classList.remove('open');
       // Altera a imagem do ícone para o ícone do menu quando o menu está fechado
-      document.querySelector('.icon').src = "../img/menu_white_36dp.svg";
+      document.querySelector('.icon').src = "./img/menu_white_36dp.svg";
   } else {
       menuMobile.classList.add('open');
       // Altera a imagem do ícone para o ícone de fechar quando o menu está aberto
-      document.querySelector('.icon').src = "../img/close_white_36dp.svg";
+      document.querySelector('.icon').src = "./img/close_white_36dp.svg";
   }
 }
 

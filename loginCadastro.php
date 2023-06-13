@@ -42,6 +42,10 @@
         <span>Lembrar senha</span>
       </div>
 
+        <p><a href="./index.php"><button type="button">
+              <
+        </button></a></p>
+
         <!-- Botão dpara fazer login -->
         <button type="submit" class="btnLogar">
             ENTRAR

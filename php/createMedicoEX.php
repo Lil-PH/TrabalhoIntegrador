@@ -11,7 +11,7 @@
         $emailCadastro = $_POST['emailCadastro'];
         $senhaCadastro = $_POST['senhaCadastro'];
 
-        $sql = "SELECT * FROM paciente WHERE email_paciente = '$emailCadastro' OR cpf_paciente = '$cpfCadastro'";
+        $sql = "SELECT * FROM medico WHERE email_medico = '$emailCadastro' OR cpf_medico = '$cpfCadastro'";
         $resultEmail = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($resultEmail) > 0) {
             echo "<script>alert('Email ou CPF já cadastrado!');</script>";
@@ -22,15 +22,15 @@
                 // Validar o CPF
                 if (validarCPF($cpfCadastro)) {
                     $senhaCadastro = password_hash($senhaCadastro, PASSWORD_DEFAULT);
-                    $sql = "INSERT INTO paciente (nome_paciente, telefone_paciente, cpf_paciente, email_paciente, senha_paciente) VALUES ('$nomeCadastro', '$telefoneCadastro', '$cpfCadastro', '$emailCadastro', '$senhaCadastro')";
+                    $sql = "INSERT INTO medico (nome_medico, telefone_medico, cpf_medico, email_medico, senha_medico) VALUES ('$nomeCadastro', '$telefoneCadastro', '$cpfCadastro', '$emailCadastro', '$senhaCadastro')";
                     if ($mysqli->query($sql) === TRUE) {
                         echo "Cadastro realizado com sucesso!";
-                        $sql = "SELECT * FROM paciente WHERE email_paciente = '$emailCadastro'";
+                        $sql = "SELECT * FROM medico WHERE email_medico = '$emailCadastro'";
                         $resultSenha = $mysqli->query($sql);
                         if ($resultSenha->num_rows > 0) {
                             while ($row = $resultSenha->fetch_assoc()) {
-                                $_SESSION['id_paciente'] = $row['id_paciente'];
-                                $_SESSION['nome_paciente'] = $row['nome_paciente'];
+                                $_SESSION['id_medico'] = $row['id_medico'];
+                                $_SESSION['nome_medico'] = $row['nome_medico'];
                                 header('Location: ../loginCadastro.php');
                             }
                         }

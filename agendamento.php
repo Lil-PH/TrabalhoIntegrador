@@ -1,6 +1,7 @@
 <?php
 include('./php/protect.php');
-include('./php/createAgendamento.php');
+// include('./php/get_especialidades.php');
+// include('./php/get_medicos.php');
 
 ?>
 <!DOCTYPE html>
@@ -11,7 +12,9 @@ include('./php/createAgendamento.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/agendar.css">
     <link rel="shortcut icon" href="./img/Dente.png" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" crossorigin="anonymous"></script>
+	<!-- <script src="/get_agendamento.js"></script> -->
 </head>
 <body>
 
@@ -20,6 +23,10 @@ include('./php/createAgendamento.php');
 
 	<!-- Este é o formulário para agendamento de consulta odontológica -->
 	<form id="agendando" class ="formulario-agendamento" action="" method="POST">
+
+		<p><a href="./telaDoDoutor.php"><button type="button">
+              <
+        </button></a></p>
 
 		<!-- Este rótulo e entrada solicitam o nome do paciente -->
 		<label for="nome">Nome:</label>
@@ -39,49 +46,99 @@ include('./php/createAgendamento.php');
 
 		<!-- Este rótulo e selecione pergunte pelo tipo de agendamento -->
 		<label for="procedimento">Procedimento:</label>
-		<select id="procedimento" name="procedimento" required>
+		<select id="select_especialidade" name="select_especialidade" required>
 			<option value="">Selecione o Procedimento</option>
-			<?php echo $optionProcedimento ?>
-			<!-- <option value="Limpeza">Limpeza</option>
-			<option value="Manutenção">Manutenção</option>
-			<option value="Clareamento">Clareamento</option>
-			<option value="Extração">Extração</option> -->
+
 		</select><br>
 
 		<!-- Este rótulo e selecione pergunte pelo dentista preferido do paciente -->
         <label for="doutor">Doutor:</label>
-		<select id="doutor" name="doutor" required>
-			<?php echo $optionMedico ?>
+		<select id="select_medico" name="select_medico" required>
+		<option value="">Selecione o Médico</option>
+
 		</select><br>
 
 		<!-- Este rótulo e entrada solicitam a data do compromisso -->
-        <label for="doutor">Data:</label>
-		<select id="doutor" name="doutor" required>
-			<option value="">Selecione o doutor</option>
-			<option value="Dr. João">Dr. João</option>
-			<option value="Dra. Maria">Dra. Maria</option>
-			<option value="Dr. Pedro">Dr. Pedro</option>
-			<option value="Dr. José">Dr. José</option>
+        <label for="data">Data:</label>
+		<select id="dataSelecionada" name="dataSelecionada" required>
+			<option value="">Selecione a data</option>
+
 		</select><br>
 
 		<!-- Este rótulo e entrada solicitam a hora do compromisso -->
-        <label for="doutor">Horário:</label>
-		<select id="doutor" name="doutor" required>
-			<option value="">Selecione o doutor</option>
-			<option value="Dr. João">Dr. João</option>
-			<option value="Dra. Maria">Dra. Maria</option>
-			<option value="Dr. Pedro">Dr. Pedro</option>
-			<option value="Dr. José">Dr. José</option>
+        <label for="horario">Horário:</label>
+		<select id="horario" name="horario" required>
+			<option value="">Selecione o horário</option>
 		</select><br>
 		
 		<!-- Este botão envia o formulário -->
 		<button type="submit" class="button" >Agendar</button>
 		
 	</form>
-
-	<!-- Adicionando o arquivo de script -->
-	<script src="./js/agendamento.js"></script>
-	<script src="./js/mascaras.js"></script>
-
+	<script src="./js/get_agendamento.js"></script>
+	<!-- <script>
+	$(document).ready(function() {
+    // Carregar opções do primeiro select ao carregar a página
+    carregarEspecialidades();
+  
+    // Adicionar um evento de change ao select de especialidade
+    $('#select_especialidade').change(function() {
+      carregarMedicos();
+    });
+  
+    function carregarEspecialidades() {
+      // Realizar uma requisição para obter a lista de especialidades do servidor
+      $.ajax({
+        url: 'php/get_especialidades.php', // Arquivo PHP que retorna a lista de especialidades
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          // Preencher as opções do primeiro select com as especialidades retornadas
+          var options = '<option value="">Selecione a Especialidade</option>';
+          for (var i = 0; i < data.length; i++) {
+            options += '<option value="' + data[i].id_especialidade + '">' + data[i].descricao_especialidade + '</option>';
+          }
+          $('#select_especialidade').html(options);
+        },
+        error: function() {
+          console.log('Erro ao obter as especialidades.');
+        }
+      });
+    }
+  
+    function carregarMedicos() {
+      var especialidadeSelecionada = $('#select_especialidade').val();
+  
+      // Verificar se uma especialidade foi selecionada
+      if (especialidadeSelecionada !== '') {
+        // Realizar uma requisição para obter a lista de médicos do servidor com base na especialidade selecionada
+        $.ajax({
+          url: 'php/get_medicos.php', // Arquivo PHP que retorna a lista de médicos com base na especialidade selecionada
+          type: 'GET',
+          dataType: 'json',
+          data: { especialidade: especialidadeSelecionada },
+          success: function(data) {
+            // Limpar as opções existentes do segundo select
+            $('#select_medico').empty();
+            
+            // Preencher as opções do segundo select com os médicos retornados
+            var options = '<option value="">Selecione o Médico</option>';
+            for (var i = 0; i < data.length; i++) {
+              options += '<option value="' + data[i].id_medico + '">' + data[i].nome_medico + '</option>';
+            }
+            $('#select_medico').html(options);
+          },
+          error: function() {
+            console.log('Erro ao obter os médicos.');
+          }
+        });
+      } else {
+        // Limpar as opções do segundo select se nenhuma especialidade estiver selecionada
+        $('#select_medico').empty();
+        $('#select_medico').html('<option value="">Selecione o Médico</option>');
+      }
+    }
+  });
+  </script> -->
 </body>
 </html>
