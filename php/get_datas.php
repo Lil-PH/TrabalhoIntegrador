@@ -1,30 +1,45 @@
 <?php
 
-// Obter os valores enviados por meio da requisição Ajax
-// $medico = $_GET['medico'];
+include('banco.php');
 
-// Consulta SQL para obter as datas disponíveis com base no procedimento e médico selecionados
-$sql = "SELECT DISTINCT id_diaData, diaAgenda
-        FROM dia_data";
-$result = $mysqli->query($sql);
+$medicoSelecionado = $_GET['medico'];
 
-if ($result->num_rows > 0) {
-    // Array para armazenar as datas disponíveis
-    $datas = array();
+// Consultar a tabela "agendamento" para obter as datas disponíveis para o médico selecionado
+$sql_g = "SELECT DISTINCT fk_id_horaDia FROM consulta WHERE fk_id_medico = '$medicoSelecionado'";
+$resultado = mysqli_query($mysqli, $sql_g);
 
-    // Percorrer os resultados e adicionar as datas ao array
-    while ($row = $result->fetch_assoc()) {
-        $data = array(
-            'id_diaData' => $row['id_diaData'],
-            'diaAgenda' => $row['diaAgenda']
-        );
-        $datas[] = $data;
+if (mysqli_num_rows($resultado) > 0) {
+  $datasAgendadas = array();
+
+  while ($row = mysqli_fetch_assoc($resultado)) {
+    $datasAgendadas[] = $row['fk_id_horaDia'];
+  }
+
+  // Consultar a tabela "dia_data" para obter todas as datas
+  $sql = "SELECT id_diaData, diaAgenda FROM dia_data";
+  $resultado = mysqli_query($mysqli, $sql);
+
+  if (mysqli_num_rows($resultado) > 0) {
+    $datasDisponiveis = array();
+
+    while ($row = mysqli_fetch_assoc($resultado)) {
+      $idDiaData = $row['id_diaData'];
+      $data = $row['diaAgenda'];
+
+      // Verificar se a data não está nas datas agendadas
+      if (!in_array($idDiaData, $datasAgendadas)) {
+        $datasDisponiveis[] = array('id_diaData' => $idDiaData, 'diaAgenda' => $data);
+      }
     }
 
-    // Retornar os resultados como JSON
-    echo json_encode($datas);
+    // Retornar as datas disponíveis como um JSON
+    header('Content-Type: application/json');
+    echo json_encode($datasDisponiveis);
+  } else {
+    echo 'Nenhuma data disponível.';
+  }
 } else {
-    echo "Nenhuma data disponível";
+  echo 'Nenhuma data disponível para o médico selecionado.';
 }
 
 ?>

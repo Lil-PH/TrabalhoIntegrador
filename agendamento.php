@@ -60,14 +60,14 @@ include('./php/protect.php');
 
 		<!-- Este rótulo e entrada solicitam a data do compromisso -->
         <label for="data">Data:</label>
-		<select id="dataSelecionada" name="dataSelecionada" required>
+		<select id="select_data" name="select_data" required>
 			<option value="">Selecione a data</option>
 
 		</select><br>
 
 		<!-- Este rótulo e entrada solicitam a hora do compromisso -->
         <label for="horario">Horário:</label>
-		<select id="horario" name="horario" required>
+		<select id="select_horario" name="select_horario" required>
 			<option value="">Selecione o horário</option>
 		</select><br>
 		
@@ -76,69 +76,5 @@ include('./php/protect.php');
 		
 	</form>
 	<script src="./js/get_agendamento.js"></script>
-	<!-- <script>
-	$(document).ready(function() {
-    // Carregar opções do primeiro select ao carregar a página
-    carregarEspecialidades();
-  
-    // Adicionar um evento de change ao select de especialidade
-    $('#select_especialidade').change(function() {
-      carregarMedicos();
-    });
-  
-    function carregarEspecialidades() {
-      // Realizar uma requisição para obter a lista de especialidades do servidor
-      $.ajax({
-        url: 'php/get_especialidades.php', // Arquivo PHP que retorna a lista de especialidades
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-          // Preencher as opções do primeiro select com as especialidades retornadas
-          var options = '<option value="">Selecione a Especialidade</option>';
-          for (var i = 0; i < data.length; i++) {
-            options += '<option value="' + data[i].id_especialidade + '">' + data[i].descricao_especialidade + '</option>';
-          }
-          $('#select_especialidade').html(options);
-        },
-        error: function() {
-          console.log('Erro ao obter as especialidades.');
-        }
-      });
-    }
-  
-    function carregarMedicos() {
-      var especialidadeSelecionada = $('#select_especialidade').val();
-  
-      // Verificar se uma especialidade foi selecionada
-      if (especialidadeSelecionada !== '') {
-        // Realizar uma requisição para obter a lista de médicos do servidor com base na especialidade selecionada
-        $.ajax({
-          url: 'php/get_medicos.php', // Arquivo PHP que retorna a lista de médicos com base na especialidade selecionada
-          type: 'GET',
-          dataType: 'json',
-          data: { especialidade: especialidadeSelecionada },
-          success: function(data) {
-            // Limpar as opções existentes do segundo select
-            $('#select_medico').empty();
-            
-            // Preencher as opções do segundo select com os médicos retornados
-            var options = '<option value="">Selecione o Médico</option>';
-            for (var i = 0; i < data.length; i++) {
-              options += '<option value="' + data[i].id_medico + '">' + data[i].nome_medico + '</option>';
-            }
-            $('#select_medico').html(options);
-          },
-          error: function() {
-            console.log('Erro ao obter os médicos.');
-          }
-        });
-      } else {
-        // Limpar as opções do segundo select se nenhuma especialidade estiver selecionada
-        $('#select_medico').empty();
-        $('#select_medico').html('<option value="">Selecione o Médico</option>');
-      }
-    }
-  });
-  </script> -->
 </body>
 </html>

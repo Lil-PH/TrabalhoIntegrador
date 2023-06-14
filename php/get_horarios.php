@@ -1,30 +1,47 @@
 <?php
+include('banco.php');
+
 // Obter o valor enviado por meio da requisição Ajax
-$data = $_GET['data'];
+$dataSelecionada = $_GET['data'];
+$medicoSelecionado = $_GET['medico'];
 
-// Consulta SQL para obter os horários disponíveis com base na data selecionada
-$sql = "SELECT id_consulta, horario
-        FROM consulta
-        WHERE fk_id_diaData = '$data'
-        AND fk_id_paciente IS NULL";
-$result = $conn->query($sql);
+// Consultar a tabela "hora_dia" para obter os horários disponíveis para a data e médico selecionados
+$sql = "SELECT DISTINCT hora_dia.id_horaDia, hora_dia.horario
+        FROM dia_data
+        INNER JOIN hora_dia ON dia_data.id_diaData = hora_dia.fk_id_diaData
+        LEFT JOIN consulta ON consulta.fk_id_diaData = dia_data.id_diaData
+        WHERE dia_data.id_diaData = '$dataSelecionada'
+        AND (consulta.fk_id_medico IS NULL OR consulta.fk_id_medico = '$medicoSelecionado')";
 
-if ($result->num_rows > 0) {
-    // Array para armazenar os horários disponíveis
-    $horarios = array();
+$resultado = mysqli_query($mysqli, $sql);
 
-    // Percorrer os resultados e adicionar os horários ao array
-    while ($row = $result->fetch_assoc()) {
-        $horario = array(
-            'id_horario' => $row['id_consulta'],
-            'horario' => $row['horario']
-        );
-        $horarios[] = $horario;
+if (mysqli_num_rows($resultado) > 0) {
+  $horariosDisponiveis = array();
+
+  while ($row = mysqli_fetch_assoc($resultado)) {
+    $idHoraDia = $row['id_horaDia'];
+    $hora = $row['horario'];
+
+
+        // Verificar se o horário está disponível na tabela "agendamento"
+        $sqlVerificar = "SELECT COUNT(*) AS total FROM consulta WHERE fk_id_horaDia = '$idHoraDia'";
+        $resultadoVerificar = mysqli_query($mysqli, $sqlVerificar);
+        $rowVerificar = mysqli_fetch_assoc($resultadoVerificar);
+        $totalAgendado = $rowVerificar['total'];
+    
+        if ($totalAgendado == 0) {
+          // Horário disponível, adicionar à lista
+          $horariosDisponiveis[] = array(
+            'id_horaDia' => $idHoraDia,
+            'horario' => $hora
+          );
+        }
+      }
+    
+      // Retornar os horários disponíveis como um JSON
+      header('Content-Type: application/json');
+      echo json_encode($horariosDisponiveis);
+    } else {
+      echo 'Nenhum horário disponível para a data selecionada.';
     }
-
-    // Retornar os resultados como JSON
-    echo json_encode($horarios);
-} else {
-    echo "Nenhum horário disponível";
-}
 ?>

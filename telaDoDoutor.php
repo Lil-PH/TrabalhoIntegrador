@@ -176,8 +176,23 @@ include('./php/updateMedico.php');
           
                 </div>
           </button>
+
+        
+          <button type="submit" name="btn-deletar" class="btn-salvar" >
+            DELETAR
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+          
+                </div>
+          </button>
+
+
       </form>
+
     </div>
+
+    
+
   <!-- Script para responsividade da página -->
   <script src="./js/responsive-adm.js"></script>
 </body>
