@@ -35,25 +35,26 @@
         <input name="senha1" type="password" autocomplete="off">
         <label>SENHA</label>
       </div>
-
-      <!-- Caixa de seleção para lembrar a senha -->
+      
+      <!-- Caixa de seleção para lembrar a senha 
       <div class="divCheck">
         <input type="checkbox" />
         <span>Lembrar senha</span>
-      </div>
-
-        <p><a href="./index.php"><button type="button">
-              <
-        </button></a></p>
+      </div> -->
+     <div class="botaos">
+      <button type="button" class="btnVoltar"><p><a href="./index.php" >
+          Voltar
+       </button></a></p>
 
         <!-- Botão dpara fazer login -->
         <button type="submit" class="btnLogar">
-            ENTRAR
-            <div class="arrow-wrapper">
+           ENTRAR
+         <div class="arrow-wrapper">
                 <div class="arrow"></div>
     
             </div>
         </button>
+     </div>
     </form>
 
     <!-- Seção do formulário para cadastro -->

@@ -72,7 +72,7 @@ form {
   transition: 0.3s;
 }
 
-/* Define as propriedades da mensagem de checkbox */
+/* Define as propriedades da mensagem de checkbox 
 .divCheck {
   margin: 0.625rem 0 0 0.3125rem;
   width: 8rem;
@@ -80,6 +80,7 @@ form {
   color: #aaa;
   cursor: default;
 }
+*/
 
 /* Define as posições dos elementos com ID "login" */
 #login {
@@ -235,10 +236,33 @@ o tamanho da fonte */
   align-items: center;
   gap: 0.6em;
   font-weight: bold;
+  margin-right: 2em;
   height: 3.5em;
   width: 7.5em;
-  margin: 1.25em auto;
   cursor: pointer;
+}
+
+.botaos{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.btnVoltar{
+  background: #303134;
+  border-radius: 1em;
+  border: 0;
+  height: 3.5em;
+  width: 7.5em;
+  margin-left: 2em;
+  cursor: pointer;
+
+  /*margin-top: 3em;*/
+}
+
+.btnVoltar:hover {
+  background-color: #00aafb;
 }
 
 /* Estilo da seta no botão */
