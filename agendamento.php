@@ -24,9 +24,10 @@ include('./php/protect.php');
 	<!-- Este é o formulário para agendamento de consulta odontológica -->
 	<form id="agendando" class ="formulario-agendamento" action="" method="POST">
 
-		<p><a href="./telaDoDoutor.php"><button type="button">
-              <
-        </button></a></p>
+
+		<button type="submit" class="botaoVoltar" onclick="window.location.href = './telaDoDoutor.php'" style="background-color: #008CBA; color: #fff; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer;">
+            Voltar
+        </button>
 
 		<!-- Este rótulo e entrada solicitam o nome do paciente -->
 		<label for="nome">Nome:</label>

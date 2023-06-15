@@ -132,6 +132,7 @@ include('./php/updateMedico.php');
 
     <!-- Seção para alterar os dados do usuário -->
     <div class="minha-conta">
+
       <form id="alterar" action="./php/updateMedico.php" method="POST">
 
         <!-- Título da página -->
@@ -167,7 +168,7 @@ include('./php/updateMedico.php');
             <input id="confirmarSenha" name="confirma_senha" type="password" minlength="8">
             <label>CONFIRMAR SENHA</label>
           </div>
-      
+
           <!-- Botão que salva as alterações feitas  -->
           <button type="submit" name="btn-salvar" class="btn-salvar">
               SALVAR
@@ -177,17 +178,15 @@ include('./php/updateMedico.php');
                 </div>
           </button>
 
-        
-          <button type="submit" name="btn-deletar" class="btn-salvar" >
-            DELETAR
-            <div class="arrow-wrapper">
-                <div class="arrow"></div>
-          
-                </div>
-          </button>
-
 
       </form>
+
+        
+      <form method="post" action="./php/deletePaciente.php">
+          <button type="submit" name="btn-excluir" class="btn-excluir" onclick="return confirm('Tem certeza de que deseja excluir seus dados?')" style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Excluir Conta</button>
+      </form>
+
+      
 
     </div>
 

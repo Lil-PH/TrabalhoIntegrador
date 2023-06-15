@@ -25,7 +25,7 @@
     <form id="login" action="./php/crudPaciente.php" method="POST">
 
       <!-- Campo de entrada para CPF-->
-      <div class="user-box">
+      <div class="user-box espaco">
         <input name="email1" type="text" autocomplete="off">
         <label>Email ou CRM</label>
       </div>
@@ -42,17 +42,20 @@
         <span>Lembrar senha</span>
       </div> -->
      <div class="botaos">
-      <button type="button" class="btnVoltar"><p><a href="./index.php" >
-          Voltar
-       </button></a></p>
+
+      
+        <button type="button" class="btnVoltar espaco" onclick="window.location.href = './index.php'">
+            VOLTAR
+      
+        </button>
 
         <!-- Botão dpara fazer login -->
-        <button type="submit" class="btnLogar">
+        <button type="submit" class="btnLogar espaco">
            ENTRAR
-         <div class="arrow-wrapper">
+         <!-- <div class="arrow-wrapper">
                 <div class="arrow"></div>
     
-            </div>
+            </div> -->
         </button>
      </div>
     </form>

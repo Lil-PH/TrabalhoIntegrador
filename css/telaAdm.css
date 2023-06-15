@@ -443,6 +443,7 @@ o tamanho da fonte */
   cursor: pointer;
 }
 
+
 /* Estilo da seta no botão */
 .btn-salvar .arrow-wrapper {
   display: flex;
@@ -484,6 +485,20 @@ o tamanho da fonte */
 
 .btn-salvar:hover .arrow:before {
   right: 0;
+}
+
+.btn-excluir {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-excluir:hover {
+  background-color: darkred;
 }
 
 /* Definição das regras de estilo para telas com largura máxima de 768px */

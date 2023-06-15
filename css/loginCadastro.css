@@ -125,8 +125,12 @@ i {
 
 /* Define o estilo dos elementos com classe "user-box" e 
 "user-box1", bem como os <input> dentro desses elementos */
-.login-box .user-box {
+.login-box .user-box{
   position: relative;
+}
+
+.espaco{
+  margin-top: 1.5em;
 }
 
 /* Define o estilo do elemento com classes "login-box" e "user-box1", tornando-o 
@@ -251,15 +255,18 @@ o tamanho da fonte */
 
 .btnVoltar{
   background: #303134;
-  border-radius: 1em;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 1.25em;
   border: 0;
   height: 3.5em;
   width: 7.5em;
   margin-left: 2em;
   cursor: pointer;
-
   /*margin-top: 3em;*/
 }
+
+
 
 .btnVoltar:hover {
   background-color: #00aafb;
