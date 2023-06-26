@@ -183,7 +183,7 @@ include('./php/updateMedico.php');
 
         
       <form method="post" action="./php/deletePaciente.php">
-          <button type="submit" name="btn-excluir" class="btn-excluir" onclick="return confirm('Tem certeza de que deseja excluir seus dados?')" style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Excluir Conta</button>
+          <button type="submit" name="btn-excluir" class="btn-excluir" onclick="return confirm('Tem certeza de que deseja excluir seus dados?')" style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; border-radius: 1.25em; font-family: 'Sarala', sans-serif;">Excluir Conta</button>
       </form>
 
       

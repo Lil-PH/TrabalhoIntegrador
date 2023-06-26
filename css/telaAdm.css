@@ -487,7 +487,7 @@ o tamanho da fonte */
   right: 0;
 }
 
-.btn-excluir {
+/* .btn-excluir {
   background-color: red;
   color: white;
   padding: 10px 20px;
@@ -499,7 +499,7 @@ o tamanho da fonte */
 
 .btn-excluir:hover {
   background-color: darkred;
-}
+} */
 
 /* Definição das regras de estilo para telas com largura máxima de 768px */
 @media screen and (max-width: 768px) {
