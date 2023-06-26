@@ -1,7 +1,7 @@
 <?php
 include('./php/protect.php');
 // include('./php/get_especialidades.php');
-// include('./php/get_medicos.php');
+//include('./php/get_medicos.php');
 
 ?>
 <!DOCTYPE html>

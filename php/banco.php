@@ -7,7 +7,7 @@
 	$porta="3307";
 
 	//pdo - somente orientado objeto
-	
+
 	// $mysqli = new mysqli($servername,$username,$password,$db_name,$porta);
 	$mysqli = mysqli_connect($servername,$username,$password,$db_name,$porta);
 
