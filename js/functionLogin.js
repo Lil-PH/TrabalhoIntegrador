@@ -1,7 +1,6 @@
 // Seleciona o elemento HTML com o ID 'login' e o armazena na variável 'formSignin'
 var formSignin = document.querySelector('#login');
 // Seleciona o elemento HTML com o ID 'cadastro' e o armazena na variável 'formSignup'
-
 var formSignup = document.querySelector('#cadastro');
 // Seleciona o elemento HTML com a classe 'btnColor' e o armazena na variável 'btnColor'
 var btnColor = document.querySelector('.btnColor');

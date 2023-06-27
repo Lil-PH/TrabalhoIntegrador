@@ -1,5 +1,7 @@
 <?php
 
+	// MUDAR NOME DO ARQUIVO PARA validarCpf.php
+
     function validarCPF($cpf) {
         // Remove caracteres não numéricos
         $cpf = preg_replace('/[^0-9]/', '', $cpf);

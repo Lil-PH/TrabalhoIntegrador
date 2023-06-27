@@ -1,24 +1,3 @@
-// // Pega as informacoes dos itens abaixo
-
-// var  = document.querySelector('#select_especialidade');
-// var agenda = document.querySelector('#agenda');
-// var minhaAgenda = document.querySelector('.minha-agenda');
-// var minhaConta = document.querySelector('.minha-conta');
-
-// // altera a estética da div cadastro e login
-
-// document.querySelector('#agenda')
-//   .addEventListener('click', () => {
-//     minhaConta.style.display = "none"
-//     minhaAgenda.style.display = "flex"
-// });
-
-// document.querySelector('#conta')
-//   .addEventListener('click', () => {
-//     minhaAgenda.style.display = "none"
-//     minhaConta.style.display = "flex"
-// });
-
 $(document).ready(function() {
   // Carregar opções do primeiro select ao carregar a página
   carregarEspecialidades();
@@ -77,7 +56,7 @@ $(document).ready(function() {
           var options = '<option value="">Selecione o Médico</option>';
           for (var i = 0; i < data.length; i++) {
             options += '<option value="' + data[i].id_medico + '">' + data[i].nome_medico + '</option>';
-            console.log(medicoSelecionado);
+            // console.log(medicoSelecionado);
           }
           $('#select_medico').html(options);
         },
@@ -221,34 +200,3 @@ $('#agendando').submit(function(event) {
                   //       });
   
 // }
-// Obtém os dados do localStorage
-
-
-
-
-
-
-
-
-  // // Obtém os dados do localStorage
-  // var eventos = localStorage.getItem('eventos');
-
-  // // Converte os dados de string para objeto
-  // eventos = JSON.parse(eventos);
-
-  // // Cria uma variável para armazenar a marcação HTML da tabela de eventos
-  // var tabela = '';
-
-  // // Verifica se há eventos agendados
-  // if(eventos && eventos.length > 0) {
-  // 	// Loop pelos eventos e adiciona cada um à tabela
-  // 	for(var i = 0; i < eventos.length; i++) {
-  // 		tabela += '<tr><td>' + eventos[i].data + '</td><td>' + eventos[i].evento + '</td></tr>';
-  // 	}
-  // } else {
-  // 	// Exibe mensagem caso não haja eventos agendados
-  // 	tabela += '<tr><td colspan="2">Nenhum evento agendado.</td></tr>';
-  // }
-
-  // // Adiciona a tabela de eventos à página
-  // document.getElementById('eventos').innerHTML = tabela;

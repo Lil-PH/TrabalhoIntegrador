@@ -13,6 +13,7 @@ include('./php/updateMedico.php');
   <link rel="stylesheet" href="./css/telaAdm.css">
   <link rel="shortcut icon" href="./img/Dente.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Cabeçalho da página -->
@@ -24,6 +25,7 @@ include('./php/updateMedico.php');
                 <h1 id="inicio">Odonto Bia</h1>
             </div>
             <!--div para a lista de itens do menu-->
+
             <div class="nav-list">
                 <ul>
                     <!--item de agenda-->
@@ -34,13 +36,19 @@ include('./php/updateMedico.php');
                     <li class="nav-item"><a href="./agendamento.php"><button class="item-menu">
                         Fazer Agendamento
                     </button></a></li>
-                    <!--item para ver o site-->
-                    <li class="nav-item"><a href="./index.php"><button class="item-menu">
-                        Ver Site
-                    </button></a></li>
                     <!--item para a conta-->
                     <li id="conta" class="nav-item"><button class="item-menu">
-                        Conta
+                    <?php
+                        if (isset($_SESSION['nome_paciente']) || isset($_SESSION['nome_medico'])) {
+                          $prefixo = '';
+                          if (isset($_SESSION['nome_medico'])) {
+                              $prefixo = 'Dr. ';
+                          }
+                          echo '<div class="login-icon" title="Usuário logado"><i class="fas fa-user"></i>' . $prefixo . explode(' ', $nome)[0] . '</div>';
+                      } else {
+                          echo '<div class="login-icon" title="Usuário não logado"></div>';
+                      }
+                      ?>
                     </button></li>
                     <!--item para sair-->
                     <li class="nav-item"><a href="./php/logout.php"><button class="item-menu">
@@ -64,13 +72,19 @@ include('./php/updateMedico.php');
                     <li class="nav-item"><a href="./agendamento.php"><button class="item-menu">
                         Fazer Agendamento
                     </button></a></li>
-                    <!--item para ver o site-->
-                    <li class="nav-item"><a href="./index.php"><button class="item-menu">
-                        Ver Site
-                    </button></a></li>
                     <!--item para a conta-->
                     <li id="conta-responsiva" class="nav-item"><button class="item-menu">
-                        Conta
+                    <?php
+                        if (isset($_SESSION['nome_paciente']) || isset($_SESSION['nome_medico'])) {
+                            $prefixo = '';
+                          if (isset($_SESSION['nome_medico'])) {
+                            $prefixo = 'Dr. ';
+                          }
+                          echo '<div class="login-icon" title="Usuário logado"><i class="fas fa-user"></i>' . $prefixo . explode(' ', $nome)[0] . '</div>';
+                      } else {
+                          echo '<div class="login-icon" title="Usuário não logado"></div>';
+                      }
+                      ?>
                     </button></li>
                     <!--item para sair-->
                     <li class="nav-item"><a href="./php/logout.php"><button class="item-menu">
@@ -100,35 +114,31 @@ include('./php/updateMedico.php');
       </h1>
     </div>
 
+
     <div class="minha-agenda">
       <div class="lista">
-        <!--Título da seção de agendamentos-->
+        <!-- Título da seção de agendamentos -->
         <h1 class="title">Consultas Agendadas</h1>
-          <!--Tabela de agendamentos-->
+        <!-- Tabela de agendamentos -->
           <table>
-            <thead>
-              <!--Cabeçalho da tabela-->
-              <tr class="lista-elementos">
-                  <th class="column1">Nome</th>
-                  <th class="column2">Doutor</th>
-                  <th class="column3">Data</th>
-                  <th class="column4">Horario inicial</th>
-                  <th class="column5">Horario final</th>
-              </tr>
-            </thead>
-            <!--Corpo da tabela (conteúdo dinâmico gerado por JavaScript)-->
-            <tbody id="tbody">
-              <tr>
-                <!-- <td><?php echo $agendamento['nome_paciente']; ?></td>
-                <td><?php echo $agendamento['nome_medico']; ?></td>
-                <td><?php echo $agendamento['data']; ?></td>
-                <td><?php echo $agendamento['horario_inicial']; ?></td>
-                <td><?php echo $agendamento['horario_final']; ?></td> -->
-              </tr>
-            </tbody>
+              <thead>
+                <!-- Cabeçalho da tabela -->
+                <tr class="lista-elementos">
+                  <th class="column1">Paciente</th>
+                  <th class="column2">Medico</th>
+                  <th class="column3">Procedimento</th>
+                  <th class="column4">Data</th>
+                  <th class="column5">Horario</th>
+                  <th class="column6">Status</th>
+                </tr>
+              </thead>
+              <tbody id="tbody">
+                <!-- Linhas da tabela serão preenchidas com AJAX -->
+              </tbody>
           </table>
       </div>  
     </div>
+
 
     <!-- Seção para alterar os dados do usuário -->
     <div class="minha-conta">
@@ -159,14 +169,19 @@ include('./php/updateMedico.php');
       
           <!-- Sessão de alteração da senha  -->
           <div class="altera-dados">
-            <input id="senha" name="senha" type="password" minlength="8">
-            <label>SENHA</label>
+            <input id="nova_senha" name="nova_senha" type="password" minlength="8">
+            <label>NOVA SENHA</label>
+          </div>
+
+          <div class="altera-dados">
+            <input id="confirma_nova_senha" name="confirma_nova_senha" type="password" minlength="8">
+            <label>CONFIRMAR NOVA SENHA</label>
           </div>
       
           <!-- Sessão de confirmacao da senha  -->
           <div class="altera-dados">
             <input id="confirmarSenha" name="confirma_senha" type="password" minlength="8">
-            <label>CONFIRMAR SENHA</label>
+            <label>SENHA ATUAL</label>
           </div>
 
           <!-- Botão que salva as alterações feitas  -->
@@ -194,5 +209,6 @@ include('./php/updateMedico.php');
 
   <!-- Script para responsividade da página -->
   <script src="./js/responsive-adm.js"></script>
+  <script src="./js/testVer.js"></script>
 </body>
 </html>

@@ -10,6 +10,8 @@
   <title>Login/Cadastro</title>
   <link rel="stylesheet" href="./css/loginCadastro.css">
   <link rel="shortcut icon" href="./img/Dente.png" type="img/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -111,6 +113,7 @@
   </div>
   <!-- scripts a serem utilizados -->
   <script src="./js/mascaras.js"></script>
+  <script src="./js/alerts.js"></script>
   <script src="./js/functionLogin.js"></script>
 </body>
 </html>

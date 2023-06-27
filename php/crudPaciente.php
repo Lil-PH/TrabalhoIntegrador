@@ -1,13 +1,13 @@
 <?php
 include('banco.php');
 
+	// MUDAR NOME DOS POSTS PARA emailLogin & senhaLogin
 if(isset($_POST['email1']) && isset($_POST['senha1'])) {
 
     if(strlen($_POST['email1']) == 0) {
-         // Chamada da função JavaScript 
-         echo "Preencha seu email";
+          echo json_encode(array('success' => false, 'message' => 'Preencha seu email'));
     } else if(strlen($_POST['senha1']) == 0) {
-        echo "Preencha sua senha";
+            echo json_encode(array('success' => false, 'message' => 'Preencha sua senha'));
     } else {
 
         $email = $mysqli->real_escape_string($_POST['email1']);
@@ -39,10 +39,9 @@ if(isset($_POST['email1']) && isset($_POST['senha1'])) {
                 $_SESSION['email_medico'] = $doctor['email_medico'];
                 $_SESSION['telefone_medico'] = $doctor['telefone_medico'];
 
-                header("Location: ../telaDoDoutor.php");
-                exit();
+                echo json_encode(array('success' => true, 'message' => 'Dados enviados com sucesso!'));
             } else {
-                echo "Falha ao logar! E-mail ou senha incorretos";
+                echo json_encode(array('success' => false, 'message' => 'Falha ao logar! E-mail ou senha incorretos'));
             }
 
         } else if($num_rows_patient == 1) {
@@ -60,89 +59,13 @@ if(isset($_POST['email1']) && isset($_POST['senha1'])) {
                 $_SESSION['email_paciente'] = $patient['email_paciente'];
                 $_SESSION['telefone_paciente'] = $patient['telefone_paciente'];
 
-                header("Location: ../telaDoDoutor.php");
-                exit();
+                echo json_encode(array('success' => true, 'message' => 'Dados enviados com sucesso!'));
             } else {
-                echo "Falha ao logar! E-mail ou senha incorretos";
+                echo json_encode(array('success' => false, 'message' => 'Falha ao logar! E-mail ou senha incorretos'));
             }
         } else {
-            echo "Falha ao logar! E-mail ou senha incorretos";
+            echo json_encode(array('success' => false, 'message' => 'Falha ao logar! E-mail ou senha incorretos'));
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if(isset($_POST['email1']) || isset($_POST['senha1'])) {
-
-//     if(strlen($_POST['email1']) == 0) {
-//         echo "Preencha seu e-mail";
-//     } else if(strlen($_POST['senha1']) == 0) {
-//         echo "Preencha sua senha";
-//     } else {
-
-//         $email_paciente = $mysqli->real_escape_string($_POST['email1']);
-//         $senha_paciente = $mysqli->real_escape_string($_POST['senha1']);
-//         // $hash = password_hash($senha_paciente, PASSWORD_DEFAULT);
-
-//         $sql_code = "SELECT * FROM paciente WHERE email_paciente = '$email_paciente' AND senha_paciente = '$senha_paciente'";
-//         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-//         $quantidade = $sql_query->num_rows;
-
-//         if($quantidade == 1) {
-            
-//             $paciente = $sql_query->fetch_assoc();
-
-//             if(!isset($_SESSION)) {
-//                 session_start();
-//             }
-
-//             $_SESSION['id_paciente'] = $paciente['id_paciente'];
-//             $_SESSION['nome_paciente'] = $paciente['nome_paciente'];
-//             $_SESSION['cpf_paciente'] = $paciente['cpf_paciente'];
-//             $_SESSION['email_paciente'] = $paciente['email_paciente'];
-//             $_SESSION['telefone_paciente'] = $paciente['telefone_paciente'];
-
-//             header("Location: ../telaDoDoutor.php");
-            
-
-//         } else {
-//             echo "Falha ao logar! E-mail ou senha incorretos";
-//         }
-
-//     }
-// }
 ?>

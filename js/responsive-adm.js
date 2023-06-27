@@ -1,3 +1,6 @@
+// MUDAR NOME DO ARQUIVO PARA responsive-user.js
+
+
 // A função 'menuShow()' é responsável por exibir ou ocultar o menu mobile da página,
 // alterando a classe do elemento com a classe 'mobile-menu' e a imagem do ícone
 function menuShow() {
@@ -21,11 +24,6 @@ var contaResponsiva = document.querySelector('#conta-responsiva');
 var agendaResponsiva = document.querySelector('#agenda-responsiva');
 var inicio = document.querySelector('#inicio');
 var listar = document.querySelector('#listar');
-var confirmarCancelar = document.querySelector('.confirmar-cancelar');
-var btnConfirmar = document.querySelector('#confirmar');
-var btnCancelar = document.querySelector('#cancelar');
-var trMensagem = document.querySelector('#tr-Mensagem');
-var mensagem = document.querySelector('.mensagem');
 var minhaAgenda = document.querySelector('.minha-agenda');
 var minhaConta = document.querySelector('.minha-conta');
 var telaInicial = document.querySelector('.tela-inicial');
@@ -108,80 +106,4 @@ class MobileNavbar {
       // Retorno do objeto da própria classe para permitir a encadeação de métodos
       return this;
     }
-}
-
-// Obtém o tbody da tabela
-const tbody = document.getElementById('tbody');
-
-// Obtém os dados do localStorage
-const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-
-// Cria uma nova linha na tabela com os dados do agendamento
-const novaLinha = document.createElement('tr');
-
-
-
-//se nao haver agendamentos
-if (!agendamentos) {
-    // Adiciona uma .trMensagem visivel
-    tbody.appendChild(novaLinha);
-    // Adiciona uma mensagem dento de novaLinha
-    const mensagem = document.createElement('td');
-    mensagem.innerHTML = 'Não há agendamentos';
-    //abaixo de status
-    
-    // Adiciona a nova linha ao final do tbody da tabela
-    novaLinha.appendChild(mensagem);
-
-    
-    // trMensagem.style.display = "flex"
-    // //centraliza p no meio da linha
-    // novaLinha.appendChild(trMensagem);
-    
-  } else {
-    // Adiciona os dados do agendamento na linha
-
-    agendamentos.forEach(agendamentos => {
-			const novaLinha = document.createElement('tr');
-			novaLinha.innerHTML = `
-      <td>${agendamentos.nome}</td>
-      <td>${agendamentos.cpf}</td>
-      <td>${agendamentos.email}</td>
-      <td>${agendamentos.telefone}</td>
-      <td>${agendamentos.doutor}</td>
-      <td>${agendamentos.procedimento}</td>
-      <td>${agendamentos.data}</td>
-      <td>${agendamentos.hora}</td>
-      <td>${agendamentos.status}</td>
-    `;
-    //atualiza as linha de frequentemente
-    tbody.appendChild(novaLinha);
-
-
-      // // Adiciona um ouvinte de evento "click" para a nova linha
-      novaLinha.addEventListener('click', function() {
-
-        // // Alterna a exibição do elemento com id "confirmarCancelar" entre "table-row" e "none"
-        if (confirmarCancelar.style.display === "table-row"){
-          confirmarCancelar.style.display = "none"
-        } else {
-          confirmarCancelar.style.display = "table-row"
-        }
-
-        //     // Adiciona um status de "confimada" em "agendamento" ao botao de confirmar ser clicado
-          btnConfirmar.addEventListener("click", function() {
-        //     // Adiciona um status de "confirmada" em "agendamento"
-            agendamentos.status = "Confirmada";
-        //     // Salva o agendamento no localStorage
-            localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-          }) // Adiciona um status de "cancelada" em "agendamento" ao botao de cancelar ser clicado
-
-          btnCancelar.addEventListener("click", function() {
-            // Adiciona um status de "cancelada" em "agendamento"
-            agendamentos.status = "Cancelada";
-            // Salva o agendamento no localStorage
-            localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-          })
-      })
-  })
 }

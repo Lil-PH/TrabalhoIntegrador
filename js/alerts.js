@@ -1,175 +1,99 @@
-function alertAgendameto() {
+// Mensagem para parte de LOGIN
+document.addEventListener('DOMContentLoaded', function() {
+  // Obtenha o formulário pelo ID ou qualquer outro seletor adequado
+  var form = document.querySelector('#login');
+  // Adicione um evento de envio ao formulário
+  form.addEventListener('submit', function(event) {
+      // Interrompa o envio padrão do formulário
+      event.preventDefault();
 
-    swal({
-        title: "Agendamento foi realizado com sucesso",
-        icon: "success",
-        button: "OK !"
-    }).then(function() {
-        // Redireciona o cliente para a página de inicio após o usuário clicar no botão OK na caixa de diálogo
-        window.location.href = "../index.php"
-    }).catch(function(error) {
-        console.log(error);
-    });
-}
+      // Realize a validação dos dados, por exemplo, verifique se os campos estão preenchidos corretamente
 
-// function alertFalhaLogar() {
+      // Crie um objeto FormData para enviar os dados do formulário
+      var formData = new FormData(form);
 
-
-
-// }
-
-function alertCampos() {
-
-    swal({
-        title: "Por favor, preencha todos os campos",
-        icon: "error",
-        button: "OK !",
-        timer: 1700,
-    });
-    
-}
-
-function alertEmailCpf() {
-
-    swal({
-        title: "O CPF ou Email digitado já está cadastrado",
-        icon: "info",
-        button: "OK !"
+      // Faça a chamada AJAX usando o método fetch()
+      fetch('./php/crudPaciente.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(function(response) {
+          return response.json(); // Converte a resposta para JSON
+      })
+      .then(function(data) {
+          // Verifique se a resposta foi bem-sucedida
+          if (data.success) {
+              // Use o SweetAlert para exibir uma mensagem de sucesso
+              Swal.fire({
+                  icon: 'success',
+                  title: 'Sucesso!',
+                  text: data.message
+              }).then(function() {
+                  // Redirecione o usuário para outra página após o fechamento da mensagem
+                  window.location.href = 'telaDoDoutor.php';
+              });
+          } else {
+              // Use o SweetAlert para exibir uma mensagem de erro
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Erro!',
+                  text: data.message
+              });
+          }
+      })
+      .catch(function(error) {
+          // Em caso de erro na chamada Ajax
+          console.log(error);
+          // Use o SweetAlert para exibir uma mensagem de erro genérica
+          Swal.fire({
+              icon: 'error',
+              title: 'Erro!',
+              text: 'Ocorreu um erro durante o processamento. Por favor, tente novamente mais tarde.'
+          });
       });
-      return;
-    
-}
-
-// function alertAgendameto() {
-
-    
-
-// }
-
-// function alertAgendameto() {
-
-
-    
-// }
-
-
-
-
-import mascara_telefone from './mascaras.js'
-
-mascara_telefone();
-
-
-
-
-
-
-
-
-
-
-
-
-
-if (nome === "" || cpf === "" || telefone === "" || email === "" || senha === "" || confirmarSenha === "") {
-    console.log('Por favor, preencha todos os campos');
-
-    swal({
-      title: "Por favor, preencha todos os campos",
-      icon: "error",
-      button: "OK !",
-      timer: 1700,
-    });
-    // alert('Por favor, preencha todos os campos');
-    return;
-  }
-
-  // Verifica se o cpf já está cadastrado
-  if (localStorage.getItem(cpf) !== null || localStorage.getItem(email) !== null) {
-    console.log('CPF ou Email já está cadastrado');
-    // alerta para "CPF que já está cadastrado"
-    swal({
-      title: "O CPF ou Email digitado já está cadastrado",
-      icon: "info",
-      button: "OK !"
-    });
-    return;
-  }
-
-  // if (localStorage.getItem(email) !== null) {
-  //   console.log('O e-mail já está cadastrado');
-  //   // alerta para "email que já está cadastrado"
-  //   swal({
-  //     title: "O email digitado já está cadastrado",
-  //     icon: "info",
-  //     button: "OK !"
-  //   });
-  //   return;
-  // }
-
-
-  // Verifica se as senhas correspondem
-  if (senha !== confirmarSenha) {
-
-    // alerta para "As senhas não corresdidas"
-    console.log('As senhas não corresdidas');
-    swal({
-      title: "As senhas digitadas, não correspondem",
-      icon: "error",
-      button: "OK !",
-      timer: 1700
-    });
-
-    
-      // Limpa o as senhas
-      document.getElementById("senha").value = "";
-      document.getElementById("confirmarSenha").value = "";
-      document.getElementById("senha").focus();
-    return;
-  }
-
-  localStorage.setItem(cpf, JSON.stringify(usuario));
-
-  console.log('Usuário cadastrado com sucesso');
-    // alerta para "Usuário cadastrado com sucesso"
-    swal({
-      title: "Usuário cadastrado com sucesso",
-      icon: "success",
-      button: "OK !"
-    });
-  // Redireciona o usuário para a página de login
-  window.location.href = "../html/loginCadastro.html";
-
-
-if (valor !== null) {
-  const usuario = JSON.parse(valor);
-  if (usuario.senha === senha) {
-    console.log('Login bem-sucedido');
-    // Redireciona o usuário para a página do doutor
-    window.location.href = "../html/telaDoDoutor.html"
-
-  } else {
-    console.log('Senha incorreta');
-    // alerta para "Senha incorreta"
-    swal({
-      title: "Senha incorreta",
-      icon: "error",
-      button: "OK !",
-      timer: 1700
-    });
-    document.getElementById("senhaLogin").value = "";
-  }
-  
-} else {
-  console.log('Usuário não encontrado');
-  // alerta para "Usuário não encontrado"
-  swal({
-    title: "Usuário não encontrado",
-    icon: "info",
-    button: "OK !",
-    timer: 1700
   });
-  document.getElementById("cpfLogin").value = "";
-  document.getElementById("senhaLogin").value = "";
-}
+});
 
+// Mensagem para parte de CADASTRO
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('#cadastro');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      var formData = new FormData(form);
+  
+      fetch('./php/createPaciente.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        if (data.success) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Sucesso!',
+            text: data.message
+          }).then(function() {
+            window.location.href = 'loginCadastro.php';
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro!',
+            text: data.message
+          });
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro!',
+          text: 'Ocorreu um erro durante o processamento. Por favor, tente novamente mais tarde.'
+        });
+      });
+    });
+  });
+  
