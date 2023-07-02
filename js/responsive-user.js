@@ -1,6 +1,3 @@
-// MUDAR NOME DO ARQUIVO PARA responsive-user.js
-
-
 // A função 'menuShow()' é responsável por exibir ou ocultar o menu mobile da página,
 // alterando a classe do elemento com a classe 'mobile-menu' e a imagem do ícone
 function menuShow() {
@@ -22,7 +19,7 @@ var conta = document.querySelector('#conta');
 var agenda = document.querySelector('#agenda');
 var contaResponsiva = document.querySelector('#conta-responsiva');
 var agendaResponsiva = document.querySelector('#agenda-responsiva');
-var inicio = document.querySelector('#inicio');
+// var inicio = document.querySelector('#inicio');
 var listar = document.querySelector('#listar');
 var minhaAgenda = document.querySelector('.minha-agenda');
 var minhaConta = document.querySelector('.minha-conta');
@@ -43,11 +40,11 @@ conta.addEventListener('click', function() {
 });
 
 // Quando o elemento com id "inicio" for clicado, irá ocultar as telas da agenda e de conta, e exibir a tela inicial
-inicio.addEventListener('click', function() {
-  minhaAgenda.style.display = 'none';
-  minhaConta.style.display = 'none';
-  telaInicial.style.display = 'flex';
-});
+// inicio.addEventListener('click', function() {
+//   minhaAgenda.style.display = 'none';
+//   minhaConta.style.display = 'none';
+//   telaInicial.style.display = 'flex';
+// });
 
 // Quando o elemento com id "agenda-responsiva" for clicado, irá ocultar as telas iniciais e de conta, e exibir a tela da agenda
 agendaResponsiva.addEventListener('click', function() {
@@ -107,3 +104,123 @@ class MobileNavbar {
       return this;
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.querySelector('#alterar');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Exibe um alerta de confirmação antes de atualizar os dados
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Deseja realmente atualizar seus dados?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Cancelar'
+    }).then(function(result) {
+      if (result.isConfirmed) {
+        var formData = new FormData(form);
+
+        fetch('./php/updateUsuario.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          if (data.success) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Sucesso!',
+              text: data.message
+            }).then(function() {
+              window.location.href = 'telaDoUser.php';
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Erro!',
+              text: data.message
+            });
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro!',
+            text: 'Ocorreu um erro durante o processamento. Por favor, tente novamente mais tarde.'
+          });
+        });
+      }
+    });
+  });
+});
+
+
+$(document).ready(function() {
+  // Evento de clique no botão de exclusão
+  $('#btn-excluir').click(function(e) {
+    e.preventDefault(); // Evita o comportamento padrão de submit do formulário
+
+    // Exibe um alerta de confirmação antes de excluir a conta
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Deseja realmente excluir sua conta?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Cancelar'
+    }).then(function(result) {
+      if (result.isConfirmed) {
+        // O usuário confirmou a exclusão, envia a requisição AJAX para excluir a conta
+        $.ajax({
+          url: './php/deletePaciente.php',
+          method: 'POST',
+          dataType: 'json',
+          data: {
+            'btn-excluir': true
+          },
+          success: function(response) {
+            if (response.success) {
+              // Exclusão bem-sucedida, exibe o SweetAlert de sucesso
+              Swal.fire({
+                title: 'Dados excluídos!',
+                text: response.message,
+                icon: 'success',
+                confirmButtonText: 'OK'
+              }).then(function() {
+                window.location.href = 'index.php';
+              });
+            } else {
+              // Erro ao excluir os dados, exibe o SweetAlert de erro
+              Swal.fire({
+                title: 'Erro',
+                text: response.message,
+                icon: 'error',
+                confirmButtonText: 'OK'
+              }).then(function() {
+                window.location.href = 'telaDoUser.php';
+              });
+            }
+          },
+          error: function(xhr, status, error) {
+            // Trata erros de solicitação AJAX
+            console.error(xhr.responseText);
+            // Exibe mensagem de erro genérica
+            Swal.fire({
+              title: 'Erro',
+              text: 'Ocorreu um erro ao excluir os dados.',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        });
+      }
+    });
+  });
+});

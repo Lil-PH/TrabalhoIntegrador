@@ -57,14 +57,14 @@ preenchimento, bordas arredondadas, borda e cursor */
 	cursor: pointer;
 } */
 
-/* .botaoVoltar[type="submit"]{
+.btn-Voltar{
 	background-color: #008CBA;
 	color: #fff;
 	padding: 10px 20px;
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
-} */
+}
 
 .button[type="submit"] {
 	background-color: #008CBA;

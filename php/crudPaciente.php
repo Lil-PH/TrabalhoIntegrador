@@ -1,17 +1,16 @@
 <?php
-include('banco.php');
+include('connect.php');
 
-	// MUDAR NOME DOS POSTS PARA emailLogin & senhaLogin
-if(isset($_POST['email1']) && isset($_POST['senha1'])) {
+if(isset($_POST['emailLogin']) && isset($_POST['senhaLogin'])) {
 
-    if(strlen($_POST['email1']) == 0) {
+    if(strlen($_POST['emailLogin']) == 0) {
           echo json_encode(array('success' => false, 'message' => 'Preencha seu email'));
-    } else if(strlen($_POST['senha1']) == 0) {
+    } else if(strlen($_POST['senhaLogin']) == 0) {
             echo json_encode(array('success' => false, 'message' => 'Preencha sua senha'));
     } else {
 
-        $email = $mysqli->real_escape_string($_POST['email1']);
-        $senha = $mysqli->real_escape_string($_POST['senha1']);
+        $email = $mysqli->real_escape_string($_POST['emailLogin']);
+        $senha = $mysqli->real_escape_string($_POST['senhaLogin']);
 
         // Check if it's a patient login
         $sql_patient = "SELECT * FROM paciente WHERE email_paciente = '$email'";
@@ -35,11 +34,12 @@ if(isset($_POST['email1']) && isset($_POST['senha1'])) {
 
                 $_SESSION['id_medico'] = $doctor['id_medico'];
                 $_SESSION['nome_medico'] = $doctor['nome_medico'];
+                $_SESSION['cpf_medico'] = $doctor['cpf_medico'];
                 $_SESSION['crm_medico'] = $doctor['crm_medico'];
                 $_SESSION['email_medico'] = $doctor['email_medico'];
                 $_SESSION['telefone_medico'] = $doctor['telefone_medico'];
 
-                echo json_encode(array('success' => true, 'message' => 'Dados enviados com sucesso!'));
+                echo json_encode(array('success' => true, 'message' => 'Login realizado com sucesso!'));
             } else {
                 echo json_encode(array('success' => false, 'message' => 'Falha ao logar! E-mail ou senha incorretos'));
             }
@@ -59,7 +59,7 @@ if(isset($_POST['email1']) && isset($_POST['senha1'])) {
                 $_SESSION['email_paciente'] = $patient['email_paciente'];
                 $_SESSION['telefone_paciente'] = $patient['telefone_paciente'];
 
-                echo json_encode(array('success' => true, 'message' => 'Dados enviados com sucesso!'));
+                echo json_encode(array('success' => true, 'message' => 'Login realizado com sucesso!'));
             } else {
                 echo json_encode(array('success' => false, 'message' => 'Falha ao logar! E-mail ou senha incorretos'));
             }

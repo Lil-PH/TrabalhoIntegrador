@@ -1,5 +1,5 @@
 <?php
-include('banco.php');
+include('connect.php');
 
 // Obter o valor enviado por meio da requisição Ajax
 $dataSelecionada = $_GET['data'];

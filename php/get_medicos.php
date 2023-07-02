@@ -1,5 +1,5 @@
 <?php
-include('banco.php');
+include('connect.php');
 
 $especialidadeSelecionada = $_GET['especialidade']; // Obtém a especialidade selecionada do parâmetro GET
 

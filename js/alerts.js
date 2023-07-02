@@ -1,19 +1,19 @@
 // Mensagem para parte de LOGIN
 document.addEventListener('DOMContentLoaded', function() {
   // Obtenha o formulário pelo ID ou qualquer outro seletor adequado
-  var form = document.querySelector('#login');
+  var formLogin = document.querySelector('#login');
   // Adicione um evento de envio ao formulário
-  form.addEventListener('submit', function(event) {
+  formLogin.addEventListener('submit', function(event) {
       // Interrompa o envio padrão do formulário
       event.preventDefault();
 
       // Realize a validação dos dados, por exemplo, verifique se os campos estão preenchidos corretamente
 
       // Crie um objeto FormData para enviar os dados do formulário
-      var formData = new FormData(form);
+      var formData = new FormData(formLogin);
 
       // Faça a chamada AJAX usando o método fetch()
-      fetch('./php/crudPaciente.php', {
+      fetch('./php/crudPaciente.php', { // Substitua pelo caminho correto para o seu arquivo PHP
           method: 'POST',
           body: formData
       })
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   text: data.message
               }).then(function() {
                   // Redirecione o usuário para outra página após o fechamento da mensagem
-                  window.location.href = 'telaDoDoutor.php';
+                  window.location.href = 'telaDoUser.php';
               });
           } else {
               // Use o SweetAlert para exibir uma mensagem de erro
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
 
 // Mensagem para parte de CADASTRO
 document.addEventListener('DOMContentLoaded', function() {
@@ -95,5 +96,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
     });
-  });
-  
+});

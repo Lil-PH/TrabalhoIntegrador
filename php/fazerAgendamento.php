@@ -1,5 +1,5 @@
 <?php
-include('banco.php');
+include('connect.php');
 require_once('protect.php');
 
 // Verificar se a requisição é do tipo POST
@@ -12,12 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $medico = $_POST['medico'];
   $data = $_POST['data'];
   $horario = $_POST['horario'];
+  $consultaStatus = "Não confirmada";
 
   // Realizar as validações e sanitizações necessárias nos dados recebidos
 
   // Inserir o agendamento na tabela "agendamento"
-  $sql = "INSERT INTO consulta (fk_id_paciente, fk_id_medico, fk_id_diaData, fk_id_horaDia)
-          VALUES ('$idPaciente', '$medico', '$data', '$horario')";
+  $sql = "INSERT INTO consulta (fk_id_paciente, fk_id_medico, fk_id_diaData, fk_id_horaDia, consulta_status)
+          VALUES ('$idPaciente', '$medico', '$data', '$horario', '$consultaStatus')";
 
   if (mysqli_query($mysqli, $sql)) {
     // Agendamento realizado com sucesso

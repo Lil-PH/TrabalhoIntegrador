@@ -1,5 +1,5 @@
 <?php 
-include('banco.php');
+include('connect.php');
 
 $sql_query = "SELECT id_especialidade, descricao_especialidade FROM especialidade ORDER BY descricao_especialidade ASC";
 $result = $mysqli->query($sql_query);

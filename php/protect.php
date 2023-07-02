@@ -5,7 +5,13 @@ if(!isset($_SESSION)) {
 }
 
 if(!isset($_SESSION['id_paciente']) && !isset($_SESSION['id_medico'])) {
-    die("Você não pode acessar esta página porque não está logado.<p><a href=\"loginCadastro.php\">Entrar</a></p>");
+    die('<body style="background-color: #2E5575"><div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <p style="font-size: 2rem; color: red; text-align: center;">
+      Você não pode acessar esta página porque não está logado. <a href="loginCadastro.php" style="color: blue; text-decoration: none;">Entrar</a>
+    </p>
+  </div></body>');
+
+
 }
 
 if (isset($_SESSION['id_paciente'])) {

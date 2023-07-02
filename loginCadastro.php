@@ -28,28 +28,26 @@
 
       <!-- Campo de entrada para CPF-->
       <div class="user-box espaco">
-        <input name="email1" type="text" autocomplete="off">
+        <input name="emailLogin" type="text" autocomplete="off">
         <label>Email ou CRM</label>
       </div>
 
       <!-- Campo de entrada para senha -->
       <div class="user-box">
-        <input name="senha1" type="password" autocomplete="off">
+        <input name="senhaLogin" type="password" autocomplete="off">
         <label>SENHA</label>
       </div>
       
-      <!-- Caixa de seleção para lembrar a senha 
-      <div class="divCheck">
-        <input type="checkbox" />
-        <span>Lembrar senha</span>
-      </div> -->
+      <!-- Link para a página de "Esqueceu a Senha" -->
+      <div class="esqueceu-senha">
+        <a href="#" id="esqueceuSenhaLink">Esqueceu a senha?</a>
+      </div>
      <div class="botaos">
 
       
-        <button type="button" class="btnVoltar espaco" onclick="window.location.href = './index.php'">
+        <a href="./index.php"><button type="button" class="btnVoltar espaco">
             VOLTAR
-      
-        </button>
+        </button></a>
 
         <!-- Botão dpara fazer login -->
         <button type="submit" class="btnLogar espaco">
@@ -73,13 +71,13 @@
 
       <!-- Campo de entrada para nome do usuario -->
       <div class="user-box">
-        <input id="cpf" name="cpfCadastro" type="text" maxlength="14" autocomplete="off" required>
+        <input id="cpf" name="cpfCadastro" type="text" maxlength="14" autocomplete="off" required onkeyup="mascaraCPF(this)">
         <label>CPF</label>
       </div>
 
       <!-- Campo de entrada para número de telefone -->
       <div class="user-box">
-        <input id="telefone" name="telefoneCadastro" type="tel" maxlength="14" autocomplete="off" onkeyup="mascara_telefone()" required>
+        <input id="telefone" name="telefoneCadastro" type="tel" maxlength="14" autocomplete="off" onkeyup="mascaraTelefone(this)" required>
         <label>TELEFONE</label>
       </div>
 

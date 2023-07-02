@@ -1,12 +1,10 @@
 <?php
 
-	// MUDAR NOME DO ARQUIVO PARA connect.php
-	
 	//Conexão com banco de dados
 	$servername="localhost"; //endereço do servidor
 	$username="root";
 	$password="";
-	$db_name="odonto_db";
+	$db_name="odonto_db_teste";
 	$porta="3307";
 
 	//pdo - somente orientado objeto

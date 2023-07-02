@@ -1,8 +1,8 @@
 
 <?php
 
-    include('banco.php');
-    include('cpf.php');
+    include('connect.php');
+    include('validarCpf.php');
     
     if (isset($_POST['emailCadastro']) || isset($_POST['cpfCadastro']) || isset($_POST['telefoneCadastro']) || isset($_POST['nomeCadastro']) || isset($_POST['senhaCadastro']) || isset($_POST['confirma_senha'])) {
     

@@ -1,6 +1,6 @@
 <?php
 include('./php/protect.php');
-// include('./php/get_especialidades.php');
+//include('./php/get_especialidades.php');
 //include('./php/get_medicos.php');
 
 ?>
@@ -21,29 +21,49 @@ include('./php/protect.php');
  	<!-- Este é um título para o formulário -->
     <h1>Agendamento Odontológico</h1>
 
+	<?php
+      
+	  if (isset($_SESSION['nome_paciente'])) {
+		$nome = $_SESSION['nome_paciente'];
+		$cpf = $_SESSION['cpf_paciente'];
+		$email = $_SESSION['email_paciente'];
+		$telefone = $_SESSION['telefone_paciente'];
+		// echo "Bem-vindo $nome!";
+
+	  } elseif (isset($_SESSION['nome_medico'])) {
+		$nome = $_SESSION['nome_medico'];
+		$cpf = $_SESSION['cpf_medico'];
+		$email = $_SESSION['email_medico'];
+		$telefone = $_SESSION['telefone_medico'];
+		// echo "Bem-vindo, Dr $nome!";
+
+	  }
+	  
+	?>
+		
 	<!-- Este é o formulário para agendamento de consulta odontológica -->
 	<form id="agendando" class ="formulario-agendamento" action="" method="POST">
 
 
-		<button type="submit" class="botaoVoltar" onclick="window.location.href = './telaDoDoutor.php'" style="background-color: #008CBA; color: #fff; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer;">
+		<a href="./telaDoUser.php"><button type="button" class="btn-Voltar">
             Voltar
-        </button>
+        </button></a>
 
 		<!-- Este rótulo e entrada solicitam o nome do paciente -->
 		<label for="nome">Nome:</label>
-		<input value="<?php echo $_SESSION['nome_paciente']; ?>" id="nome" type="text" name="nome" disabled="" required><br>
+		<input value="<?php echo $nome; ?>" id="nome" type="text" name="nome" disabled="" required><br>
 
 		<!-- Esta etiqueta e entrada solicitam o CPF do paciente -->
 		<label for="nome">CPF:</label>
-		<input value="<?php echo $_SESSION['cpf_paciente']; ?>" id="cpf" type="text" name="CPF" maxlength="14" disabled="" required><br>
+		<input value="<?php echo $cpf; ?>" id="cpf" type="text" name="CPF" maxlength="14" disabled="" required><br>
 
 		<!-- Este rótulo e entrada solicitam o e-mail do paciente -->
 		<label for="email">E-mail:</label>
-		<input value="<?php echo $_SESSION['email_paciente']; ?>" id="email" type="email" name="email" disabled="" required><br>
+		<input value="<?php echo $email; ?>" id="email" type="email" name="email" disabled="" required><br>
 		
 		<!-- Este rótulo e entrada solicitam o telefone do paciente -->
 		<label for="telefone">Telefone:</label>
-		<input value="<?php echo $_SESSION['telefone_paciente']; ?>" id="telefone" type="tel" name="telefone" disabled="" maxlength="14" onkeyup="mascara_telefone()" required><br>
+		<input value="<?php echo $telefone; ?>" id="telefone" type="tel" name="telefone" disabled="" maxlength="14" onkeyup="mascara_telefone()" required><br>
 
 		<!-- Este rótulo e selecione pergunte pelo tipo de agendamento -->
 		<label for="procedimento">Procedimento:</label>

@@ -4,19 +4,20 @@
 
 /* Este seletor aplica o reset de estilização a todos os elementos da página */
 * {
-    /* Resetando estilização vinda do html*/
-  padding: 0;
+  /* Resetando estilização vinda do html*/
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
+}
+
+.status-buttons.show {
+  display: inline-block;
 }
 
 /* Este seletor aplica a animação de scroll suave em toda a página */
 html {
-
   scroll-behavior: smooth; /* Faz animacao do scroll no html*/
   scroll-padding-top: 100px; /* N deixa que os elementos fiquem abaixo do header*/
-
 }
 
 /* Definindo o estilo do corpo da página (body) */
@@ -34,11 +35,28 @@ header {
   position: relative;
 }
 
+.confirmar-btn {
+
+  display: none;
+
+}
+
+.nao-confirmar-btn {
+
+  display: none;
+
+}
+
 /* Definindo o estilo da logo */
 .logo {
   display: flex;
   align-items: center;
   font-family: 'Righteous', cursive;
+}
+
+.logo a {
+  text-decoration: none;
+  border-bottom: none;
 }
   
 .logo h1 {
@@ -69,6 +87,12 @@ header {
 .nav-item {
   margin: 0 15px;
 }
+
+/* Ajusta o tamanho dos ícones */
+.icone {
+  width: 1em;
+}
+
 
 /* Guia de Menu */
 /* Definindo o estilo dos itens do menu de navegação (item-menu) */
@@ -181,9 +205,12 @@ navegação (item-menu:after) */
  
  /* Define as regras de estilo para a mensagem de boas-vindas */
 .bem-vindo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0.5;
   font-family: 'Sigmar', cursive;
-  padding-top: 20rem;
+  padding-top: 10rem;
   font-size: 5rem;
   margin: 0 auto;
   text-align: center;
@@ -193,7 +220,7 @@ navegação (item-menu:after) */
 
 /* Define as regras de estilo para a seção da agenda */
 
-.title{
+.title {
   font-family: Arial, sans-serif;
   text-align: center;
   color: #fff;
@@ -201,92 +228,144 @@ navegação (item-menu:after) */
 
 .minha-agenda {
   display: none;
-  width: 100%;
-  min-height: 100vh;
-  background: #2E5575;
+  min-height: 80vh;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 33px 30px
+  
+  background: #2E5575;
 }
 
-/* Define o estilo da tabela */
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1170px;
+  margin: 0 auto;
+}
 
 table {
   border-spacing: 1;
   border-collapse: collapse;
   background: #fff;
-  border-radius: 1em;
+  border-radius: 10px;
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
-  position: relative
+  position: relative;
 }
 
 table * {
-  position: relative
+  position: relative;
 }
 
-table td,table th {
-  padding-left: 8px
+table td,
+table th {
+  padding-left: 8px;
 }
 
 table thead tr {
   height: 60px;
-  background: #341c55
+  background: #1A3042;
 }
 
 table tbody tr {
-  height: 50px
+  height: 50px;
 }
 
 table tbody tr:last-child {
-  border: 0
+  border: 0;
 }
 
-table td,table th {
-  text-align: left
+table td,
+table th {
+  text-align: left;
 }
 
-table td.l,table th.l {
-  text-align: right
+table td.l,
+table th.l {
+  text-align: right;
 }
 
-table td.c,table th.c {
-  text-align: center
+table td.c,
+table th.c {
+  text-align: center;
 }
 
-table td.r,table th.r {
-  text-align: center
+table td.r,
+table th.r {
+  text-align: center;
 }
 
-.lista-elementos th {
+.table100-head th {
+  font-family: OpenSans-Regular;
+  font-size: 18px;
   color: #fff;
   line-height: 1.2;
-  font-weight: unset
+  font-weight: unset;
+  text-align: center;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f5f5f5
+  background-color: #f5f5f5;
 }
 
 tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
   color: gray;
   line-height: 1.2;
-  font-weight: unset
+  font-weight: unset;
 }
 
 tbody tr:hover {
   color: #555;
   background-color: #f5f5f5;
-  cursor: pointer
+  cursor: pointer;
 }
 
-.column1,.column2,.column3,.column4,.column5,.column6 {
-  width: 10em;
-  text-align: center
+.column1 {
+  width: 260px;
+  padding-left: 40px;
+  text-align: center;
 }
 
+.column2 {
+  width: 160px;
+  text-align: center;
+}
+
+.column3 {
+  width: 245px;
+  text-align: center;
+}
+
+.column4 {
+  width: 110px;
+  text-align: center;
+}
+
+.column5 {
+  width: 170px;
+  text-align: center;
+}
+
+.column6 {
+  width: 222px;
+  text-align: center;
+}
 
 /* Define as propriedades da caixa de login */
 .minha-conta {
@@ -298,7 +377,7 @@ tbody tr:hover {
   font-family: 'Sarala', sans-serif;
   padding: 1.5rem;
   width: 21.8rem;
-  height: 31.5rem;
+  height: 36.5rem;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -477,22 +556,25 @@ o tamanho da fonte */
   right: 0;
 }
 
-/* .btn-excluir {
+.btn-excluir {
   background-color: red;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
+  border-radius: 1.25em;
   font-size: 16px;
   cursor: pointer;
+  font-family: 'Sarala', sans-serif;
 }
 
 .btn-excluir:hover {
   background-color: darkred;
-} */
+}
+
 
 /* Definição das regras de estilo para telas com largura máxima de 768px */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   /* Define o espaçamento interno da barra de navegação  */
   .nav-bar {
     padding: 1.5rem 4rem;
@@ -567,7 +649,6 @@ o tamanho da fonte */
   }
 
   /* Definição da TABELA de agendamentos*/
-
   table {
     display:block
   }
@@ -584,7 +665,7 @@ o tamanho da fonte */
     height: auto;
     padding: 37px 0
   }
-  
+
   table tbody tr td {
     padding-left: 40%!important;
     margin-bottom: 24px
@@ -595,6 +676,7 @@ o tamanho da fonte */
   }
 
   table tbody tr td:before {
+    font-family: OpenSans-Regular;
     font-size: 14px;
     color: #999;
     line-height: 1.2;
@@ -603,6 +685,17 @@ o tamanho da fonte */
     width: 40%;
     left: 30px;
     top: 0
+  }
+
+
+
+  .column4,.column5,.column6,.column1,.column2,.column3 {
+    width: 100%;
+    text-align: left;
+  }
+
+  tbody tr {
+    font-size: 14px
   }
 
   table tbody tr td:nth-child(1):before {
@@ -627,15 +720,6 @@ o tamanho da fonte */
 
   table tbody tr td:nth-child(6):before {
     content: "Status"
-  }
-
-  .column1,.column2,.column3,.column4,.column5,.column6 {
-    width: 100%;
-    text-align: left
-  }
-
-  tbody tr {
-    font-size: 14px
   }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-include('banco.php');
+include('connect.php');
 
 $medicoSelecionado = $_GET['medico'];
 

@@ -170,7 +170,7 @@ $('#agendando').submit(function(event) {
             button: "OK !"
           }).then(function() {
             // Redireciona o cliente para a página de inicio após o usuário clicar no botão OK na caixa de diálogo
-            window.location.href = "./telaDoDoutor.php"
+            window.location.href = "./telaDoUser.php"
           }).catch(function(error) {
             console.log(error);
           });

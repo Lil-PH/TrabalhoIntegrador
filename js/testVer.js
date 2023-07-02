@@ -1,4 +1,4 @@
-var tabela = document.querySelector('#tbody');
+var tabela = document.querySelector('#linha-consulta');
 
 function preencherTabela(consultas) {
   // Limpa o conteúdo atual da tabela
@@ -14,7 +14,7 @@ function preencherTabela(consultas) {
                   '<td class="column3">' + consulta.descricao_especialidade + '</td>' +
                   '<td class="column4">' + consulta.diaAgenda + '</td>' +
                   '<td class="column5">' + consulta.horario + '</td>' +
-                  '<td class="column6">' + consulta.consulta_status + '</td>' +
+                  '<td class="column6" data-id-consulta="' + consulta.id_consulta + '">' + consulta.consulta_status + '</td>' +
                 '</tr>';
 
       tabela.innerHTML += row;
@@ -43,3 +43,12 @@ function atualizarTabela() {
 // Atualiza a tabela imediatamente e a cada 5 segundos
 atualizarTabela();
 setInterval(atualizarTabela, 5000);
+
+var linhaTr = document.querySelector('#linha-consulta');
+var btnConfirmar = document.querySelector('#confirmar-btn');
+var btnNConfirmar = document.querySelector('#nao-confirmar-btn');
+
+linhaTr.addEventListener('click', function() {
+  btnConfirmar.style.display = "flex",
+  btnNConfirmar.style.display = "flex"
+});
