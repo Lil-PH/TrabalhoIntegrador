@@ -125,7 +125,6 @@ include('./php/protect.php');
           $nome = $_SESSION['nome_paciente'];
           echo "Bem-vindo $nome!";
 
-
           $cpf = $_SESSION['cpf_paciente'];
           $email = $_SESSION['email_paciente'];
           $telefone = $_SESSION['telefone_paciente'];
@@ -136,7 +135,6 @@ include('./php/protect.php');
           $nome = $_SESSION['nome_medico'];
           echo "Bem-vindo, Dr $nome!";
 
-
           $cpf = $_SESSION['cpf_medico'];
           $email = $_SESSION['email_medico'];
           $telefone = $_SESSION['telefone_medico'];
@@ -145,7 +143,7 @@ include('./php/protect.php');
       ?>
       </h1>
     </div>
-
+        
 
     <div class="minha-agenda">
 
@@ -154,6 +152,7 @@ include('./php/protect.php');
           <div class="wrap-table100">
               <div class="table100">
                 <!-- Título da seção de agendamentos -->
+                <div id="tipo-usuario" data-tipo-usuario="<?php echo isset($_SESSION['nome_medico']) ? 'medico' : 'paciente'; ?>"></div>
                 <h1 class="title">Consultas Agendadas</h1>
                 <table>
                   <thead>
@@ -167,10 +166,8 @@ include('./php/protect.php');
                     </tr>
                   </thead>
                   <tbody id="linha-consulta">
-                    <tr>
-                      <button id="confirmar-btn" class="confirmar-btn">Confirmar</button>
-                      <button id="nao-confirmar-btn" class="nao-confirmar-btn">Não Confirmar</button>
-                    </tr>
+
+                    <!-- esta sessão é preenchida pelo select da consulta -->
                   </tbody>
                 </table>
               </div>
@@ -259,5 +256,6 @@ include('./php/protect.php');
   <script src="./js/responsive-user.js"></script>
   <script src="./js/testVer.js"></script>
   <script src="./js/mascaras.js"></script>
+  
 </body>
 </html>

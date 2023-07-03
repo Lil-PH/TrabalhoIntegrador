@@ -4,7 +4,7 @@
 	$servername="localhost"; //endereço do servidor
 	$username="root";
 	$password="";
-	$db_name="odonto_db_teste";
+	$db_name="odonto_db";
 	$porta="3307";
 
 	//pdo - somente orientado objeto

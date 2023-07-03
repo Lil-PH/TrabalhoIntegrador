@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $medico = $_POST['medico'];
   $data = $_POST['data'];
   $horario = $_POST['horario'];
-  $consultaStatus = "Não confirmada";
+  $consultaStatus = "Pendente";
 
   // Realizar as validações e sanitizações necessárias nos dados recebidos
 

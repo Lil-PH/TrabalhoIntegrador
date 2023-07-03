@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 include('connect.php');
 require_once 'protect.php';
 
@@ -45,33 +41,6 @@ if ($result->num_rows > 0) {
         $consultas[] = $row;
     }
 }
-
-// Verifica se o método HTTP utilizado é POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtém o ID da consulta e o novo status enviado pelo cliente
-    $idConsulta = $_POST['idConsulta'];
-    $novoStatus = $_POST['novoStatus'];
-
-    // Atualiza o status da consulta no banco de dados
-    $updateSql = "UPDATE consulta SET consulta_status = '$novoStatus' WHERE id_consulta = '$idConsulta'";
-    $updateResult = $mysqli->query($updateSql);
-
-    // Verifica se a atualização foi bem-sucedida
-    if ($updateResult) {
-        // Retorna uma resposta de sucesso para o cliente
-        echo json_encode(['status' => 'success']);
-        exit;
-    } else {
-        // Retorna uma resposta de erro para o cliente
-        $response = [
-            'status' => 'error',
-            'message' => 'Falha ao atualizar o status da consulta.'
-        ];
-        echo json_encode($response);
-        exit;
-    }
-}
-
 
 // Retorna os resultados como JSON
 echo json_encode($consultas);
