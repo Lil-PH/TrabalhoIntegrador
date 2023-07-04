@@ -7,12 +7,12 @@ require_once('protect.php');
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recupera os dados do formulário
-    $nome = $_POST['nome'];
-    $telefone = $_POST['telefone'];
-    $email = $_POST['email'];
-    $novaSenha = $_POST['nova_senha'];
-    $confirmarNovaSenha = $_POST['confirma_nova_senha'];
-    $senha = $_POST['confirma_senha'];
+    $nome = $mysqli->real_escape_string($_POST['nome']);
+    $telefone = $mysqli->real_escape_string($_POST['telefone']);
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $novaSenha = $mysqli->real_escape_string($_POST['nova_senha']);
+    $confirmarNovaSenha = $mysqli->real_escape_string($_POST['confirma_nova_senha']);
+    $senha = $mysqli->real_escape_string($_POST['confirma_senha']);
 
     // Validação dos campos (adicionar as validações necessárias)
     if (empty($senha)) {

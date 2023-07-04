@@ -26,46 +26,72 @@ document.querySelector('#btnCadastro')
 });
 
 
-function validarCPF(cpf) {
-  // Remove caracteres não numéricos do CPF
-  cpf = cpf.replace(/[^\d]+/g,'');
+$(document).ready(function() {
+    // Captura o evento de envio do formulário "validaUser"
+    $('#validaUser').submit(function(event) {
+      event.preventDefault();
 
-  // Verifica se o CPF tem 11 dígitos
-  if (cpf.length !== 11) {
-    return false;
-  }
+      var email = $('#validaUserEmail').val();
+      var cpf = $('#validaUsercpf').val();
 
-  // Verifica se todos os dígitos são iguais (ex: 111.111.111-11)
-  if (/^(\d)\1+$/.test(cpf)) {
-    return false;
-  }
+      var data = {
+        validaUserEmail: email,
+        validaUsercpf: cpf
+      };
 
-  // Verifica se os dígitos verificadores são válidos
-  var soma = 0;
-  var resto;
-  for (var i = 1; i <= 9; i++) {
-    soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
-  }
-  resto = (soma * 10) % 11;
-  if ((resto === 10) || (resto === 11)) {
-    resto = 0;
-  }
-  if (resto !== parseInt(cpf.substring(9, 10))) {
-    return false;
-  }
-  soma = 0;
-  for (var i = 1; i <= 10; i++) {
-    soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
-  }
-  resto = (soma * 10) % 11;
-  if ((resto === 10) || (resto === 11)) {
-    resto = 0;
-  }
-  if (resto !== parseInt(cpf.substring(10, 11))) {
-    return false;
-  }
+      $.ajax({
+        type: 'POST',
+        url: './php/validar_usuario.php',
+        data: data,
+        dataType: 'json',
+        success: function(response) {
+          if (response.success) {
+            // Senha e usuário validados com sucesso, agora exibimos o formulário "trocarSenha"
+            $('#validaUser').hide();
+            $('#trocarSenha').show();
+          } else {
+            alert(response.message);
+          }
+        },
+        error: function(xhr, status, error) {
+          alert('Erro ao processar a solicitação: ' + error);
+        }
+      });
+    });
 
-  // Se chegou até aqui, o CPF é válido
-  return true;
-}
+    // Captura o evento de envio do formulário "trocarSenha"
+    $('#trocarSenha').submit(function(event) {
+      event.preventDefault();
+
+      var novaSenha = $('#novaSenha').val();
+      var confirmarNovaSenha = $('#confirmarNovaSenha').val();
+
+      // Aqui você pode realizar a validação dos campos do formulário "trocarSenha" antes de enviá-lo para o PHP
+
+      var data = {
+        novaSenha: novaSenha,
+        confirmarNovaSenha: confirmarNovaSenha
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: './php/atualizar_senha.php',
+        data: data,
+        dataType: 'json',
+        success: function(response) {
+          if (response.success) {
+            alert(response.message);
+          } else {
+            alert(response.message);
+          }
+        },
+        error: function(xhr, status, error) {
+          alert('Erro ao processar a solicitação: ' + error);
+        }
+      });
+    });
+});
+
+
+
 

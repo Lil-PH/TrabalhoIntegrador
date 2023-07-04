@@ -121,6 +121,7 @@ include('./php/protect.php');
       <h1 class="bem-vindo">
       <?php
       
+        // Verifica se o nome do paciente está definido na sessão
         if (isset($_SESSION['nome_paciente'])) {
           $nome = $_SESSION['nome_paciente'];
           echo "Bem-vindo $nome!";
@@ -130,7 +131,7 @@ include('./php/protect.php');
           $telefone = $_SESSION['telefone_paciente'];
 
           
-
+        // Verifica se o nome do médico está definido na sessão
         } elseif (isset($_SESSION['nome_medico'])) {
           $nome = $_SESSION['nome_medico'];
           echo "Bem-vindo, Dr $nome!";
@@ -195,7 +196,7 @@ include('./php/protect.php');
       
           <!-- Sessão de alteração do telefone  -->
           <div class="altera-dados">
-            <input value="<?php echo $telefone; ?>" id="telefone" name="telefone" type="tel" onkeyup="mascaraTelefone(this)" maxlength="14">
+            <input value="<?php echo $telefone; ?>" id="telefone" name="telefone" type="tel" onkeyup="mascaraTelefone(this)" maxlength="15">
             <label>TELEFONE</label>
           </div>
       
@@ -211,12 +212,13 @@ include('./php/protect.php');
             <label>NOVA SENHA</label>
           </div>
 
+          <!-- Sessão de confirmacao da senha  -->
           <div class="altera-dados">
             <input id="confirma_nova_senha" name="confirma_nova_senha" type="password" minlength="8">
             <label>CONFIRMAR NOVA SENHA</label>
           </div>
       
-          <!-- Sessão de confirmacao da senha  -->
+          <!-- Sessão da senha atual -->
           <div class="altera-dados">
             <input id="confirmarSenha" name="confirma_senha" type="password" minlength="8">
             <label>SENHA ATUAL</label>
@@ -254,7 +256,6 @@ include('./php/protect.php');
 
   <!-- Script para responsividade da página -->
   <script src="./js/responsive-user.js"></script>
-  <script src="./js/testVer.js"></script>
   <script src="./js/mascaras.js"></script>
   
 </body>

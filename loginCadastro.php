@@ -24,7 +24,7 @@
     </div>
 
     <!-- Seção do formulário de login -->
-    <form id="login" action="./php/crudPaciente.php" method="POST">
+    <form id="login" action="./php/validarUsuario.php" method="POST">
 
       <!-- Campo de entrada para CPF-->
       <div class="user-box espaco">
@@ -39,9 +39,10 @@
       </div>
       
       <!-- Link para a página de "Esqueceu a Senha" -->
-      <div class="esqueceu-senha">
+      <!-- <div class="esqueceu-senha">
         <a href="#" id="esqueceuSenhaLink">Esqueceu a senha?</a>
-      </div>
+      </div> -->
+      
      <div class="botaos">
 
       
@@ -77,7 +78,7 @@
 
       <!-- Campo de entrada para número de telefone -->
       <div class="user-box">
-        <input id="telefone" name="telefoneCadastro" type="tel" maxlength="14" autocomplete="off" onkeyup="mascaraTelefone(this)" required>
+        <input id="telefone" name="telefoneCadastro" type="tel" maxlength="15" autocomplete="off" onkeyup="mascaraTelefone(this)" required>
         <label>TELEFONE</label>
       </div>
 

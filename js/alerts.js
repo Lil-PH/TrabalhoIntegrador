@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var formData = new FormData(formLogin);
 
       // Faça a chamada AJAX usando o método fetch()
-      fetch('./php/crudPaciente.php', { // Substitua pelo caminho correto para o seu arquivo PHP
+      fetch('./php/validarUsuario.php', { // Substitua pelo caminho correto para o seu arquivo PHP
           method: 'POST',
           body: formData
       })

@@ -184,19 +184,3 @@ $('#agendando').submit(function(event) {
   }, 'json');
 });
 });
-
-
-                  //  console.log('Agendamento foi realizado com sucesso');
-                  //     // Exibe uma mensagem de sucesso para o usuário usando a biblioteca 'sweetalert'
-                  //     swal({
-                  //         title: "Agendamento foi realizado com sucesso",
-                  //         icon: "success",
-                  //         button: "OK !"
-                  //     }).then(function() {
-                  //         // Redireciona o cliente para a página de inicio após o usuário clicar no botão OK na caixa de diálogo
-                  //         window.location.href = "../index.php"
-                  //       }).catch(function(error) {
-                  //         console.log(error);
-                  //       });
-  
-// }

@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $idPaciente = $_SESSION['id_paciente'];
 
   // Receber os dados do agendamento
-  $procedimento = $_POST['procedimento'];
-  $medico = $_POST['medico'];
-  $data = $_POST['data'];
-  $horario = $_POST['horario'];
+  $procedimento = $mysqli->real_escape_string($_POST['procedimento']);
+  $medico = $mysqli->real_escape_string($_POST['medico']);
+  $data = $mysqli->real_escape_string($_POST['data']);
+  $horario = $mysqli->real_escape_string($_POST['horario']);
   $consultaStatus = "Pendente";
 
   // Realizar as validações e sanitizações necessárias nos dados recebidos

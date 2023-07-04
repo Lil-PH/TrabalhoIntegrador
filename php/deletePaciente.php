@@ -1,9 +1,9 @@
 <?php
 
-	// colocar no ARQUIVO crudPaciente.php Fazer funcoes
 include('connect.php');
 include('protect.php');
 
+//Verfica se o botão de excluir foi pressionado
 if (isset($_POST['btn-excluir'])) {
     $id = $_SESSION['id_paciente'];
 
