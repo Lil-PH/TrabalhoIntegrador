@@ -1,10 +1,10 @@
 <?php
 
 	//Conexão com banco de dados
-	$servername="sql203.infinityfree.com"; //Endereço do servidor
-	$username="epiz_34261980"; //Usuário do servidor
-	$password="NEcmRzm3lITCD6v"; //Senha do servidor
-	$db_name="epiz_34261980_db_odonto"; //Nome do banco de dados
+	$servername="sql201.infinityfree.com"; //Endereço do servidor
+	$username="if0_35512066"; //Usuário do servidor
+	$password="Lr9oonXNeGsDAI"; //Senha do servidor
+	$db_name="if0_35512066_db_odonto"; //Nome do banco de dados
 	$porta="3306"; //Porta que o banco de dados está localizado
 
 	// Criando a conexão utilizando a extensão mysqli
