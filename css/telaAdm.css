@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@700&family=Sigmar&display=swap');/* importação de fonts do google fonts */
+
+/* Abaixo está a estilização da página telaDoDoutor.html */
+
+/* Este seletor aplica o reset de estilização a todos os elementos da página */
+* {
+    /* Resetando estilização vinda do html*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Este seletor aplica a animação de scroll suave em toda a página */
+html {
+
+  scroll-behavior: smooth; /* Faz animacao do scroll no html*/
+  scroll-padding-top: 100px; /* N deixa que os elementos fiquem abaixo do header*/
+
+}
+
+/* Definindo o estilo do corpo da página (body) */
+body{
+  background: #2E5575;
+}
+
+/* Definindo o estilo do cabeçalho (header) */
+header {
+  background-color: #1A3042;
+  box-shadow: 0px 3px 10px #000000;
+  position: fixed; /* Fixa o header*/
+  width: 100vw;  /* Define o header com 100% da largura do dispositivo*/
+  z-index: 999; /* Posiciona o header a frente dos demais elementos*/
+  position: relative;
+}
+
+/* Definindo o estilo da logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Righteous', cursive;
+}
+  
+.logo h1 {
+  color: #fff;
+  cursor: pointer;
+}
+  
+/* Definindo o estilo da barra de navegação (nav-bar) */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+}
+  
+/* lista da NavBar */
+/* Definindo o estilo da lista de navegação (nav-list) */
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+  
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+  
+.nav-item {
+  margin: 0 15px;
+}
+
+/* Guia de Menu */
+/* Definindo o estilo dos itens do menu de navegação (item-menu) */
+.item-menu {
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: 'Sarala', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+ 
+}
+
+/* Definindo o estilo dos itens do menu de navegação quando estão 
+com foco ou hover (item-menu:focus, item-menu:hover) */
+.item-menu:focus,
+.item-menu:hover {
+  color: #fff;
+}
+
+/* Definindo o estilo do indicador dos itens do menu de navegação 
+quando estão com foco ou hover (item-menu:focus:after, item-menu:hover:after) */
+.item-menu:focus:after,
+.item-menu:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+/* Definindo o estilo do indicador dos itens do menu de 
+navegação (item-menu:after) */
+.item-menu:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+  transition: 1s;
+ 
+}
+
+/* Define o estilo dos links na barra de navegação */
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+/* Define o estilo do ícone de menu na versão mobile */
+.mobile-menu-icon {
+  display: none;
+}
+
+/* Define o estilo do menu na versão mobile */
+.mobile-menu {
+  display: none;
+}
+
+/* Define as regras de estilo para a tela inicial */
+.tela-inicial {
+  display: flex;
+ 
+ }
+ 
+ /* Define as regras de estilo para a mensagem de boas-vindas */
+ .bem-vindo{
+   opacity: 0.5;
+   font-family: 'Sigmar', cursive;
+   padding-top: 20rem;
+   font-size: 5rem;
+   margin: 0 auto;
+   text-align: center;
+   color: rgb(144 144 144);
+   cursor: default;
+ }
+
+/* Define as regras de estilo para a seção da agenda */
+.minha-agenda{
+  background-color: gray;
+  display: none;
+  flex-direction: column;
+
+}
+
+.title{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  background-color: #2E5575;
+}
+
+/* Define o estilo da tabela */
+.table-agendamento {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Define o estilo do cabeçalho da tabela */
+thead {
+  background-color: #008CBA;
+  color: #fff;
+}
+
+/* Define o estilo das células de cabeçalho e dados da tabela */
+.lista-elementos{
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.elementos {
+
+  text-align: center;
+} 
+
+/* Define o estilo das linhas pares da tabela */
+.lista-elementos:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Define o estilo das linhas que o mouse está sobre na tabela */
+.lista-elementos:hover {
+  background-color: #ddd;
+}
+
+/* Define o estilo do formulário */
+
+/* Define as regras de estilo para o grupo de formulários */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Define o estilo para um elemento com a classe "confirmar-cancelar" e o torna invisível */
+.confirmar-cancelar{
+  background-color: #2E5575;
+  display: none;
+
+}
+
+.btn-confirma{
+
+  display: none;
+    
+}
+
+.btn-cancela{
+    
+  display: none;
+}
+
+
+/* Define o estilo para um elemento com o id "listar" e o torna invisível. */
+#listar {
+
+  display: none;
+
+}
+
+/* Define o estilo para um elemento com a classe "mensagem" e centraliza 
+seu conteúdo horizontal e verticalmente, além de definir sua altura 
+e tamanho da fonte. */
+.tr-mensagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 2em;
+}
+
+/* Define as propriedades da caixa de login */
+.minha-conta {
+  margin: 0 auto;
+  display: none;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  background-color: black;
+  font-family: 'Sarala', sans-serif;
+  padding: 1.5rem;
+  width: 21.8rem;
+  height: 28.5rem;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.6);
+}
+
+/* Define o estilo do título da página */
+.title-altera-dados {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: white;
+  cursor: default;
+}
+
+.minha-conta .altera-dados {
+  position: relative;
+}
+
+/* Define o estilo do elemento com classes "minha-conta" e "altera-dados1", tornando-o 
+relativo para permitir que seus filhos sejam posicionados de maneira absoluta */
+.minha-conta .altera-dados1 {
+  position: relative;
+}
+/* Define o estilo dos <input> filhos do elemento com classe "altera-dados", definindo
+ a largura, o preenchimento, o tamanho da fonte, a cor do texto,
+ a margem inferior, a borda e o fundo */
+.minha-conta .altera-dados input {
+  width: 100%;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
+  color: #fff;
+  margin-bottom: 1.25em; 
+  border: none;
+  border-bottom: 0.063em solid #fff; 
+  outline: none;
+  background: transparent;
+}
+
+/* Define o estilo dos <input> filhos do elemento com classe "altera-dados1", definindo
+ a largura, o preenchimento, o tamanho da fonte, a cor do texto,
+ a margem inferior, a borda e o fundo */
+.minha-conta .altera-dados1 input {
+  width: 100%;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
+  color: #fff;
+  margin-bottom: 1.25em;
+  margin-top: 20% auto;
+  border: none;
+  border-bottom: 0.063em solid #fff; 
+  outline: none;
+  background: transparent;
+}
+
+/* Define o estilo das <label> filhas do elemento com classe "altera-dados", 
+posicionando-as de maneira absoluta no topo e à esquerda do <input>, 
+definindo o preenchimento, o tamanho da fonte, a cor do texto, 
+as propriedades do ponteiro do mouse e a transição */
+.minha-conta .altera-dados label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.625em 0; 
+  font-size: 1rem;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Define o estilo das <label> filhas do elemento com classe "altera-dados", 
+quando o <input> correspondente recebe foco ou está válido, 
+posicionando-as acima do <input>, definindo a cor do texto e 
+o tamanho da fonte */
+.minha-conta .altera-dados input:focus ~ label,
+.minha-conta .altera-dados input:valid ~ label {
+  top: -1.25em;
+  left: 0;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* Define o estilo dos <span> filhos do elemento com classe "altera-dados1", 
+posicionando-os de maneira absoluta no topo e à esquerda do <input>, 
+definindo o preenchimento, o tamanho da fonte, a cor do texto, 
+as propriedades do ponteiro do mouse e a transição */
+.minha-conta .altera-dados1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Define o estilo dos <span> filhos do elemento com classe "altera-dados1", 
+quando o <input> correspondente recebe foco ou está válido, 
+posicionando-os acima do <input>, definindo a cor do texto e 
+o tamanho da fonte */
+.minha-conta .altera-dados1 input:focus ~ span,
+.minha-conta .altera-dados1 input:valid ~ span {
+  top: -1.25em;
+  left: 0;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* Define as variáveis de cores e tamanhos do botão de login */
+.btn-salvar {
+  --primary-color: #303134;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 0.625em;
+  --arrow-stroke: 0.2em;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 1.25em;
+  color: var(--secondary-color);
+  padding: 1em 1.25em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 3.5em;
+  width: 7.5em;
+  margin: 1.25em auto;
+  cursor: pointer;
+}
+
+/* Estilo da seta no botão */
+.btn-salvar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-salvar .arrow {
+  margin-top: 0.0625em;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btn-salvar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -0.1875em;
+  right: 0.1875em;
+  transition: 0.2s;
+  padding: 0.1875em;
+  transform: rotate(-45deg);
+}
+
+/* Estilo do botão no hover */
+.btn-salvar:hover {
+  background-color: var(--hover-color);
+}
+
+.btn-salvar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btn-salvar:hover .arrow:before {
+  right: 0;
+}
+
+/* Definição das regras de estilo para telas com largura máxima de 768px */
+@media screen and (max-width: 768px) {
+  /* Define o espaçamento interno da barra de navegação  */
+  .nav-bar {
+      padding: 1.5rem 4rem;
+  }
+  /* Esconde os itens da barra de navegação */
+  .nav-item {
+      display: none;
+  }
+  /* Esconde os itens do menu */
+  .item-menu {
+      display: none;
+  }
+  /* Exibe o ícone do menu mobile */
+  .mobile-menu-icon {
+      display: block;
+  }
+  /* Remove o fundo do botão do ícone do menu mobile */
+  .mobile-menu-icon button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+  }
+  /* Define o alinhamento e espaçamento dos itens do menu mobile  */
+  .mobile-menu ul {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding-bottom: 1rem;
+  }
+  /* Exibe os itens da barra de navegação no menu mobile */
+  .mobile-menu .nav-item {
+      display: block;
+      padding-top: 1.2rem;
+  }
+  /* Define o espaçamento dos itens do menu mobile */
+  .mobile-menu .item-menu {
+      display: block;
+      padding: 1rem 2rem;
+  }
+  /* Define a largura do botão do menu mobile */
+  .mobile-menu .item-menu button {
+      width: 100%;
+  }
+  /* Exibe o menu mobile quando é aberto */
+  .open {
+      display: block;
+  }
+
+  .minha-conta {
+    display: flex;
+    margin-top: 4em;
+    width: 18em;
+  }
+
+  .bem-vindo {
+    padding-top: 16rem;
+    font-size: 3rem;
+    cursor: default;
+  } 
+
+  /* Define a largura do botão no conteúdo principal para tela mobile */
+  .botao {
+    margin-left: 90px;   
+  }
+  
+  /* Definição das regras de estilo para o elemento com o id #listar */
+  #listar{
+    cursor: pointer;
+    display: flex;
+    margin-top: 20% auto;
+  }
+
+}

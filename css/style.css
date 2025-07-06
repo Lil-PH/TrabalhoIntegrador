@@ -1,168 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');/* importação de fonts do google fonts */
 
-/* Abaixo e a estilização da pagina index.html */
+/* Abaixo está a estilização da pagina index.html */
 
+/* Este seletor aplica o reset de estilização a todos os elementos da página */
 * {
-    /* Resetando qualquer estilização vinda do html*/
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  /* Resetando estilização vinda do html*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
+/* Este seletor aplica a animação de scroll suave em toda a página */
+html {
+
+  scroll-behavior: smooth; /* Faz animacao do scroll no html*/
+  scroll-padding-top: 100px; /* N deixa que os elementos fiquem abaixo do header*/
+
+}
+
+/* Este seletor aplica uma cor de fundo azul escuro ao corpo da página */
+body{
+  background: #2E5575;
+}
+
+/* Este seletor define o estilo do cabeçalho da página #464646 */
 header {
-    background-color: #2E5575;
-    box-shadow: 0px 3px 10px #464646;
-    position: fixed;
-    width: 100vw;
+  background-color: #1A3042;
+  box-shadow: 0px 3px 10px #000000;
+  position: fixed; /* Fixa o header*/
+  width: 100vw;  /* Define o header com 100% da largura do dispositivo*/
+  z-index: 999; /* Posiciona o header a frente dos demais elementos*/
 }
 
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 6rem;
-}
-
+/* Este seletor aplica um estilo específico ao logotipo do site */
 .logo {
-    display: flex;
-    align-items: center;
-    font-family: 'Righteous', cursive;
+  display: flex;
+  align-items: center;
+  font-family: 'Righteous', cursive;
+  cursor: pointer;
 }
+
 
 .logo h1 {
-    color: #fff;
+  color: #fff;
 }
 
- /* lista da NavBar */
+/* Este seletor define o estilo da barra de navegação */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+}
 
+ 
+/* Este seletor define o estilo da lista de navegação */
 .nav-list {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-list ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  list-style: none;
 }
 
+/* Este seletor define o espaçamento entre os itens da lista de navegação */
 .nav-item {
-    margin: 0 15px;
+  margin: 0 15px;
 }
-
-.nav-link {
-    text-decoration: none;
-    font-size: 1.15rem;
-    color: #fff;
-    font-weight: 400;
-}
-
-
-.mobile-menu-icon {
-    display: none;
-}
-
-.mobile-menu {
-    display: none;
-}
-
-@media screen and (max-width: 768px) {
-    .nav-bar {
-        padding: 1.5rem 4rem;
-    }
-    .nav-item {
-        display: none;
-    }
-    .item-menu {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        padding-bottom: 1rem;
-    }
-    .mobile-menu .nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .item-menu {
-        display: block;
-        padding: 1rem 2rem;
-    }
-    .mobile-menu .item-menu button {
-        width: 100%;
-    }
-    .open {
-        display: block;
-    }
-
-    .conteudo-principal-imagem {
-        width: 10%;
-        flex-direction: column; /* para direcionar para baixo da coluna */
-    }
-
-    .mapa-responsivo{
-
-      width: 150%;
-      height: 350;
-      flex-direction: column; /* para direcionar para baixo da coluna */
-      border: 1px solid black;
-  
-    }
-
-}
-
-/* Conteudo principal */
-
-.conteudo {
-    background: #2E5575;
-    border-top: 0.4px solid white;
-  }
-
-  .conteudo-principal{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-  
-  
-  }
-  
-  .conteudo-principal-escrito{
-    display: flex;
-    flex-direction: column;
-    gap:32px;
-  }
-  
-  .conteudo-principal-escrito-titulo{
-    font-family: 'Righteous', cursive;
-    font-weight: 400;
-    font-size: 64px;
-    color: white;
-  }
-  
-  .conteudo-principal-escrito-subtitulo{
-    font-family: 'Sarala', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color:white;
-  }
-
-
-
 
 /* Guia de Menu */
 
+/* Estilização dos itens do menu */
 .item-menu {
   font-size: 18px;
   color: #e1e1e1;
@@ -176,20 +87,24 @@ header {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
-  
+ 
 }
 
+/* Quando o item é focado ou está com o cursor em cima */
 .item-menu:focus,
 .item-menu:hover {
   color: #fff;
 }
 
+/* Linha que aparece abaixo do item quando ele é focado 
+ou está com o cursor em cima */
 .item-menu:focus:after,
 .item-menu:hover:after {
   width: 100%;
   left: 0%;
 }
 
+/* Estilização da linha abaixo do item */
 .item-menu:after {
   content: "";
   pointer-events: none;
@@ -203,181 +118,419 @@ header {
   transition-duration: 400ms;
   transition-property: width, left;
   transition: 1s;
-  
+ 
+}
+
+/* Estilização dos links do menu */
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+/* Ícone do menu para dispositivos móveis */
+.mobile-menu-icon {
+  display: none;
+}
+
+/* Menu para dispositivos móveis */
+.mobile-menu {
+  display: none;
+}
+
+/* Textos iniciais */
+
+/* Definição do estilo do conteúdo principal */
+.conteudo {
+  background: #2E5575;
+  border-top: 0.4px solid white;
+}
+
+/* Definição do estilo do conteúdo principal com elementos em linha */
+.conteudo-principal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 200px; 
+
+}
+
+/* Definição do estilo do conteúdo principal escrito */
+.conteudo-principal-escrito{
+  display: flex;
+  flex-direction: column;
+  gap:32px;
+ 
+}
+
+/* Definição do estilo do título do conteúdo principal escrito */
+.conteudo-principal-escrito-titulo{
+  margin-top: 1em;
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+}
+
+/* Definição do estilo do subtitulo do conteúdo principal escrito */
+.conteudo-principal-escrito-subtitulo{
+  font-family: 'Sarala', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color:white;
+}
+
+/* Imagem */
+
+/* Definição do estilo da imagem do conteúdo principal */
+.conteudo-principal-imagem{
+  position: none;
+  display: inline-flex;
+  margin-top: 5.5em;
+  width: 15%;
+  justify-content: space-around;
 }
 
 /* Botao de Cadastro */
 
+/* Definição do estilo do botão de cadastro */
 .botao {
-    --primary-color: #000000;
-    --secondary-color: #fff;
-    --hover-color: #00aafb;
-    --arrow-width: 10px;
-    --arrow-stroke: 2px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    color: var(--secondary-color);
-    padding: 1em 1.8em;
-    background: var(--primary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-    height: 50px;
-    width: 150px;
-  }
-  
-  .botao .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .botao .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
-    background: var(--primary-color);
-    height: var(--arrow-stroke);
-    position: relative;
-    transition: 0.2s;
-  }
-  
-  .botao .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid var(--secondary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.2s;
-    padding: 3px;
-    transform: rotate(-45deg);
-  }
-  
-  .botao:hover {
-    background-color: var(--hover-color);
-  }
-  
-  .botao:hover .arrow {
-    background: var(--secondary-color);
-  }
-  
-  .botao:hover .arrow:before {
-    right: 0;
-  }
+  --primary-color: #000000;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 50px;
+  width: 205px;
+  cursor: pointer;
+}
 
-  /* textos iniciais */
+/* Definição do estilo do wrapper da seta do botão de cadastro */
+.botao .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .conteudo-principal{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-  
-  }
-  
-  .conteudo-principal-escrito{
-    display: flex;
-    flex-direction: column;
-    gap:32px;
-    
-  }
-  
-  .conteudo-principal-escrito-titulo{
-    font-family: 'Righteous', cursive;
-    font-weight: 400;
-    font-size: 64px;
-    color: white;
-  }
-  
-  .conteudo-principal-escrito-subtitulo{
-    font-family: 'Sarala', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color:white;
-  }
+/* Definição do estilo da seta do botão */
+.botao .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
 
-  /* Imagem */
+.botao .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
 
-  .conteudo-principal-imagem{
-    /*altura da imagen*/
-    display: flex;
-    margin-top: 5.5em;
-    width: 25%;
-    justify-content: space-around;
-  }
+/* Estilo do botão quando o cursor do mouse estiver sobre ele */
+.botao:hover {
+  background-color: var(--hover-color);
+}
 
-  /* Botao de Cadastro */
+.botao:hover .arrow {
+  background: var(--secondary-color);
+}
 
-  /* .conteudo-secundario{ */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* gap: 24px; */
-    /* margin-top: 48px; */
-    /* padding-bottom: 48px; */
-  /* } */
+.botao:hover .arrow:before {
+  right: 0;
+}
 
-  /* Botao de Cadastro */
-  main section div p{
-    color:#00aafb;
-  }
+/* Textos secundários */
 
-  
-  .conteudo-secundario-titulo{
-    padding-top: 48px; /*48px sera a distancia do titulo em relação ao border-top*/
-    font-family: 'Sarala', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color:white;
-    margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
-  }
-  
-  .conteudo-secundario-paragrafo{
-    max-width: 100%;
-    word-wrap: break-word;
-    font-family: 'Righteous', cursive;
-    font-weight: 300;
-    font-size: 18px;
-    color:white;
-  
-  }
-   
-  .teste{
-    display: flex;
-    align-items: center;
-    border-top:0.4px solid white;  
+/* Definição do estilo dos textos secundários */
+.conteudo-secundario-titulo{
+  font-family: 'Sarala', sans-serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  color:white;
+  margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
 
-  }
+}
 
-  .conteudo-secundario-imagem{
-    width: 15vw;
-    height: 15vh;
-    padding-right: 25px ;
-    
-  }
+.conteudo-secundario-paragrafo{
+  max-width: 100%;
+  word-wrap: break-word;
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  font-size: 2rem;
+  color:rgb(255, 255, 255);
+}
 
-  .mapa-responsivo{
-    width: 15vw;
-    height: 15vh;
-    border: 1px solid black;
-    /* padding-right: 25px ; */
+.cor_link{
+  color: #ffffff; /*cor do link*/
+}
 
-  }
-  
-  /* Rodape */
+/* Definição do estilo dos elementos */
+.elementos{
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 300px;
+  margin: 0 0 100px 0;
+}
 
-  .rodape{
+/* Estilização do conteúdo secundário escrito */
+.conteudo-secundario-escrito{
+  width: 35vw;
+  height: 25vh; 
+  word-wrap: break-word;
+}
+
+/* Estilização do conteúdo secundário em forma de imagem */
+.conteudo-secundario-imagem{
+  width: 25vw;
+  height: 30vh;
+}
+
+/* Estilização do mapa responsivo */
+.mapa-responsivo{
+  width: 25vw;
+  height: 25vh;
+  border: 1px solid black;
+
+}
+
+/* Rodapé */
+
+/* Estilização do rodapé */
+.rodape{
     padding: 32px;
-    border-top:0.4px solid white;
-    background: #2E5575;
-  }
+    box-shadow: 0px 3px 10px #000000;
+    /* border-top:0.4px solid rgb(0, 0, 0); */
+    background: #1A3042;
+    
+    
+}
+
+.whatsapp-footer{
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 30px;
+  margin: 0, 20px;
+}
+
+.facebook-footer{
+  background-color: rgba(58, 85, 159, 1);
+  color: #fff;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 100px;
+  font-size: 30px;
+  margin: 0, 20px;
+}
+
+.instagram-footer{
+  background:linear-gradient(#5557ca,#e7476d);
+  color: #fff;
+  border-radius: 50px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 30px;
+  margin: 0, 20px;
+}
+
+
+
+/* Estilização do conteúdo do footer escrito */
+.conteudo-footer-escrito{
+  width: 25vw;
+  height: 25vh; 
+  word-wrap: break-word;
+}
+
+.conteudo-footer-titulo{
+  font-family: 'Sarala', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color:white;
+  margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
+}
+
+.conteudo-footer-paragrafo{
+  max-width: 100%;
+  word-wrap: break-word;
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  font-size: 1rem;
+  color: white;
+}
+
+
+/* Criando o estilo do botão do whatsapp */
+.whatsapp-link{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 1px 1px 2px #888;
+  z-index: 999;
+}
+
+/* Estilização do ícone do WhatsApp */
+.fa-whatsapp{
+  margin-top: 16px;
+}
+
+  /* Responsividade da página */
+
+  @media screen and (max-width: 768px) {
+    /* Estilos para a barra de navegação quando a tela tem no 
+    máximo 768px de largura */
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    /* Oculta os itens da barra de navegação */
+    .nav-item {
+        display: none;
+    }
+    /* Oculta os itens do menu */
+    .item-menu {
+        display: none;
+    }
+    /* Mostra o ícone de menu para dispositivos móveis */
+    .mobile-menu-icon {
+        display: block;
+    }
+    /* Estilos para o botão do ícone do menu */
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    /* Estilos para a lista de itens do menu para dispositivos móveis */
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+    /* Estilos para os itens da lista do menu para dispositivos móveis */
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    /* Estilos para os subitens da lista do menu para dispositivos móveis */
+    .mobile-menu .item-menu {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    /* Estilos para o botão dos subitens do menu para dispositivos móveis */
+    .mobile-menu .item-menu button {
+        width: 100%;
+    }
+    /* Mostra os elementos com a classe "open" */
+    .open {
+        display: block;
+    }
+
+   /* Estilos para o conteúdo principal quando a tela tem no máximo 768px de largura */
+    .conteudo-principal {
+        flex-direction: column; /* para direcionar para baixo da coluna */
+        margin-bottom: 50px;
+    }
+    /* Estilos para a imagem do conteúdo principal quando a tela 
+    tem no máximo 768px de largura */
+    .conteudo-principal-imagem{
+      width: 40vw;
+    }
+    /* Estilos para o título do conteúdo principal quando a tela tem no máximo 768px de largura */
+    .conteudo-principal-escrito-titulo{
+      padding-top: 100px;
+    }
+    
+    /* Alinha o botão à esquerda */
+    .botao {
+      margin-left: 90px;   
+     }
+
+    /* Adapta o mapa e a imagem secundária para a visualização 
+    em dispositivos móveis */
+    .mapa-responsivo{
+      order: 3;
+      width: 50vw;
+      flex-direction: column; /* para direcionar para baixo da coluna */
+      border: 1px solid black;
+    }
+
+    .conteudo-secundario-imagem{
+      order: 3;
+      width: 50vw;
+    }
+
+    .imagem{
+      margin-top: 250px;
+    }
+   
+    
+    /* Alinha os elementos na vertical para dispositivos móveis */
+    .elementos {
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 0px 0px 0px;
+    }
+
+    /* Ajusta o tamanho do texto e a ordem dos elementos secundários */
+    .conteudo-secundario-escrito{
+      width: 100vw; 
+      word-wrap: break-word;
+    
+    }
+    
+    .conteudo-secundario-titulo{
+      order: 1;
+      font-size: 2em;
+    }
+    .conteudo-secundario-paragrafo {
+      font-size: 2em;   
+    }
+
+    .conteudo-footer-escrito{
+      width: 75vw; 
+      word-wrap: break-word;
+    }
+
+}
+
+/* Ajusta o tamanho dos ícones */
+.icons {
+
+  width: 1em;
   
-  .rodape-imagem{
-    height: 200px;
-    display: block;
-    margin: 0 auto;
-  }
+}

@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+/* Estilo da tela de loginCadastro.html */
+
+/* Define as configurações padrões para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+/* Define as propriedades do body da página */
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2E5575;
+}
+
+/* Define as propriedades da caixa de login */
+.login-box {
+  background-color: black;
+  padding: 0.375rem;
+  width: 21.875rem;
+  height: 21.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.6);
+}
+
+/* Define as propriedades do formulário de login */
+form {
+  position: absolute;
+  margin-top: 4.688rem;
+  transition: 0.5s;
+  width: 18.75rem;
+  height: 25rem;
+}
+
+/* Define as propriedades dos botões do formulário */
+.buttonsForm {
+  margin-top: 1.25rem;
+  position: relative;
+  border-radius: 1.875rem;
+  box-shadow: 0 0 0.4375rem 0 blueviolet;
+}
+
+/* Define as propriedades dos botões do formulário quando são clicados */
+.buttonsForm button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  padding: 0.625rem 1.5625rem;
+  color: white;
+}
+
+/* Define as propriedades do botão colorido que aparece ao clicar no botão de login */
+.btnColor {
+  position: absolute;
+  width: 6.75rem;
+  height: 100%;
+  background: linear-gradient(to right, #00aafb, #a963f8);
+  border-radius: 1.875rem;
+  transition: 0.3s;
+}
+
+/* Define as propriedades da mensagem de checkbox */
+.divCheck {
+  margin: 0.625rem 0 0 0.3125rem;
+  width: 8rem;
+  font-size: 0.8125rem;
+  color: #aaa;
+  cursor: default;
+}
+
+/* Define as posições dos elementos com ID "login" */
+#login {
+  left: 1.5625rem;
+}
+
+/* Define as posições dos elementos com ID "cadastro" */
+#cadastro {
+  left: 28.125rem;
+}
+
+/* Define as posições dos elementos <i> com as classes "iEmail", 
+"iPassword" e "iPassword2" */
+i {
+  position: absolute;
+  left: 0;
+  padding: 0.625em; 
+}
+
+.iEmail {
+  top: 2.5em; 
+}
+
+.iPassword {
+  top: 7.125em; 
+}
+
+.iPassword2 {
+  top: 11.875em; 
+}
+
+/* Define o estilo para o primeiro <p> filho do elemento com classe "login-box" */
+.login-box p:first-child {
+  margin: 0 0 1.875em; 
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Define o estilo dos elementos com classe "user-box" e 
+"user-box1", bem como os <input> dentro desses elementos */
+.login-box .user-box {
+  position: relative;
+}
+
+/* Define o estilo do elemento com classes "login-box" e "user-box1", tornando-o 
+relativo para permitir que seus filhos sejam posicionados de maneira absoluta */
+.login-box .user-box1 {
+  position: relative;
+}
+/* Define o estilo dos <input> filhos do elemento com classe "user-box", definindo
+ a largura, o preenchimento, o tamanho da fonte, a cor do texto,
+ a margem inferior, a borda e o fundo */
+.login-box .user-box input {
+  width: 100%;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
+  color: #fff;
+  margin-bottom: 1.25em; 
+  border: none;
+  border-bottom: 0.063em solid #fff; 
+  outline: none;
+  background: transparent;
+}
+
+/* Define o estilo dos <input> filhos do elemento com classe "user-box1", definindo
+ a largura, o preenchimento, o tamanho da fonte, a cor do texto,
+ a margem inferior, a borda e o fundo */
+.login-box .user-box1 input {
+  width: 100%;
+  padding: 0.625em 0; 
+  font-size: 1rem; 
+  color: #fff;
+  margin-bottom: 1.25em; 
+  border: none;
+  border-bottom: 0.063em solid #fff; 
+  outline: none;
+  background: transparent;
+}
+
+/* Define o estilo das <label> filhas do elemento com classe "user-box", 
+posicionando-as de maneira absoluta no topo e à esquerda do <input>, 
+definindo o preenchimento, o tamanho da fonte, a cor do texto, 
+as propriedades do ponteiro do mouse e a transição */
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.625em 0; 
+  font-size: 1rem;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Define o estilo das <label> filhas do elemento com classe "user-box", 
+quando o <input> correspondente recebe foco ou está válido, 
+posicionando-as acima do <input>, definindo a cor do texto e 
+o tamanho da fonte */
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -1.25em;
+  left: 0;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* Define o estilo dos <span> filhos do elemento com classe "user-box1", 
+posicionando-os de maneira absoluta no topo e à esquerda do <input>, 
+definindo o preenchimento, o tamanho da fonte, a cor do texto, 
+as propriedades do ponteiro do mouse e a transição */
+.login-box .user-box1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Define o estilo dos <span> filhos do elemento com classe "user-box1", 
+quando o <input> correspondente recebe foco ou está válido, 
+posicionando-os acima do <input>, definindo a cor do texto e 
+o tamanho da fonte */
+.login-box .user-box1 input:focus ~ span,
+.login-box .user-box1 input:valid ~ span {
+  top: -1.25em;
+  left: 0;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* Define as variáveis de cores e tamanhos do botão de login */
+.btnLogar {
+  --primary-color: #303134;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 0.625em;
+  --arrow-stroke: 0.125em;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 1.25em;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 3.5em;
+  width: 7.5em;
+  margin: 1.25em auto;
+  cursor: pointer;
+}
+
+/* Estilo da seta no botão */
+.btnLogar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnLogar .arrow {
+  margin-top: 0.0625em;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btnLogar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -0.1875em;
+  right: 0.1875em;
+  transition: 0.2s;
+  padding: 0.1875em;
+  transform: rotate(-45deg);
+}
+
+/* Estilo do botão no hover */
+.btnLogar:hover {
+  background-color: var(--hover-color);
+}
+
+.btnLogar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btnLogar:hover .arrow:before {
+  right: 0;
+}
+
+/* Botao de cadastro */
+/* Define as variáveis de cores e tamanhos do botão de cadastro */
+.btnCadastrar {
+  --primary-color: #303134;
+  --secondary-color: #fff;
+  --hover-color: #00aafb;
+  --arrow-width: 0.625rem; 
+  --arrow-stroke: 0.125rem; 
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 1.25rem; 
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  height: 3.125rem; 
+  width: 8.75rem; 
+  margin: 1.25rem auto;
+  cursor: pointer; 
+}
+
+/* Estilos para a seta do botão de cadastro */
+.btnCadastrar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnCadastrar .arrow {
+  margin-top: 0.0625rem; 
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btnCadastrar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -0.1875rem; 
+  right: 0.1875rem; 
+  transition: 0.2s;
+  padding: 0.1875rem; 
+  transform: rotate(-45deg);
+}
+
+/* Define a cor de fundo do botão ao passar o mouse */
+.btnCadastrar:hover {
+  background-color: var(--hover-color);
+}
+
+/* Define a cor de fundo da seta do botão ao passar o mouse */
+.btnCadastrar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+/* Define a posição da seta do botão ao passar o mouse */
+.btnCadastrar:hover .arrow:before {
+  right: 0;
+}
+
+/* Define a cor e o estilo do link "a2" da caixa de login */
+.login-box a.a2 {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Define a cor e o estilo do link "a2" da caixa de login ao passar o mouse */
+.login-box a.a2:hover {
+  background: transparent;
+  color: #4ac246;
+  border-radius: 0.3125rem; /* converted from 5px */
+}
