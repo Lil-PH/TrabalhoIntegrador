@@ -75,39 +75,62 @@
     </div>
 
     <div class="minha-agenda">
-      <!--Título da seção de agendamentos-->
-      <h1 class="title">Consultas Agendadas</h1>
-        <!--Tabela de agendamentos-->
-        <table class="table-agendamento">
-          <thead>
-            <!--Cabeçalho da tabela-->
-            <tr class="lista-elementos">
-              <th class="elementos">Nome</th>
-              <th class="elementos">CPF</th>
-              <th class="elementos">E-mail</th>
-              <th class="elementos">Telefone</th>
-              <th class="elementos">Doutor</th>
-              <th class="elementos">Procedimento</th>
-              <th class="elementos">Data</th>
-              <th class="elementos">Hora</th>
-              <th class="elementos">Status</th>
-            </tr>
-          </thead>
-          <!--Corpo da tabela (conteúdo dinâmico gerado por JavaScript)-->
-          <tbody id="tbody">
-          </tbody>
-        </table>
-        <!--Botão para listar agendamentos-->
-        <tr><button id="listar"><img src="../img/pesquisar.svg" alt="Lupa"></button></tr>
-        <!--Ícone da lupa (para exibição em telas menores)-->
-        <div class="icons8-pesquisar"></div>
-        <!--Botões para confirmar ou cancelar agendamento (habilitados dinamicamente)-->
-        <tr class="acoes">
-          <div class="confirmar-cancelar">
-            <button id="confirmar">Confirmar Consulta</button>
-            <button id="cancelar">Cancelar Consulta</button>
-          </div>
-        </tr>
+      <div class="lista">
+        <!--Título da seção de agendamentos-->
+        <h1 class="title">Consultas Agendadas</h1>
+          <!--Tabela de agendamentos-->
+          <table>
+            <thead>
+              <!--Cabeçalho da tabela-->
+              <tr class="lista-elementos">
+                  <th class="column1">Nome</th>
+                  <th class="column2">CPF</th>
+                  <th class="column3">E-mail</th>
+                  <th class="column4">Telefone</th>
+                  <th class="column5">Doutor</th>
+                  <th class="column6">Procedimento</th>
+                  <th class="column7">Data</th>
+                  <th class="column8">Hora</th>
+                  <th class="column9">Status</th>
+              </tr>
+            </thead>
+            <!--Corpo da tabela (conteúdo dinâmico gerado por JavaScript)-->
+            <tbody id="tbody">
+              <tr>
+                <td class="column1">_</td>
+                <td class="column2">_</td>
+                <td class="column3">_</td>
+                <td class="column4">_</td>
+                <td class="column5">_</td>
+                <td class="column6">_</td>
+                <td class="column7">_</td>
+                <td class="column8">_</td>
+                <td class="column9">_</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+
+
+          <!--Botão para listar agendamentos-->
+          <tr><button id="listar"><img src="../img/pesquisar.svg" alt="Lupa"></button></tr>
+          <!--Ícone da lupa (para exibição em telas menores)-->
+          <div class="icons8-pesquisar"></div>
+          <!--Botões para confirmar ou cancelar agendamento (habilitados dinamicamente)-->
+          <tr>
+            <div class="confirmar-cancelar">
+              <button id="confirmar">Confirmar Consulta</button>
+              <button id="cancelar">Cancelar Consulta</button>
+            </div>
+          </tr>
+          <tr>
+            <div class="tr-Mensagem">
+              <p class="mensagem">Não há agendamentos.</p>
+            </div>
+          </tr>
+      </div>  
     </div>
 
     <!-- Seção para alterar os dados do usuário -->
