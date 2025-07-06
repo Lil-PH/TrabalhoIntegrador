@@ -24,6 +24,8 @@ var listar = document.querySelector('#listar');
 var confirmarCancelar = document.querySelector('.confirmar-cancelar');
 var btnConfirmar = document.querySelector('#confirmar');
 var btnCancelar = document.querySelector('#cancelar');
+var trMensagem = document.querySelector('#tr-Mensagem');
+var mensagem = document.querySelector('.mensagem');
 var minhaAgenda = document.querySelector('.minha-agenda');
 var minhaConta = document.querySelector('.minha-conta');
 var telaInicial = document.querySelector('.tela-inicial');
@@ -112,62 +114,74 @@ class MobileNavbar {
 const tbody = document.getElementById('tbody');
 
 // Obtém os dados do localStorage
-const agendamento = JSON.parse(localStorage.getItem('agendamento'));
+const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
 
 // Cria uma nova linha na tabela com os dados do agendamento
 const novaLinha = document.createElement('tr');
 
-// Adiciona a nova linha ao final do tbody da tabela
-tbody.appendChild(novaLinha);
+
+
 //se nao haver agendamentos
-if (!agendamento) {
-    // Adiciona uma mensagem de aviso
-    const mensagem = document.createElement('p');
-    mensagem.innerHTML = 'Não há agendamentos.';
-    novaLinha.style.textAlign = 'center';
-    tbody.appendChild(mensagem);
-    //centraliza p no meio da linha
+if (!agendamentos) {
+    // Adiciona uma .trMensagem visivel
+    tbody.appendChild(novaLinha);
+    // Adiciona uma mensagem dento de novaLinha
+    const mensagem = document.createElement('td');
+    mensagem.innerHTML = 'Não há agendamentos';
+    //abaixo de status
+    
+    // Adiciona a nova linha ao final do tbody da tabela
+    novaLinha.appendChild(mensagem);
+
+    
+    // trMensagem.style.display = "flex"
+    // //centraliza p no meio da linha
+    // novaLinha.appendChild(trMensagem);
+    
   } else {
     // Adiciona os dados do agendamento na linha
 
-
-    novaLinha.innerHTML = `
-      <td>${agendamento.nome}</td>
-      <td>${agendamento.cpf}</td>
-      <td>${agendamento.email}</td>
-      <td>${agendamento.telefone}</td>
-      <td>${agendamento.doutor}</td>
-      <td>${agendamento.procedimento}</td>
-      <td>${agendamento.data}</td>
-      <td>${agendamento.hora}</td>
-      <td>${agendamento.status}</td>
+    agendamentos.forEach(agendamentos => {
+			const novaLinha = document.createElement('tr');
+			novaLinha.innerHTML = `
+      <td>${agendamentos.nome}</td>
+      <td>${agendamentos.cpf}</td>
+      <td>${agendamentos.email}</td>
+      <td>${agendamentos.telefone}</td>
+      <td>${agendamentos.doutor}</td>
+      <td>${agendamentos.procedimento}</td>
+      <td>${agendamentos.data}</td>
+      <td>${agendamentos.hora}</td>
+      <td>${agendamentos.status}</td>
     `;
     //atualiza as linha de frequentemente
     tbody.appendChild(novaLinha);
 
-    // Adiciona um ouvinte de evento "click" para a nova linha
-    novaLinha.addEventListener('click', function() {
 
-    // Alterna a exibição do elemento com id "confirmarCancelar" entre "table-row" e "none"
-    if (confirmarCancelar.style.display === "table-row"){
-      confirmarCancelar.style.display = "none"
-    } else {
-      confirmarCancelar.style.display = "table-row"
-    }
+      // // Adiciona um ouvinte de evento "click" para a nova linha
+      novaLinha.addEventListener('click', function() {
 
-        // Adiciona um status de "confimada" em "agendamento" ao botao de confirmar ser clicado
-      btnConfirmar.addEventListener("click", function() {
-        // Adiciona um status de "confirmada" em "agendamento"
-        agendamento.status = "confirmada";
-        // Salva o agendamento no localStorage
-        localStorage.setItem('agendamento', JSON.stringify(agendamento));
-      }) // Adiciona um status de "cancelada" em "agendamento" ao botao de cancelar ser clicado
+        // // Alterna a exibição do elemento com id "confirmarCancelar" entre "table-row" e "none"
+        if (confirmarCancelar.style.display === "table-row"){
+          confirmarCancelar.style.display = "none"
+        } else {
+          confirmarCancelar.style.display = "table-row"
+        }
 
-      btnCancelar.addEventListener("click", function() {
-        // Adiciona um status de "cancelada" em "agendamento"
-        agendamento.status = "cancelada";
-        // Salva o agendamento no localStorage
-        localStorage.setItem('agendamento', JSON.stringify(agendamento));
+        //     // Adiciona um status de "confimada" em "agendamento" ao botao de confirmar ser clicado
+          btnConfirmar.addEventListener("click", function() {
+        //     // Adiciona um status de "confirmada" em "agendamento"
+            agendamentos.status = "Confirmada";
+        //     // Salva o agendamento no localStorage
+            localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+          }) // Adiciona um status de "cancelada" em "agendamento" ao botao de cancelar ser clicado
+
+          btnCancelar.addEventListener("click", function() {
+            // Adiciona um status de "cancelada" em "agendamento"
+            agendamentos.status = "Cancelada";
+            // Salva o agendamento no localStorage
+            localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+          })
       })
-
-})};
+  })
+}
