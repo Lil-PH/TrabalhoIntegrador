@@ -321,14 +321,12 @@ ou está com o cursor em cima */
 
 /* Estilização do rodapé */
 .rodape{
-    padding: 32px;
     box-shadow: 0px 3px 10px #000000;
     /* border-top:0.4px solid rgb(0, 0, 0); */
-    background: #1A3042;
-    
-    
+    background: #1A3042;   
 }
 
+/*Estilização do icone whatsapp do footer*/
 .whatsapp-footer{
   background-color: #25d366;
   color: #fff;
@@ -339,6 +337,7 @@ ou está com o cursor em cima */
   margin: 0, 20px;
 }
 
+/*Estilização do icone facebook do footer*/
 .facebook-footer{
   background-color: rgba(58, 85, 159, 1);
   color: #fff;
@@ -349,6 +348,7 @@ ou está com o cursor em cima */
   margin: 0, 20px;
 }
 
+/*Estilização do icone instagram do footer*/
 .instagram-footer{
   background:linear-gradient(#5557ca,#e7476d);
   color: #fff;
@@ -364,18 +364,21 @@ ou está com o cursor em cima */
 /* Estilização do conteúdo do footer escrito */
 .conteudo-footer-escrito{
   width: 25vw;
-  height: 25vh; 
+  height: 17vh; 
   word-wrap: break-word;
 }
 
+/* Estilização do titulo do footer  */
 .conteudo-footer-titulo{
   font-family: 'Sarala', sans-serif;
   font-weight: 400;
   font-size: 3rem;
+  padding-left: 5rem;
   color:white;
   margin-bottom: 16px;/*16px sera a distancia do titulo em relação aos paragrafos a baixo*/
 }
 
+/* Estilização do paragrafo do footer  */
 .conteudo-footer-paragrafo{
   max-width: 100%;
   word-wrap: break-word;
@@ -383,6 +386,27 @@ ou está com o cursor em cima */
   font-weight: 300;
   font-size: 1rem;
   color: white;
+}
+
+/* conteiner escrito do footer  */
+.conteudo-footer{
+  display: flex;
+  flex-direction: column;
+  padding-left: 50em; 
+}
+
+/* conteiner icones do footer  */
+.icones-footer{
+  padding-left: 8rem;
+  padding-bottom: 1.5rem;
+}
+
+/* conteiner direitos do footer  */
+.direitos-footer{
+  margin-top: 10px;
+  padding: 10px;
+  background: #5557ca;
+  
 }
 
 
@@ -523,7 +547,28 @@ ou está com o cursor em cima */
 
     .conteudo-footer-escrito{
       width: 75vw; 
+      height: 25vh; 
+      padding-left: 2rem ;
       word-wrap: break-word;
+    }
+
+    .conteudo-footer{
+      display: flex;
+      flex-direction: column;
+      padding-left: 4rem;
+    }
+    
+    .icones-footer{
+      padding-left: 4.5rem;
+    }
+    
+    .direitos-footer{
+      margin-top: 10px;
+      padding: 10px;
+      background: #5557ca; 
+    }
+    .conteudo-footer-titulo{
+      padding-left: 0; 
     }
 
 }
@@ -533,4 +578,10 @@ ou está com o cursor em cima */
 
   width: 1em;
   
+}
+
+.diretos-reservados{
+  padding-left: 5em;
+  text-align: center;
+  color:#fff
 }

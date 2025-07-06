@@ -146,77 +146,124 @@ navegação (item-menu:after) */
  }
  
  /* Define as regras de estilo para a mensagem de boas-vindas */
- .bem-vindo{
-   opacity: 0.5;
-   font-family: 'Sigmar', cursive;
-   padding-top: 20rem;
-   font-size: 5rem;
-   margin: 0 auto;
-   text-align: center;
-   color: rgb(144 144 144);
-   cursor: default;
- }
+.bem-vindo{
+  opacity: 0.5;
+  font-family: 'Sigmar', cursive;
+  padding-top: 20rem;
+  font-size: 5rem;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(144 144 144);
+  cursor: default;
+}
 
 /* Define as regras de estilo para a seção da agenda */
-.minha-agenda{
-  background-color: gray;
-  display: none;
-  flex-direction: column;
-
-}
 
 .title{
   font-family: Arial, sans-serif;
   text-align: center;
   color: #fff;
-  background-color: #2E5575;
+}
+
+.minha-agenda {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background: #2E5575;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px
 }
 
 /* Define o estilo da tabela */
-.table-agendamento {
-  width: 100%;
+
+table {
+  border-spacing: 1;
   border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 1em;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative
+}
+
+table * {
+  position: relative
+}
+
+table td,table th {
+  padding-left: 8px
+}
+
+table thead tr {
+  height: 60px;
+  background: #341c55
+}
+
+table tbody tr {
+  height: 50px
+}
+
+table tbody tr:last-child {
+  border: 0
+}
+
+table td,table th {
+  text-align: left
+}
+
+table td.l,table th.l {
+  text-align: right
+}
+
+table td.c,table th.c {
+  text-align: center
+}
+
+table td.r,table th.r {
+  text-align: center
+}
+
+.lista-elementos th {
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5
+}
+
+tbody tr {
+  color: gray;
+  line-height: 1.2;
+  font-weight: unset
+}
+
+tbody tr:hover {
+  color: #555;
+  background-color: #f5f5f5;
+  cursor: pointer
+}
+
+.column1,.column2,.column3,.column4,.column5,.column6 {
+  width: 10em;
+  text-align: center
 }
 
 /* Define o estilo do cabeçalho da tabela */
-thead {
-  background-color: #008CBA;
-  color: #fff;
-}
 
 /* Define o estilo das células de cabeçalho e dados da tabela */
-.lista-elementos{
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.elementos {
-
-  text-align: center;
-} 
 
 /* Define o estilo das linhas pares da tabela */
-.lista-elementos:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
 /* Define o estilo das linhas que o mouse está sobre na tabela */
-.lista-elementos:hover {
-  background-color: #ddd;
-}
 
 /* Define o estilo do formulário */
 
 /* Define as regras de estilo para o grupo de formulários */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
 
 /* Define o estilo para um elemento com a classe "confirmar-cancelar" e o torna invisível */
 .confirmar-cancelar{
@@ -225,35 +272,31 @@ thead {
 
 }
 
-.btn-confirma{
-
-  display: none;
-    
-}
-
-.btn-cancela{
-    
-  display: none;
-}
-
-
-/* Define o estilo para um elemento com o id "listar" e o torna invisível. */
-#listar {
-
-  display: none;
-
-}
-
 /* Define o estilo para um elemento com a classe "mensagem" e centraliza 
 seu conteúdo horizontal e verticalmente, além de definir sua altura 
 e tamanho da fonte. */
-.tr-mensagem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 2em;
+/* #tr-Mensagem{
+
+  display: none;
+
 }
+
+.mensagem {
+
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-family: 'Sarala', sans-serif;
+
+} */
+
+/* Define o estilo para um elemento com o id "listar" e o torna invisível. */
+/* #listar {
+
+  display: none;
+
+} */
+
 
 /* Define as propriedades da caixa de login */
 .minha-conta {
@@ -447,55 +490,55 @@ o tamanho da fonte */
 @media screen and (max-width: 768px) {
   /* Define o espaçamento interno da barra de navegação  */
   .nav-bar {
-      padding: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
   }
   /* Esconde os itens da barra de navegação */
   .nav-item {
-      display: none;
+    display: none;
   }
   /* Esconde os itens do menu */
   .item-menu {
-      display: none;
+    display: none;
   }
   /* Exibe o ícone do menu mobile */
   .mobile-menu-icon {
-      display: block;
+    display: block;
   }
   /* Remove o fundo do botão do ícone do menu mobile */
   .mobile-menu-icon button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
   /* Define o alinhamento e espaçamento dos itens do menu mobile  */
   .mobile-menu ul {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 1rem;
   }
   /* Exibe os itens da barra de navegação no menu mobile */
   .mobile-menu .nav-item {
-      display: block;
-      padding-top: 1.2rem;
+    display: block;
+    padding-top: 1.2rem;
   }
   /* Define o espaçamento dos itens do menu mobile */
   .mobile-menu .item-menu {
-      display: block;
-      padding: 1rem 2rem;
+    display: block;
+    padding: 1rem 2rem;
   }
   /* Define a largura do botão do menu mobile */
   .mobile-menu .item-menu button {
-      width: 100%;
+    width: 100%;
   }
   /* Exibe o menu mobile quando é aberto */
   .open {
-      display: block;
+    display: block;
   }
 
   .minha-conta {
-    display: flex;
+    display: none;
     margin-top: 4em;
     width: 18em;
   }
@@ -518,4 +561,95 @@ o tamanho da fonte */
     margin-top: 20% auto;
   }
 
+  /* Definição da TABELA de agendamentos*/
+
+  table {
+    display:block
+  }
+
+  table>*,table tr,table td,table th {
+    display: block
+  }
+
+  table thead {
+    display: none
+  }
+
+  table tbody tr {
+    height: auto;
+    padding: 37px 0
+  }
+  
+  table tbody tr td {
+    padding-left: 40%!important;
+    margin-bottom: 24px
+  }
+
+  table tbody tr td:last-child {
+    margin-bottom: 0
+  }
+
+  table tbody tr td:before {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0
+  }
+
+  table tbody tr td:nth-child(1):before {
+    content: "Nome"
+  }
+
+  table tbody tr td:nth-child(2):before {
+    content: "CPF"
+  }
+
+  table tbody tr td:nth-child(3):before {
+    content: "E-mail"
+  }
+
+  table tbody tr td:nth-child(4):before {
+    content: "Telefone"
+  }
+
+  table tbody tr td:nth-child(5):before {
+    content: "Doutor"
+  }
+
+  table tbody tr td:nth-child(6):before {
+    content: "Procedimento"
+  }
+
+  table tbody tr td:nth-child(7):before {
+    content: "Data"
+  }
+
+  table tbody tr td:nth-child(8):before {
+    content: "Hora"
+  }
+
+  table tbody tr td:nth-child(9):before {
+    content: "Status"
+  }
+
+  .column1,.column2,.column3,.column4,.column5,.column6 {
+    width: 100%;
+    text-align: left
+  }
+
+  tbody tr {
+    font-size: 14px
+  }
+
+}
+
+@media(max-width: 576px) {
+  .minha-agenda {
+    padding-left:15px;
+    padding-right: 15px
+  }
 }
