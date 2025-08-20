@@ -27,7 +27,10 @@
 
 </div>
 
+<br>
+
 ---
+
 <br>
 
 ### 🎯 Sobre o Projeto:
@@ -91,6 +94,8 @@
     👨‍💻 Autores:
   </p>
 
+<br>
+
   <samp>
     <p>
       <b>André Gomes da Silva</b><br>
@@ -98,6 +103,8 @@
       <b>Pedro Henrique Silva Arnaut</b>
     </p>
   </samp>
+
+<br>
 
   <p>
     <a href="https://github.com/Lil-PH"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
