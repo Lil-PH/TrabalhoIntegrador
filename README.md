@@ -5,7 +5,7 @@
 <br>
 
 <p align="center">
-  Projeto Integrador para automatizar o atendimento da clínica Odonto Bia através de um chatbot interativo.
+  Projeto Integrador para automatizar o atendimento da clínica Odonto Bia através de uma Página de Agendamentos.
 </p>
 
 <br>
