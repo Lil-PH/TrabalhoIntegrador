@@ -27,10 +27,15 @@
 
 </div>
 
+<br>
+
 ---
+
 <br>
 
 ### 🎯 Sobre o Projeto:
+
+<br>
 
 - Este trabalho foi realizado com o intuito de automatizar os atendimentos da Odonto Bia, oferecendo uma solução prática e acessível para os pacientes e dentistas.
 - O projeto foi desenvolvido em parceria como parte de um Trabalho Integrador acadêmico do IFES.
@@ -42,6 +47,8 @@
 <br>
 
 ### 🚀 Como Acessar:
+
+<br>
 
 - Você pode interagir com a aplicação web diretamente através do link: <a href="https://lil-ph.github.io/TrabalhoIntegrador/">Acessar a página Odonto Bia</a>
 
@@ -59,6 +66,8 @@
     👨‍💻 Autores:
   </p>
 
+<br>
+
   <samp>
     <p>
       <b>André Gomes da Silva</b><br>
@@ -66,6 +75,8 @@
       <b>Pedro Henrique Silva Arnaut</b>
     </p>
   </samp>
+
+<br>
 
   <p>
     <a href="https://github.com/Lil-PH"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
